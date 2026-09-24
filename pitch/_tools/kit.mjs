@@ -11,9 +11,13 @@ export function plural(n, [one, few, many]) {
   if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
   return many;
 }
+// Glue digit groups and the currency sign so prices never wrap mid-number.
+export const nb = (s) => String(s ?? '').replace(/(\d) (?=\d{3}\b)/g, '$1\u00a0').replace(/(\d) ₽/g, '$1\u00a0₽').replace(/ \/ /g, '\u00a0/ ');
 export const reviewsText = (n) => `${n} ${plural(n, ['отзыв', 'отзыва', 'отзывов'])}`;
 export const rub = (n) => (typeof n === 'number' ? n.toLocaleString('ru-RU').replace(/ /g, ' ') + ' ₽' : n);
 export const telHref = (phone) => 'tel:+' + phone.replace(/\D/g, '').replace(/^8(?=\d{10}$)/, '7');
+
+export const AWARD_ICON = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/><path d="m9 14-1.5 6.5L12 18l4.5 2.5L15 14"/><path d="m12 7.2.8 1.6 1.8.3-1.3 1.2.3 1.8-1.6-.9-1.6.9.3-1.8-1.3-1.2 1.8-.3Z"/></svg>';
 
 export const icon = {
   phone: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.5 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.5v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg>',
@@ -81,7 +85,7 @@ svg.i{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.7;
 /* sections */
 .sec{padding:clamp(64px,9vw,112px) 0}
 .sec-alt{background:var(--surface-2)}
-.eyebrow{font:600 12px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text,var(--accent));margin-bottom:14px;display:block}
+.eyebrow{font:600 12px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text,var(--accent));margin-bottom:14px;display:block}
 .sec-head{max-width:720px;margin-bottom:clamp(28px,4vw,48px)}
 .sec-head h2{font-size:clamp(32px,5vw,52px)}
 .sec-head p{margin-top:16px;color:var(--muted);font-size:clamp(16px,1.6vw,18px)}
@@ -112,8 +116,13 @@ svg.i{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.7;
 .rating-num svg{width:.62em;height:.62em;fill:var(--star,#f5b82e);stroke:none}
 .rating-txt h3{font-size:clamp(22px,2.6vw,30px)}
 .rating-txt p{margin-top:8px;color:var(--muted)}
-.stars{display:flex;gap:3px;color:var(--star,#f5b82e)}
-.stars svg{fill:currentColor;stroke:none;width:20px;height:20px}
+.stars{position:relative;display:inline-flex;color:var(--star,#f5b82e)}
+.stars-bg,.stars-fg{display:flex;gap:3px;white-space:nowrap}
+.stars-bg{opacity:.28}
+.stars-fg{position:absolute;left:0;top:0;bottom:0;overflow:hidden}
+.stars svg{fill:currentColor;stroke:none;width:20px;height:20px;flex:none}
+.award{display:flex;gap:10px;align-items:flex-start;margin-top:14px!important;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,var(--star,#f5b82e) 14%,transparent);color:var(--text)!important;font-size:14.5px}
+.award svg{width:22px;height:22px;color:var(--accent-text,var(--accent));margin-top:1px}
 
 /* visit */
 .visit{display:grid;gap:20px}
@@ -252,7 +261,8 @@ const BASE_JS = `
         b.addEventListener('click',function(){slotsEl.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});this.setAttribute('aria-pressed','true');sel.time=this.textContent;update();});
         slotsEl.appendChild(b);
       }
-      if(!any){var p=d.createElement('p');p.className='note';p.textContent='На сегодня окон уже нет — выберите другой день.';slotsEl.appendChild(p);}
+      if(!any){var p=d.createElement('p');p.className='note';p.style.gridColumn='1/-1';p.textContent='На этот день окон уже нет — выберите другой день.';slotsEl.appendChild(p);}
+      return any;
     }
     function update(){
       if(sel.day&&sel.time){var t=sel.day.getDate()+' '+months[sel.day.getMonth()]+', '+names[sel.day.getDay()]+' · '+sel.time;out.textContent='Вы выбрали: '+t;hidden.value=t;}
@@ -267,7 +277,8 @@ const BASE_JS = `
       daysEl.appendChild(b);
       if(i===0)sel.day=dt;
     }
-    renderSlots();update();
+    if(!renderSlots()){var nb=daysEl.querySelectorAll('.day')[1];if(nb)nb.click();}
+    update();
   });
   // gentle reveal on scroll
   if('IntersectionObserver' in window){
@@ -336,22 +347,23 @@ ${c.js || ''}</script>
 
 export function priceTabs({ id = 'uslugi', eyebrow = 'Услуги и цены', title, lead, cats, bookHref, bookLabel = 'Записаться онлайн', footNote, alt }) {
   const tabs = cats.map((c, i) => `<button class="tab" role="tab" id="${id}-t${i}" aria-controls="${id}-p${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(c.name)}</button>`).join('');
-  const panels = cats.map((c, i) => `<div class="panel" role="tabpanel" id="${id}-p${i}" aria-labelledby="${id}-t${i}"${i ? ' hidden' : ''}><ul class="plist">${c.items.map((it) => `<li class="prow"><div class="prow-main"><div class="prow-name">${esc(it.n)}</div>${it.d ? `<div class="prow-desc">${esc(it.d)}</div>` : ''}${it.t ? `<div class="prow-meta"><span>${icon.clock.replace('<svg', '<svg style="width:15px;height:15px;display:inline;vertical-align:-3px"')} ${esc(it.t)}</span></div>` : ''}</div><div class="prow-price">${esc(it.p)}${it.ps ? `<small>${esc(it.ps)}</small>` : ''}</div></li>`).join('')}</ul></div>`).join('');
+  const panels = cats.map((c, i) => `<div class="panel" role="tabpanel" id="${id}-p${i}" aria-labelledby="${id}-t${i}"${i ? ' hidden' : ''}><ul class="plist">${c.items.map((it) => `<li class="prow"><div class="prow-main"><div class="prow-name">${esc(it.n)}</div>${it.d ? `<div class="prow-desc">${nb(esc(it.d))}</div>` : ''}${it.t ? `<div class="prow-meta"><span>${icon.clock.replace('<svg', '<svg style="width:15px;height:15px;display:inline;vertical-align:-3px"')} ${esc(it.t)}</span></div>` : ''}</div><div class="prow-price">${nb(esc(it.p))}${it.ps ? `<small>${nb(esc(it.ps))}</small>` : ''}</div></li>`).join('')}</ul></div>`).join('');
   const ext = bookHref && /^https?:/.test(bookHref) ? ' target="_blank" rel="noopener"' : '';
   return `<section class="sec${alt ? ' sec-alt' : ''}" id="${id}" aria-labelledby="${id}-h"><div class="wrap">
 <div class="sec-head reveal"><span class="eyebrow">${esc(eyebrow)}</span><h2 id="${id}-h">${title}</h2>${lead ? `<p>${lead}</p>` : ''}</div>
 <div data-tabs class="reveal"><div class="tabs" role="tablist" aria-label="Категории услуг">${tabs}</div>${panels}</div>
-<div class="price-foot"><p class="note">${footNote || 'Цены — с открытых страниц студии. Точную стоимость подтвердит администратор.'}</p>${bookHref ? `<a class="btn btn-primary" href="${bookHref}"${ext}>${icon.cal}${esc(bookLabel)}</a>` : ''}</div>
+<div class="price-foot"><p class="note">${footNote || 'Цены — из открытых источников компании. Точную стоимость подтвердит администратор.'}</p>${bookHref ? `<a class="btn btn-primary" href="${bookHref}"${ext}>${icon.cal}${esc(bookLabel)}</a>` : ''}</div>
 </div></section>`;
 }
 
-export function ratingBlock({ rating, count, orgUrl, lead, alt }) {
+export function ratingBlock({ rating, count, orgUrl, lead, alt, award }) {
   const r = Number(rating).toFixed(1);
-  const full = Math.round(Number(rating));
+  const pct = Math.max(0, Math.min(100, (Number(rating) / 5) * 100)).toFixed(1);
+  const row = icon.star.repeat(5);
   return `<section class="sec${alt ? ' sec-alt' : ''}" id="otzyvy" aria-labelledby="otzyvy-h"><div class="wrap">
 <div class="rating reveal">
 <div class="rating-num">${icon.star}<span>${r.replace('.', ',')}</span></div>
-<div class="rating-txt"><div class="stars" aria-hidden="true">${icon.star.repeat(full)}</div><h3 id="otzyvy-h" style="margin-top:10px">${reviewsText(count)} на Яндекс Картах</h3><p>${lead || 'Живые отзывы клиентов — в карточке на Яндекс Картах. Там же можно оставить свой.'}</p></div>
+<div class="rating-txt"><div class="stars" aria-hidden="true"><span class="stars-bg">${row}</span><span class="stars-fg" style="width:${pct}%">${row}</span></div><h3 id="otzyvy-h" style="margin-top:10px">${reviewsText(count)} на Яндекс Картах</h3><p>${lead || 'Живые отзывы клиентов — в карточке на Яндекс Картах. Там же можно оставить свой.'}</p>${award ? `<p class="award">${AWARD_ICON}<span><strong>Хорошее место 2026</strong> — награда Яндекс Карт для любимых мест пользователей</span></p>` : ''}</div>
 <a class="btn btn-ghost" href="${orgUrl}reviews/" target="_blank" rel="noopener">Читать отзывы${icon.arrow}</a>
 </div></div></section>`;
 }
