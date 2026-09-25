@@ -22,7 +22,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:120px}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--sans);font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
 p{margin:0}
@@ -81,7 +81,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px var(--pad) 0}
 .tabs::-webkit-scrollbar{display:none}
 .tab{flex:none;min-height:44px;padding:0 12px;border:0;background:none;cursor:pointer;font-size:15px;font-weight:500;color:var(--ink-2);border-bottom:2px solid transparent;white-space:nowrap}
-.tab sup{font-size:11px;margin-left:3px;color:var(--ink-2)}
+.tab sup{font-size:13px;vertical-align:baseline;margin-left:5px;color:var(--ink-2);font-weight:500}
 .tab[aria-pressed="true"]{color:var(--ink);border-color:var(--ink);font-weight:700}
 .frow{display:flex;gap:8px;padding:8px var(--pad) 10px;align-items:center}
 .sel{position:relative;flex:1 1 0;min-width:0}
@@ -98,10 +98,12 @@ button,input,select,textarea{font:inherit;color:inherit}
 .item{display:flex;flex-direction:column;cursor:pointer;text-align:left;border:0;padding:0;background:none}
 .tile{position:relative;aspect-ratio:4/5;background:var(--tone,#efe8df);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:14px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .item:hover .tile{transform:translateY(-4px)}
-.tile .no{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(35,39,42,.62);display:flex;justify-content:space-between}
+.tile .no{font-size:13px;letter-spacing:.06em;gap:8px;text-transform:uppercase;color:rgba(35,39,42,.62);display:flex;justify-content:space-between}
 .tile .lead{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,6.2vw,36px);line-height:.98;color:var(--ink);text-wrap:balance}
-.tile .rest{font-size:11.5px;line-height:1.45;color:rgba(35,39,42,.72);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-.tile .big{position:absolute;right:-.06em;top:.28em;font-family:var(--serif);font-weight:500;font-size:clamp(96px,26vw,170px);line-height:.8;color:var(--deep);opacity:.22;letter-spacing:-.04em;pointer-events:none}
+.tile .rest{font-size:13px;line-height:1.4;color:rgba(35,39,42,.74);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.tile .big{position:absolute;right:14px;top:44px;font-family:var(--serif);font-weight:500;font-size:clamp(72px,8.4vw,112px);line-height:.8;color:var(--deep);opacity:.2;letter-spacing:-.02em;font-variant-numeric:lining-nums;pointer-events:none}
+@media (max-width:759px){.tile .big{display:none}.tile .no{letter-spacing:.02em;text-transform:none}}
+.tile .no span{white-space:nowrap}
 .tile>*{position:relative}
 .tile .big{position:absolute}
 .item .cap{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-top:10px}
@@ -112,7 +114,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .shot img{width:100%;aspect-ratio:4/5;height:auto;object-fit:cover}
 .shot figcaption{font-size:12px;color:var(--ink-2);padding-top:10px;font-style:italic;font-family:var(--serif);font-size:16px}
 .shot.w{grid-column:span 2}.shot.w img{aspect-ratio:3/2}
-@media (min-width:760px){.shot.w img{aspect-ratio:auto;height:calc(100% - 34px)}}
+@media (min-width:760px){.shot.w img{position:absolute;inset:0 0 auto;aspect-ratio:auto;height:calc(100% - 56px)}.shot.w figcaption{position:absolute;left:0;bottom:22px;padding:0}}
 .more{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:44px;padding:0 var(--pad)}
 .more small{font-size:13px;color:var(--ink-2)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
@@ -138,15 +140,14 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media (min-width:900px){.strip-h{display:flex;justify-content:space-between;align-items:end}}
 .strip-h h2{font-size:clamp(34px,5vw,56px)}
 .strip-h p{font-size:13px;color:var(--ink-2);max-width:36ch}
-.reel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 8px;scrollbar-width:thin}
+.reel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:0 var(--pad) 8px;scrollbar-width:thin}
 .reel img{flex:none;width:min(62vw,320px);aspect-ratio:3/4;height:auto;object-fit:cover;scroll-snap-align:start}
-.reel img:nth-child(3n+2){margin-top:40px}
 
 /* shop */
 .shop{border-top:1px solid var(--hair);display:grid}
 .shop-map{position:relative;min-height:340px}
 .shop-map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shop-map figcaption{position:absolute;left:12px;bottom:12px;background:rgba(251,248,243,.92);font-size:12px;padding:6px 10px}
+.shop-map figcaption{position:absolute;left:12px;bottom:12px;background:rgba(251,248,243,.92);font-size:13px;padding:6px 10px}
 .shop-b{padding:48px var(--pad);display:grid;gap:30px}
 .shop h2{font-size:clamp(38px,5vw,64px)}
 .addr{font-family:var(--serif);font-size:clamp(26px,3.2vw,36px);line-height:1.1}
@@ -156,7 +157,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .facts dd{margin:0;font-weight:500}
 .facts a{text-underline-offset:3px}
 .score{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.score strong{font-family:var(--serif);font-size:72px;line-height:.8;font-weight:500}
+.score strong{font-family:var(--serif);font-size:72px;line-height:.8;font-weight:500;font-variant-numeric:lining-nums}
 .score p{font-size:14px;color:var(--ink-2)}
 .score a{color:var(--ink);font-weight:600;text-underline-offset:3px}
 .stars{display:flex;gap:2px;color:var(--rose)}
@@ -166,8 +167,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 footer{background:var(--ink);color:#d8d2c9;padding:44px var(--pad) 120px;font-size:13px;display:grid;gap:16px}
 footer .logo{color:#fff;font-size:40px}
 footer a{color:#fff}
-footer .fl{display:flex;flex-wrap:wrap;gap:8px 22px}
-footer .pol{background:none;border:0;padding:0;color:#fff;text-decoration:underline;cursor:pointer;font-size:13px;min-height:32px;text-align:left}
+footer .fl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
+footer .pol{background:none;border:0;padding:0;color:#fff;text-decoration:underline;cursor:pointer;font:inherit;line-height:inherit;text-align:left}
 @media (min-width:900px){footer{padding-bottom:44px}}
 
 /* sticky bar */
@@ -198,7 +199,7 @@ dialog::backdrop{background:rgba(20,22,20,.55)}
 form.order{padding:22px var(--pad) 32px;display:grid;gap:20px;align-content:start}
 @media (min-width:900px){form.order{padding:28px 36px}}
 fieldset{border:0;margin:0;padding:0;min-width:0}
-legend,.lb{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px;font-weight:600;padding:0}
+legend,.lb{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px;font-weight:600;padding:0}
 .seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));border:1px solid var(--ink)}
 .seg label{position:relative;display:flex;align-items:center;justify-content:center;min-height:48px;cursor:pointer;font-weight:600;font-size:14px;text-align:center;padding:0 6px}
 .seg label+label{border-left:1px solid var(--ink)}
@@ -209,12 +210,12 @@ legend,.lb{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppe
 .fld input,.fld select,.fld textarea{width:100%;min-height:48px;border:1px solid var(--hair-2);background:var(--white);padding:10px 12px;border-radius:0;font-size:16px}
 .fld textarea{min-height:96px;resize:vertical;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3}
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--ink);outline-offset:-1px}
-.cnt{font-size:12px;color:var(--ink-2);text-align:right;margin-top:4px}
+.cnt{font-size:13px;color:var(--ink-2);text-align:right;margin-top:4px}
 .sum{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);padding-top:14px}
 .sum span{font-size:13px;color:var(--ink-2);max-width:26ch}
 .sum strong{font-size:24px}
-.consent{font-size:12px;color:var(--ink-2)}
-.consent button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font-size:12px;color:var(--ink)}
+.consent{font-size:13px;color:var(--ink-2)}
+.consent button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font-size:13px;color:var(--ink);text-align:left}
 .ok{display:none;background:var(--rose-soft);padding:14px 16px;font-weight:600;border-left:3px solid var(--rose)}
 .ok.on{display:block}
 .pol-d{width:min(560px,92vw);padding:28px;margin:auto}
@@ -296,7 +297,7 @@ legend,.lb{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppe
 </section>
 
 <section class="shop" id="magazin" aria-labelledby="shop-h">
-  <figure class="shop-map" style="margin:0"><img style="object-position:62% 88%" src="img/path.jpg" width="506" height="900" loading="lazy" alt="Двор в переулке у магазина — фото из карточки на Яндекс Картах"><figcaption>Фото из карточки на Яндекс Картах</figcaption></figure>
+  <figure class="shop-map" style="margin:0"><img src="img/door.jpg" width="1024" height="1024" loading="lazy" alt="Флорист с корзиной роз и маттиолы у деревянной двери — фото из карточки на Яндекс Картах"><figcaption>Фото из карточки на Яндекс Картах</figcaption></figure>
   <div class="shop-b">
     <h2 id="shop-h" class="reveal">Магазин</h2>
     <p class="addr reveal">Москва, Большой Афанасьевский переулок,&nbsp;31</p>
@@ -396,16 +397,18 @@ legend,.lb{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppe
     return r;
   }
   function render(){
-    var r=list(),html='',k=0;
+    var r=list(),html='',k=0,cells=0,n=0,cols=getComputedStyle(grid).gridTemplateColumns.split(' ').length||1;
     found.textContent=r.length+' '+(r.length%10===1&&r.length%100!==11?'позиция':(r.length%10>=2&&r.length%10<=4&&(r.length%100<10||r.length%100>=20)?'позиции':'позиций'));
     if(!r.length)html='<p class="empty">В этом бюджете пока пусто — попробуйте другой или напишите флористу.</p>';
-    r.slice(0,st.shown).forEach(function(x,i){
-      if(i===5||i===13||i===21||i===29||i===37){var ph=PHOTOS[k%PHOTOS.length];k++;
-        html+='<figure class="shot'+(k%2?' w':'')+'"><img src="img/'+ph[0]+'.jpg" loading="lazy" width="720" height="900" alt="'+ph[1]+'"><figcaption>Из мастерской Flowzenda</figcaption></figure>';}
+    for(var i=0;i<r.length;i++){var x=r[i];
+      if(i>=st.shown&&cells%cols===0)break;
+      if(i===5||i===13||i===21||i===29||i===37){var ph=PHOTOS[k%PHOTOS.length];k++;var wide=k%2&&cols>1;cells+=wide?2:1;
+        html+='<figure class="shot'+(wide?' w':'')+'"><img src="img/'+ph[0]+'.jpg" loading="lazy" width="720" height="900" alt="'+ph[1]+'"><figcaption>Из мастерской Flowzenda</figcaption></figure>';}
+      cells++;n++;
       html+='<button type="button" class="item" data-i="'+D.indexOf(x)+'" aria-label="'+x.n+', '+fmt(x.p)+' — оформить заказ">'+tile(x)+'<span class="cap"><span class="nm">'+x.n+'</span><span class="pr">'+fmt(x.p)+'</span></span><span class="buy">Заказать →</span></button>';
-    });
-    grid.innerHTML=html;
-    var rest=r.length-st.shown;more.hidden=rest<=0;left.textContent=rest>0?'Показано '+Math.min(st.shown,r.length)+' из '+r.length:'';
+    }
+    grid.innerHTML=html;st.shown=Math.max(st.shown,n);
+    var rest=r.length-n;more.hidden=rest<=0;left.textContent=rest>0?'Показано '+n+' из '+r.length:'';
   }
   document.getElementById('tabs').addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b)return;
     this.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-pressed',t===b?'true':'false')});st.cat=b.dataset.v;st.shown=step;render();
@@ -413,6 +416,8 @@ legend,.lb{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppe
   document.getElementById('f-price').addEventListener('change',function(){st.price=this.value;st.shown=step;render();});
   document.getElementById('f-sort').addEventListener('change',function(){st.sort=this.value;render();});
   more.addEventListener('click',function(){st.shown+=step;render();});
+  var lastCols=getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+  window.addEventListener('resize',function(){var c=getComputedStyle(grid).gridTemplateColumns.split(' ').length;if(c!==lastCols){lastCols=c;render();}});
   render();
 
   /* order sheet */

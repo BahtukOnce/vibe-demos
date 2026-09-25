@@ -57,9 +57,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 .cover{padding:18px 0 56px}
 .cover .wrap{display:grid;gap:34px}
 .label{background:#fff;border:2px solid var(--ink);padding:22px 20px 20px;position:relative;max-width:520px;box-shadow:6px 6px 0 var(--ink)}
-.label .kind{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.label .kind{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .label h1{font-family:var(--sans);font-size:clamp(34px,8vw,58px);letter-spacing:-.02em;margin-top:6px;line-height:.95}
-.label .ln{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin-top:18px;align-items:end;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.label .ln{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin-top:18px;align-items:end;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
 .label .ln span:nth-child(even){font-family:var(--hand);font-size:26px;line-height:1.05;color:var(--pen);border-bottom:1px solid #9aa3ad;padding-bottom:2px}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;background:var(--pen);color:#fff;border:2px solid var(--ink);font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
@@ -89,7 +89,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 
 /* sections */
-.sec{padding:64px 0}
+.sec{padding:56px 0}
 .sec-t{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:28px}
 .sec-t h2{font-family:var(--sans);font-size:clamp(32px,5vw,52px);letter-spacing:-.02em}
 .sec-t .hand{font-size:28px;color:var(--red);transform:rotate(-3deg);display:inline-block}
@@ -98,7 +98,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* timetable */
 .tt{background:#fff;border:2px solid var(--ink);max-width:880px;overflow:hidden}
 .tt table{width:100%;border-collapse:collapse;font-size:15px}
-.tt caption{text-align:left;padding:14px 16px;border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:#f1efe6}
+.tt caption{text-align:left;padding:14px 16px;border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:#f1efe6}
 .tt th,.tt td{border-bottom:1px solid #c9ced6;padding:12px 16px;text-align:left;vertical-align:middle}
 .tt th{font-family:var(--mono);font-weight:500;font-size:13px;width:90px;color:var(--ink-2)}
 .tt td.t{font-family:var(--hand);font-size:30px;line-height:1;color:var(--pen);white-space:nowrap}
@@ -107,18 +107,21 @@ button,input,select,textarea{font:inherit;color:inherit}
 .tt tr.now td.t::after{content:" ← сегодня";font-size:20px;color:var(--red)}
 .tt tr:last-child th,.tt tr:last-child td{border-bottom:0}
 @media (max-width:560px){.tt td.s{display:none}.tt th,.tt td{padding:10px 12px}}
-.tt-side{display:grid;gap:18px;align-content:start}
+.tt-side{display:flex;flex-direction:column;gap:16px}
 .tt-grid{display:grid;gap:30px}
-@media (min-width:880px){.tt-grid{grid-template-columns:1.4fr 1fr;align-items:start}}
+.tt-grid .tt{max-width:none}
+.tt-ph{position:relative;flex:1 1 auto;margin:14px 0 0;min-height:260px;transform:rotate(1.5deg)}
+.tt-ph img{position:absolute;left:10px;top:10px;width:calc(100% - 20px);height:calc(100% - 56px)}
+@media (min-width:880px){.tt-grid{grid-template-columns:1.35fr 1fr;align-items:stretch}.tt-ph{min-height:200px}}
 .checks{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:16px}
 .checks li{display:flex;gap:12px;align-items:center}
 .checks li::before{content:"✓";display:inline-grid;place-items:center;width:28px;height:28px;border:2px solid var(--ink);font-family:var(--hand);font-size:24px;font-weight:700;color:var(--pen);flex:none;background:#fff}
 
 /* menu */
 .menu-grid{display:grid;gap:26px}
-@media (min-width:880px){.menu-grid{grid-template-columns:1.1fr .9fr;gap:48px}}
+@media (min-width:880px){.menu-grid{grid-template-columns:1.3fr .7fr;gap:48px}}
 .page{background:#fff;border:1px solid #d3d7de;padding:26px 22px;position:relative;box-shadow:0 1px 0 #d3d7de,0 3px 0 #fff,0 4px 0 #d3d7de}
-.page h3{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin-bottom:12px}
+.page h3{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin-bottom:12px}
 .lst{list-style:none;margin:0 0 6px;padding:0}
 .lst li{display:flex;align-items:baseline;gap:8px;padding:9px 0;border-bottom:1px solid #e3e7ec;font-size:18px;font-weight:500}
 .lst li i{flex:1;border-bottom:2px dotted #b9c0c9;transform:translateY(-4px)}
@@ -138,14 +141,14 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* diary */
 .diary{display:grid;background:#fff;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(31,34,39,.9)}
 @media (min-width:880px){.diary{grid-template-columns:1fr 1fr}.diary>div+div{border-left:2px solid var(--ink)}}
-.d-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 18px;border-bottom:2px solid var(--ink);background:#f1efe6}
-.d-h b{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.d-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:#f1efe6}
+.d-h b{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 .d-h span{font-family:var(--hand);font-size:24px;color:var(--pen)}
 .d-tbl{width:100%;border-collapse:collapse}
-.d-tbl th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:8px 18px;border-bottom:1px solid var(--ink)}
+.d-tbl th{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:8px 18px;border-bottom:1px solid var(--ink)}
 .d-tbl td{border-bottom:1px solid #c9ced6;padding:8px 18px;vertical-align:middle}
 .d-tbl td:first-child{font-weight:600;font-size:17px}
-.d-tbl td:first-child small{display:block;font-weight:400;font-size:12px;color:var(--ink-2)}
+.d-tbl td:first-child small{display:block;font-weight:400;font-size:13px;color:var(--ink-2)}
 .d-tbl td:last-child{width:1%;white-space:nowrap}
 .qty{display:flex;align-items:center;gap:4px}
 .qty button{width:44px;height:44px;border:1.5px solid var(--ink);background:#fff;font-size:22px;line-height:1;cursor:pointer;font-weight:600}
@@ -153,7 +156,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .qty output{min-width:34px;text-align:center;font-family:var(--hand);font-size:30px;color:var(--pen);font-weight:700}
 .d-sum{padding:14px 18px;font-family:var(--hand);font-size:24px;color:var(--pen);min-height:64px}
 .d-form{padding:18px;display:grid;gap:18px;align-content:start}
-.lbl{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.lbl{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
 .chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 .chips button{min-height:48px;border:1.5px solid var(--ink);background:#fff;cursor:pointer;font-weight:600;font-size:14px}
 .chips button[aria-checked="true"]{background:var(--pen);color:#fff}
@@ -161,17 +164,17 @@ button,input,select,textarea{font:inherit;color:inherit}
 .fld input::placeholder{color:#9aa3ad}
 .fld input:focus{outline:none;border-bottom-color:var(--pen);background:#fffbe5}
 .sign{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.sign small{font-size:12px;color:var(--ink-2);max-width:32ch}
-.sign small button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font-size:12px;color:var(--ink)}
+.sign small{font-size:13px;color:var(--ink-2);max-width:34ch}
+.sign small a{color:var(--ink)}
 .demo{display:none;font-family:var(--hand);font-size:26px;color:var(--red);transform:rotate(-2deg);border:2px solid var(--red);padding:6px 12px;justify-self:start}
 .demo.on{display:block}
 
 /* student card */
-.idcard{display:grid;gap:22px;max-width:880px;margin:44px auto 0;background:#e8eefb;border:2px solid var(--ink);padding:22px;position:relative}
+.idcard{display:grid;gap:22px;margin:44px 0 0;background:#e8eefb;border:2px solid var(--ink);padding:22px;position:relative}
 .idcard::after{content:"";position:absolute;right:18px;top:18px;width:54px;height:40px;border:2px solid var(--ink);background:repeating-linear-gradient(90deg,#c9a24a 0 4px,#e3c36f 4px 8px)}
-.idcard .kind{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.idcard .kind{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 .idcard h3{font-family:var(--sans);font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;margin-top:6px;max-width:16ch}
-.idcard dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-family:var(--mono);font-size:12px;align-items:end}
+.idcard dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-family:var(--mono);font-size:13px;align-items:end}
 .idcard dd{margin:0;font-family:var(--hand);font-size:24px;color:var(--pen);border-bottom:1px solid #8c96a3;line-height:1.1}
 @media (min-width:760px){.idcard{grid-template-columns:1.2fr 1fr;align-items:end;padding:30px}}
 
@@ -187,7 +190,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .wall figure:nth-child(3n){transform:rotate(-.8deg)}
 .wall figure:nth-child(4n)::before{left:auto;right:-18px;top:14px;transform:rotate(40deg)}
 .wall figure:hover{transform:rotate(0) scale(1.03);z-index:2}
-.credit{font-size:12px;color:var(--ink-2);margin-top:26px;font-family:var(--mono)}
+.credit{font-size:13px;color:var(--ink-2);margin-top:26px;font-family:var(--mono)}
 
 /* grade */
 .grade{display:grid;gap:24px;align-items:center;background:#fff;border:1px solid #d3d7de;padding:26px 22px}
@@ -205,15 +208,15 @@ button,input,select,textarea{font:inherit;color:inherit}
 .addr{font-family:var(--sans);font-size:clamp(26px,3.6vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
 .how{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:0;border-top:1px solid var(--ink)}
 .how li{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid #c9ced6}
-.how li>span:first-child{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
+.how li>span:first-child{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
 .how a{font-weight:600;text-underline-offset:3px}
 
 footer{border-top:2px solid var(--ink);background:var(--paper);padding:34px 0 120px;font-size:14px}
 footer .wrap{display:grid;gap:14px}
 footer .logo{font-size:44px}
-footer .fl{display:flex;flex-wrap:wrap;gap:8px 22px}
-footer button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;min-height:32px;font-size:14px}
-footer small{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+footer .fl{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px}
+footer button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font:inherit;text-align:left}
+footer small{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
 @media (min-width:880px){footer{padding-bottom:40px}}
 
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:2px solid var(--ink)}
@@ -230,10 +233,12 @@ dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
 .reveal{opacity:0;transform:translateY(16px) rotate(var(--r,0deg));transition:opacity .7s,transform .7s}
 .reveal.on{opacity:1;transform:rotate(var(--r,0deg))}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
-.stamp{position:absolute;right:-4px;bottom:0;z-index:5;width:128px;height:128px;font-size:10px}
+.stamp{position:absolute;right:4px;bottom:0;z-index:5;width:140px;height:140px;font-size:13px;letter-spacing:0;padding:10px}
 .stamp strong{font-size:34px}
 .sign small{text-align:left}
-.menu-grid{align-items:start}
+.menu-grid{align-items:stretch}
+.menu-grid .page{display:flex;flex-direction:column}
+.menu-grid .page .src{margin-top:auto;padding-top:18px}
 .cta .btn{flex:none}
 @media (max-width:879px){
   .cover{padding-top:10px}.cover .wrap{gap:26px}
@@ -246,7 +251,7 @@ dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
   .arrow-note{font-size:21px;max-width:92px;left:0;top:20px}
   .arrow-note svg{margin-left:20px;width:56px}
 }
-@media (min-width:880px){.stamp{width:150px;height:150px;right:20px;bottom:40px;font-size:11px}.stamp strong{font-size:40px}}
+@media (min-width:880px){.stamp{width:156px;height:156px;right:20px;bottom:40px;font-size:13px}.stamp strong{font-size:40px}}
 </style>
 </head>
 <body>
@@ -312,6 +317,7 @@ dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
           <li>оплата картой</li>
           <li>еда навынос</li>
         </ul>
+        <figure class="pola tape tt-ph"><img src="img/window.jpg" width="1024" height="768" loading="lazy" alt="Длинный зал кофейни: гости с ноутбуками за столиками у больших окон"><figcaption>места у окна — с ноутбуком</figcaption></figure>
       </div>
     </div>
   </div>
@@ -325,12 +331,12 @@ dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
         <h3>Кофе</h3>
         <ul class="lst">
           <li>Капучино<i></i><b>300–500 ₽</b></li>
-          <li>Раф<i></i><span class="q">из вашего меню</span></li>
-          <li>Флэт уайт<i></i><span class="q">из вашего меню</span></li>
-          <li>Лунго<i></i><span class="q">из вашего меню</span></li>
-          <li>Матча<i></i><span class="q">из вашего меню</span></li>
+          <li>Раф<i></i><span class="q">цена позже</span></li>
+          <li>Флэт уайт<i></i><span class="q">цена позже</span></li>
+          <li>Лунго<i></i><span class="q">цена позже</span></li>
+          <li>Матча<i></i><span class="q">цена позже</span></li>
         </ul>
-        <p class="src">Меню с ценами нигде не опубликовано. Цена капучино — из карточки на Яндекс Картах, названия напитков — из отзывов гостей. Остальные цены подставим из вашего меню.</p>
+        <p class="src">Цена капучино — из карточки на Яндекс Картах, названия напитков — из отзывов гостей. Полного меню с ценами в открытом доступе нет: остальные цены подставим из вашего.</p>
       </div>
       <figure class="pola tape reveal" style="position:relative;margin:0;--r:2deg;padding:10px 10px 50px;align-self:start">
         <img src="img/flatlay.jpg" width="900" height="900" loading="lazy" alt="Два капучино с латте-артом, чизкейк и белые цветы на мраморном столе, вид сверху" style="aspect-ratio:1/1;height:auto">
@@ -364,7 +370,7 @@ dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
         <div class="fld"><label class="lbl" for="p-name">Имя для стакана</label><input id="p-name" name="name" autocomplete="given-name" placeholder="Аня"></div>
         <div class="fld"><label class="lbl" for="p-tel">Телефон</label><input id="p-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7"></div>
         <div class="fld"><label class="lbl" for="p-note">Пожелания</label><input id="p-note" name="note" placeholder="на овсяном, без сахара"></div>
-        <div class="sign"><button class="btn" type="submit">Отправить бариста</button><small>Нажимая, вы соглашаетесь с <button type="button" data-policy>политикой обработки персональных данных</button>.</small></div>
+        <div class="sign"><button class="btn" type="submit">Отправить бариста</button><small>Нажимая, вы соглашаетесь с&nbsp;<a href="#policy" data-policy>политикой обработки персональных данных</a>.</small></div>
         <p class="demo" id="demo" role="status">Это демо: заказ не отправлен.</p>
       </div>
     </form>
@@ -454,7 +460,7 @@ dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
 (function(){
   var DR=[['Капучино','300–500 ₽'],['Раф',''],['Флэт уайт',''],['Лунго',''],['Матча','']],q=DR.map(function(){return 0});
   var tb=document.getElementById('drinks');
-  tb.innerHTML=DR.map(function(d,i){return '<tr><td>'+d[0]+'<small>'+(d[1]||'цена из вашего меню')+'</small></td><td><div class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="Убрать: '+d[0]+'">−</button><output id="q'+i+'">0</output><button type="button" data-i="'+i+'" data-d="1" aria-label="Добавить: '+d[0]+'">+</button></div></td></tr>';}).join('');
+  tb.innerHTML=DR.map(function(d,i){return '<tr><td>'+d[0]+'<small>'+(d[1]||'цена позже')+'</small></td><td><div class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="Убрать: '+d[0]+'">−</button><output id="q'+i+'">0</output><button type="button" data-i="'+i+'" data-d="1" aria-label="Добавить: '+d[0]+'">+</button></div></td></tr>';}).join('');
   var sum=document.getElementById('dsum');
   tb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var i=+b.dataset.i;q[i]=Math.max(0,Math.min(9,q[i]+ +b.dataset.d));document.getElementById('q'+i).textContent=q[i];
     var p=DR.map(function(d,i){return q[i]?d[0].toLowerCase()+' × '+q[i]:''}).filter(Boolean);sum.textContent=p.length?p.join(', '):'пока пусто…';});
