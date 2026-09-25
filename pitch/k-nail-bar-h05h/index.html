@@ -28,7 +28,7 @@ h1,h2,h3{margin:0;font-family:var(--deco);font-weight:400;line-height:1}
 p{margin:0}
 .w{width:min(1180px,100% - 32px);margin-inline:auto}
 .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:99;background:var(--brass);color:var(--esp);padding:10px 14px}
-.orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--brass);font:500 12.5px var(--body);letter-spacing:.32em;text-transform:uppercase}
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--brass);font:500 13px/1.5 var(--body);letter-spacing:.28em;text-transform:uppercase;text-align:center}
 .orn::before,.orn::after{content:"";height:1px;flex:0 1 70px;background:linear-gradient(90deg,transparent,var(--brass))}
 .orn::after{background:linear-gradient(90deg,var(--brass),transparent)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 30px;background:var(--brass);color:#1b100b;font:500 15px var(--body);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:0;transition:background .25s,transform .25s}
@@ -37,7 +37,7 @@ p{margin:0}
 .btn.ghost:hover{background:rgba(201,163,92,.12)}
 
 .concept{background:#120a07;color:var(--brass2);text-align:center;padding:10px 16px;font:400 14px/1.45 var(--body);border-bottom:1px solid var(--line)}
-.concept span{display:inline-block;border:1px solid var(--line);padding:6px 14px;max-width:760px}
+.concept span{display:inline-block;border:1px solid var(--line);padding:6px 14px;max-width:920px;text-wrap:balance}
 
 /* top */
 .top{display:flex;justify-content:space-between;align-items:center;padding:16px 16px}
@@ -64,11 +64,11 @@ p{margin:0}
 .side dl{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0;width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .side dl div{padding:14px 6px}
 .side dl div+div{border-left:1px solid var(--line)}
-.side dt{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.side dt{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
 .side dd{margin:4px 0 0;font:400 22px/1.2 var(--deco)}
 .cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 @media (min-width:980px){
-  .hero .w{grid-template-columns:1fr 440px 1fr;align-items:center;gap:48px}
+  .hero .w{grid-template-columns:1fr 440px 1fr;align-items:end;gap:48px}
   .sign{grid-column:1/-1}
   .side{text-align:left;justify-items:start}
   .side.l{order:0}.arch{order:1}.side.r{order:2}
@@ -116,12 +116,8 @@ p{margin:0}
 .shelf figcaption b{font:400 28px/1 var(--deco);font-weight:400}
 .shelf figcaption span{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
 @media (min-width:900px){
-  .shelf{display:block;columns:3;column-gap:28px;overflow:visible;margin:0;padding:0}
-  .shelf figure{break-inside:avoid;margin:0 0 34px}
-  .shelf figure:nth-child(3n+1) img{aspect-ratio:4/5}
-  .shelf figure:nth-child(3n+2) img{aspect-ratio:1/1}
-  .shelf figure:nth-child(2) img{aspect-ratio:3/4}
-  .shelf figure:nth-child(4) img{aspect-ratio:1/1}
+  .shelf{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);gap:40px 24px;overflow:visible;margin:0;padding:0}
+  .shelf figcaption b{font-size:26px}
 }
 .src{margin-top:26px;font-size:13px;color:#9d8c76}
 
@@ -132,22 +128,22 @@ p{margin:0}
 .rule:last-child{border-bottom:0}
 .rule i{font:400 34px/1 var(--deco);color:var(--brass);font-style:normal}
 .rule b{font:400 26px/1.1 var(--deco);display:block}
-.rule span{color:var(--mute);font-size:15px}
+.rule span{color:var(--mute);font-size:15px;display:block;margin-top:4px}
 @media (min-width:900px){.house .w{grid-template-columns:repeat(5,1fr)}.rule{grid-template-columns:1fr;border-bottom:0;border-right:1px solid var(--line);padding:34px 22px;align-content:start}.rule:last-child{border-right:0}}
 
 /* salon */
 .salon{padding:clamp(70px,10vw,130px) 0}
 .salon .w{display:grid;gap:36px}
-@media (min-width:980px){.salon .w{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
-.duo{display:grid;grid-template-columns:3fr 2fr;gap:12px;align-items:end}
-.duo img{width:100%;object-fit:cover}
+.duo{display:grid;grid-template-columns:3fr 2fr;gap:12px;align-items:stretch}
+.duo img{width:100%;height:100%;object-fit:cover}
 .duo .big{aspect-ratio:3/4}
-.duo .sm{aspect-ratio:3/4;margin-bottom:40px}
+.duo .sm{object-position:50% 50%}
+@media (min-width:980px){.salon .w{grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}.duo .big{aspect-ratio:auto}.duo img{min-height:0}}
 .salon h2{font-size:clamp(46px,7vw,84px)}
 .addr{margin-top:24px;font:400 clamp(26px,3.4vw,34px)/1.2 var(--deco)}
 .addr small{display:block;font:400 16px/1.5 var(--body);color:var(--mute);margin-top:8px}
 .hrs{margin-top:28px;display:inline-grid;border:1px solid var(--brass);padding:16px 22px;text-align:center}
-.hrs span{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass)}
+.hrs span{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass)}
 .hrs b{font:400 36px/1.1 var(--deco);font-weight:400}
 .plaque{margin-top:34px;display:grid;grid-template-columns:auto 1fr;gap:6px 20px;align-items:center;padding:22px;background:linear-gradient(135deg,#6f5426,#c9a35c 45%,#8a6a33);color:#1b100b}
 .plaque b{font:400 64px/.9 var(--deco);grid-row:span 2}
@@ -161,12 +157,12 @@ p{margin:0}
 .reserve{background:#120a07;padding:clamp(70px,10vw,120px) 0;text-align:center;position:relative;overflow:hidden}
 .reserve::before{content:"K";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font:400 min(90vw,640px)/1 var(--deco);color:rgba(201,163,92,.06);pointer-events:none}
 .reserve h2{font-size:clamp(48px,9vw,104px);position:relative}
-.reserve p.l{color:var(--mute);margin:18px auto 0;max-width:38ch;position:relative}
-.reserve .cta{margin-top:32px;position:relative}
+.reserve p.l{color:var(--mute);margin:18px auto 0;max-width:46ch;position:relative;text-wrap:balance}
+.reserve .cta{margin-top:32px;position:relative;flex-direction:row;justify-content:center;align-items:center}
 .ways{position:relative;display:grid;gap:0;margin:48px auto 0;max-width:900px;border-top:1px solid var(--line)}
 .ways a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line);text-decoration:none;min-height:64px;transition:color .2s}
 .ways a:hover{color:var(--brass2)}
-.ways small{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.ways small{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
 .ways span{font:400 22px var(--deco);text-align:right}
 @media (min-width:900px){.ways{grid-template-columns:1fr 1fr;column-gap:48px}}
 
@@ -297,9 +293,9 @@ dialog p{color:var(--mute);margin-bottom:12px}
   <div class="w">
     <div class="rule reveal"><i>I</i><div><b>Парковка</b><span>для гостей на машине</span></div></div>
     <div class="rule reveal"><i>II</i><div><b>Wi-Fi</b><span>пока сохнет покрытие</span></div></div>
-    <div class="rule reveal"><i>III</i><div><b>Мужской сервис</b><span>ногтевой сервис для мужчин</span></div></div>
+    <div class="rule reveal"><i>III</i><div><b>Для мужчин</b><span>мужской ногтевой сервис</span></div></div>
     <div class="rule reveal"><i>IV</i><div><b>Наращивание</b><span>и артдизайн</span></div></div>
-    <div class="rule reveal"><i>V</i><div><b>Оплата картой</b><span>как удобно</span></div></div>
+    <div class="rule reveal"><i>V</i><div><b>Оплата картой</b><span>на месте, в студии</span></div></div>
   </div>
 </section>
 
@@ -316,7 +312,7 @@ dialog p{color:var(--mute);margin-bottom:12px}
       <div class="hrs"><span>Открыто ежедневно</span><b>10:00 — 21:00</b></div>
       <div class="plaque">
         <b>5,0</b>
-        <span>на Яндекс Картах · 180 отзывов</span>
+        <span>на Яндекс Картах · 180&nbsp;отзывов</span>
         <a href="https://yandex.ru/maps/org/80303677134/reviews/" target="_blank" rel="noopener">Читать отзывы</a>
         <span class="award">Хорошее место 2026</span>
       </div>
@@ -331,7 +327,7 @@ dialog p{color:var(--mute);margin-bottom:12px}
   <div class="w">
     <p class="orn reveal">Бронь</p>
     <h2 id="bron-h" class="reveal" style="margin-top:16px">Ваш стул<br>у бара</h2>
-    <p class="l reveal">Выберите мастера, услугу и время в онлайн-записи. Или напишите — подберём окно.</p>
+    <p class="l reveal">Выберите мастера, услугу и&nbsp;время в&nbsp;онлайн&#8209;записи. Или напишите — подберём окно.</p>
     <div class="cta reveal"><a class="btn" href="https://n123003.yclients.com/" target="_blank" rel="noopener">Записаться онлайн</a></div>
     <div class="ways reveal">
       <a href="tel:+79267496806"><small>Телефон</small><span>+7 926 749-68-06</span></a>
