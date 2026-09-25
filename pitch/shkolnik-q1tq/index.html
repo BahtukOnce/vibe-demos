@@ -7,432 +7,467 @@
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="yandex" content="noindex, nofollow">
 <title>Школьник — кофейня на Земляном Валу · концепт сайта</title>
-<meta name="description" content="Концепт сайта кофейни «Школьник»: меню и предзаказ к выходу.">
-<meta name="theme-color" content="#f7f0e4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b4532a%22%2F%3E%3Cpath%20d%3D%22M16%2024h28l-3%2022a5%205%200%200%201-5%204H24a5%205%200%200%201-5-4Z%22%20fill%3D%22%23fffbf3%22%2F%3E%3Cpath%20d%3D%22M44%2028h4a6%206%200%200%201%200%2012h-5%22%20stroke%3D%22%23fffbf3%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E">
+<meta name="description" content="Концепт сайта кофейни «Школьник» у метро Курская: расписание, меню, предзаказ к выходу и бонусная карта.">
+<meta name="theme-color" content="#fbf9f2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fbf9f2'/%3E%3Cpath d='M0 16h64M0 32h64M0 48h64' stroke='%23c9d6ea'/%3E%3Cpath d='M12 0v64' stroke='%23d9534a'/%3E%3Ctext x='37' y='46' text-anchor='middle' font-family='cursive' font-size='40' font-weight='700' fill='%232748a8'%3EШ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
+:root{
+  --paper:#fbf9f2;--grid:#dde5ef;--ink:#1f2227;--ink-2:#4f535a;--pen:#2748a8;--red:#c0392b;--tape:rgba(242,221,150,.72);
+  --hand:Caveat,"Comic Sans MS",cursive;--mono:"IBM Plex Mono",ui-monospace,monospace;--sans:"IBM Plex Sans",system-ui,sans-serif;
+  --pad:clamp(16px,4vw,56px);
+}
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.55 var(--font-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-img,svg{display:block;max-width:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--display-weight,500);line-height:1.08;letter-spacing:var(--display-tracking,-.01em);margin:0;text-wrap:balance}
 p{margin:0}
+h1,h2,h3{margin:0;font-weight:700;line-height:1}
 button,input,select,textarea{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--focus,var(--accent));outline-offset:3px;border-radius:6px}
-.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--text);color:var(--bg);padding:10px 14px;border-radius:10px;text-decoration:none}
+:focus-visible{outline:2px dashed var(--pen);outline-offset:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-80px;z-index:200;background:var(--ink);color:#fff;padding:12px 16px}
 .skip:focus{top:12px}
-.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
-.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-svg.i{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.hand{font-family:var(--hand);font-weight:700}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad);position:relative}
+.margin::before{content:"";position:absolute;top:0;bottom:0;left:calc(var(--pad) - 14px);width:2px;background:rgba(192,57,43,.45)}
+@media (max-width:700px){.margin::before{left:8px}}
 
-/* concept banner */
-.concept{background:#16140f;color:#f6f1e7;font:500 13px/1.45 var(--font-body);position:relative;z-index:60}
-.concept .wrap{display:flex;gap:10px;align-items:flex-start;padding-top:10px;padding-bottom:10px}
-.concept b{display:inline-block;background:#f3d34a;color:#16140f;border-radius:5px;padding:1px 7px;margin-right:6px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
-.concept svg{margin-top:1px;color:#f3d34a}
+/* concept: sticky note */
+.concept{background:#fff3a8;padding:12px var(--pad);font-size:14px;line-height:1.45;border-bottom:1px solid #e8d77a;box-shadow:0 2px 0 rgba(0,0,0,.04)}
+.concept p{max-width:1080px;margin:0 auto}
+.concept b{font-family:var(--hand);font-size:22px;color:var(--red);margin-right:6px}
 
-/* header */
-.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.logo{font-family:var(--font-display);font-size:22px;font-weight:var(--logo-weight,600);text-decoration:none;letter-spacing:var(--display-tracking,-.01em);white-space:nowrap;display:flex;align-items:center;gap:10px}
-.nav{display:none;gap:26px;font-size:15px}
-.nav a{text-decoration:none;color:var(--muted);transition:color .2s}
-.nav a:hover{color:var(--text)}
-.top .top-cta{display:none}
-@media (min-width:900px){.nav{display:flex}.top .top-cta{display:inline-flex}}
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px var(--pad);max-width:1180px;margin:0 auto}
+.logo{font-family:var(--hand);font-weight:700;font-size:40px;line-height:1;text-decoration:none;color:var(--pen)}
+.top nav{display:none;gap:22px;font-family:var(--mono);font-size:13px}
+.top nav a{text-decoration:none;padding:8px 0}
+.top nav a:hover{text-decoration:underline wavy var(--red);text-underline-offset:5px}
+.tel{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 14px;border:1.5px solid var(--ink);text-decoration:none;font-family:var(--mono);font-size:14px;font-weight:600;background:var(--paper)}
+.tel svg{width:18px;height:18px}
+.tel span{display:none}
+@media (min-width:880px){.top nav{display:flex}.tel span{display:inline}}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:var(--btn-radius,999px);border:1.5px solid transparent;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;transition:transform .15s ease,background .2s,box-shadow .2s,color .2s;white-space:nowrap}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
-.btn-primary:hover{background:color-mix(in srgb,var(--accent) 88%,#000)}
-.btn-ghost{border-color:color-mix(in srgb,var(--text) 22%,transparent);color:var(--text);background:transparent}
-.btn-ghost:hover{border-color:var(--text)}
-.btn-sm{min-height:42px;padding:0 18px;font-size:15px}
-.btn-block{width:100%}
+/* cover */
+.cover{padding:18px 0 56px}
+.cover .wrap{display:grid;gap:34px}
+.label{background:#fff;border:2px solid var(--ink);padding:22px 20px 20px;position:relative;max-width:520px;box-shadow:6px 6px 0 var(--ink)}
+.label .kind{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.label h1{font-family:var(--sans);font-size:clamp(34px,8vw,58px);letter-spacing:-.02em;margin-top:6px;line-height:.95}
+.label .ln{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin-top:18px;align-items:end;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.label .ln span:nth-child(even){font-family:var(--hand);font-size:26px;line-height:1.05;color:var(--pen);border-bottom:1px solid #9aa3ad;padding-bottom:2px}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;background:var(--pen);color:#fff;border:2px solid var(--ink);font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn svg{width:18px;height:18px}
+.pen-link{font-family:var(--hand);font-size:26px;color:var(--pen);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;min-height:48px;display:inline-flex;align-items:center}
+.stamp{display:inline-grid;place-items:center;text-align:center;width:150px;height:150px;border-radius:50%;border:3px double var(--red);color:var(--red);transform:rotate(-12deg);font-family:var(--mono);font-size:11px;line-height:1.3;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;padding:14px;background:rgba(251,249,242,.7)}
+.stamp strong{display:block;font-family:var(--sans);font-size:40px;letter-spacing:-.02em;line-height:1}
+.stamp:hover{transform:rotate(-6deg) scale(1.03)}
+.board{position:relative;min-height:470px}
+.pola{position:absolute;margin:0;background:#fff;padding:10px 10px 48px;box-shadow:0 1px 2px rgba(0,0,0,.12),0 12px 28px -12px rgba(0,0,0,.35)}
+.pola img{width:100%;height:100%;object-fit:cover;background:#ddd}
+.pola figcaption{position:absolute;left:12px;right:12px;bottom:8px;font-family:var(--hand);font-size:24px;line-height:1.1;color:var(--pen)}
+.pola::before,.tape::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:var(--tape);transform:rotate(-4deg);box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.p1{width:min(78%,370px);aspect-ratio:1/1.14;right:0;top:0;transform:rotate(3deg);z-index:2}
+.p2{width:min(56%,270px);aspect-ratio:1/1;left:0;top:250px;transform:rotate(-5deg);z-index:3}
+.p2::before{left:30%;transform:rotate(8deg)}
+.arrow-note{position:absolute;left:4%;top:40px;font-family:var(--hand);font-size:25px;color:var(--red);transform:rotate(-6deg);max-width:150px;line-height:1.05;z-index:4}
+.arrow-note svg{width:70px;height:40px;display:block;margin:4px 0 0 40px}
+@media (min-width:880px){
+  .cover{padding:30px 0 90px}
+  .cover .wrap{grid-template-columns:1fr 1.05fr;align-items:center}
+  .board{min-height:600px}
+  .p1{width:400px;right:10px}
+  .p2{width:300px;top:320px;left:10px}
+}
 
 /* sections */
-.sec{padding:clamp(64px,9vw,112px) 0}
-.sec-alt{background:var(--surface-2)}
-.eyebrow{font:600 12px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text,var(--accent));margin-bottom:14px;display:block}
-.sec-head{max-width:720px;margin-bottom:clamp(28px,4vw,48px)}
-.sec-head h2{font-size:clamp(32px,5vw,52px)}
-.sec-head p{margin-top:16px;color:var(--muted);font-size:clamp(16px,1.6vw,18px)}
-.lead{font-size:clamp(17px,1.8vw,20px);color:var(--muted)}
-.muted{color:var(--muted)}
-.note{font-size:14px;color:var(--muted)}
+.sec{padding:64px 0}
+.sec-t{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.sec-t h2{font-family:var(--sans);font-size:clamp(32px,5vw,52px);letter-spacing:-.02em}
+.sec-t .hand{font-size:28px;color:var(--red);transform:rotate(-3deg);display:inline-block}
+.note-red{font-family:var(--hand);color:var(--red);font-size:22px;line-height:1.15}
 
-/* prices */
-.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 14px;margin:0 -20px 8px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;border:1.5px solid var(--line-strong,var(--line));background:var(--surface);color:var(--text);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px;cursor:pointer;transition:all .2s;min-height:44px}
-.tab[aria-selected="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
-.panel[hidden]{display:none}
-.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.prow{display:flex;gap:16px;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
-.prow-main{min-width:0;flex:1}
-.prow-name{font-weight:600;font-size:17px;overflow-wrap:anywhere}
-.prow-desc{color:var(--muted);font-size:14.5px;margin-top:4px;max-width:62ch}
-.prow-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;font-size:13px;color:var(--muted)}
-.prow-price{font-family:var(--font-price,var(--font-body));font-weight:700;font-size:18px;white-space:nowrap;text-align:right}
-.prow-price small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
-.price-foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:28px}
+/* timetable */
+.tt{background:#fff;border:2px solid var(--ink);max-width:880px;overflow:hidden}
+.tt table{width:100%;border-collapse:collapse;font-size:15px}
+.tt caption{text-align:left;padding:14px 16px;border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:#f1efe6}
+.tt th,.tt td{border-bottom:1px solid #c9ced6;padding:12px 16px;text-align:left;vertical-align:middle}
+.tt th{font-family:var(--mono);font-weight:500;font-size:13px;width:90px;color:var(--ink-2)}
+.tt td.t{font-family:var(--hand);font-size:30px;line-height:1;color:var(--pen);white-space:nowrap}
+.tt td.s{font-size:13px;color:var(--ink-2)}
+.tt tr.now{background:#fff8d2}
+.tt tr.now td.t::after{content:" ← сегодня";font-size:20px;color:var(--red)}
+.tt tr:last-child th,.tt tr:last-child td{border-bottom:0}
+@media (max-width:560px){.tt td.s{display:none}.tt th,.tt td{padding:10px 12px}}
+.tt-side{display:grid;gap:18px;align-content:start}
+.tt-grid{display:grid;gap:30px}
+@media (min-width:880px){.tt-grid{grid-template-columns:1.4fr 1fr;align-items:start}}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:16px}
+.checks li{display:flex;gap:12px;align-items:center}
+.checks li::before{content:"✓";display:inline-grid;place-items:center;width:28px;height:28px;border:2px solid var(--ink);font-family:var(--hand);font-size:24px;font-weight:700;color:var(--pen);flex:none;background:#fff}
 
-/* rating */
-.rating{display:grid;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg,28px);padding:clamp(24px,4vw,48px)}
-@media (min-width:860px){.rating{grid-template-columns:auto 1fr auto}}
-.rating-num{display:flex;align-items:center;gap:14px;font-family:var(--font-display);font-size:clamp(56px,9vw,88px);line-height:1}
-.rating-num svg{width:.62em;height:.62em;fill:var(--star,#f5b82e);stroke:none}
-.rating-txt h3{font-size:clamp(22px,2.6vw,30px)}
-.rating-txt p{margin-top:8px;color:var(--muted)}
-.stars{position:relative;display:inline-flex;color:var(--star,#f5b82e)}
-.stars-bg,.stars-fg{display:flex;gap:3px;white-space:nowrap}
-.stars-bg{opacity:.28}
-.stars-fg{position:absolute;left:0;top:0;bottom:0;overflow:hidden}
-.stars svg{fill:currentColor;stroke:none;width:20px;height:20px;flex:none}
-.award{display:flex;gap:10px;align-items:flex-start;margin-top:14px!important;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,var(--star,#f5b82e) 14%,transparent);color:var(--text)!important;font-size:14.5px}
-.award svg{width:22px;height:22px;color:var(--accent-text,var(--accent));margin-top:1px}
+/* menu */
+.menu-grid{display:grid;gap:26px}
+@media (min-width:880px){.menu-grid{grid-template-columns:1.1fr .9fr;gap:48px}}
+.page{background:#fff;border:1px solid #d3d7de;padding:26px 22px;position:relative;box-shadow:0 1px 0 #d3d7de,0 3px 0 #fff,0 4px 0 #d3d7de}
+.page h3{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin-bottom:12px}
+.lst{list-style:none;margin:0 0 6px;padding:0}
+.lst li{display:flex;align-items:baseline;gap:8px;padding:9px 0;border-bottom:1px solid #e3e7ec;font-size:18px;font-weight:500}
+.lst li i{flex:1;border-bottom:2px dotted #b9c0c9;transform:translateY(-4px)}
+.lst li b{font-weight:700;white-space:nowrap}
+.lst li .q{font-family:var(--hand);font-weight:700;font-size:22px;color:var(--red);white-space:nowrap}
+.src{font-size:13px;color:var(--ink-2);margin-top:10px}
+.more-pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px;margin-top:36px}
+@media (min-width:880px){.more-pages{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card-p{position:relative}
+.card-p .pola{position:relative;padding:8px 8px 10px;display:block}
+.card-p .pola img{aspect-ratio:1/1;height:auto}
+.card-p:nth-child(odd) .pola{transform:rotate(-2deg)}
+.card-p:nth-child(even) .pola{transform:rotate(2deg)}
+.card-p h4{margin:14px 0 2px;font-size:17px}
+.card-p p{font-size:14px;color:var(--ink-2)}
+
+/* diary */
+.diary{display:grid;background:#fff;border:2px solid var(--ink);box-shadow:8px 8px 0 rgba(31,34,39,.9)}
+@media (min-width:880px){.diary{grid-template-columns:1fr 1fr}.diary>div+div{border-left:2px solid var(--ink)}}
+.d-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 18px;border-bottom:2px solid var(--ink);background:#f1efe6}
+.d-h b{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.d-h span{font-family:var(--hand);font-size:24px;color:var(--pen)}
+.d-tbl{width:100%;border-collapse:collapse}
+.d-tbl th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:8px 18px;border-bottom:1px solid var(--ink)}
+.d-tbl td{border-bottom:1px solid #c9ced6;padding:8px 18px;vertical-align:middle}
+.d-tbl td:first-child{font-weight:600;font-size:17px}
+.d-tbl td:first-child small{display:block;font-weight:400;font-size:12px;color:var(--ink-2)}
+.d-tbl td:last-child{width:1%;white-space:nowrap}
+.qty{display:flex;align-items:center;gap:4px}
+.qty button{width:44px;height:44px;border:1.5px solid var(--ink);background:#fff;font-size:22px;line-height:1;cursor:pointer;font-weight:600}
+.qty button:hover{background:#fff8d2}
+.qty output{min-width:34px;text-align:center;font-family:var(--hand);font-size:30px;color:var(--pen);font-weight:700}
+.d-sum{padding:14px 18px;font-family:var(--hand);font-size:24px;color:var(--pen);min-height:64px}
+.d-form{padding:18px;display:grid;gap:18px;align-content:start}
+.lbl{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.chips button{min-height:48px;border:1.5px solid var(--ink);background:#fff;cursor:pointer;font-weight:600;font-size:14px}
+.chips button[aria-checked="true"]{background:var(--pen);color:#fff}
+.fld input{width:100%;min-height:50px;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:6px 2px;font-family:var(--hand);font-size:28px;color:var(--pen);border-radius:0}
+.fld input::placeholder{color:#9aa3ad}
+.fld input:focus{outline:none;border-bottom-color:var(--pen);background:#fffbe5}
+.sign{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.sign small{font-size:12px;color:var(--ink-2);max-width:32ch}
+.sign small button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font-size:12px;color:var(--ink)}
+.demo{display:none;font-family:var(--hand);font-size:26px;color:var(--red);transform:rotate(-2deg);border:2px solid var(--red);padding:6px 12px;justify-self:start}
+.demo.on{display:block}
+
+/* student card */
+.idcard{display:grid;gap:22px;max-width:880px;margin:44px auto 0;background:#e8eefb;border:2px solid var(--ink);padding:22px;position:relative}
+.idcard::after{content:"";position:absolute;right:18px;top:18px;width:54px;height:40px;border:2px solid var(--ink);background:repeating-linear-gradient(90deg,#c9a24a 0 4px,#e3c36f 4px 8px)}
+.idcard .kind{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.idcard h3{font-family:var(--sans);font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;margin-top:6px;max-width:16ch}
+.idcard dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-family:var(--mono);font-size:12px;align-items:end}
+.idcard dd{margin:0;font-family:var(--hand);font-size:24px;color:var(--pen);border-bottom:1px solid #8c96a3;line-height:1.1}
+@media (min-width:760px){.idcard{grid-template-columns:1.2fr 1fr;align-items:end;padding:30px}}
+
+/* wall */
+.wall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 18px;padding-top:12px}
+@media (min-width:880px){.wall{grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 30px}}
+.wall figure{margin:0;background:#fff;padding:9px 9px 44px;position:relative;box-shadow:0 1px 2px rgba(0,0,0,.12),0 12px 26px -14px rgba(0,0,0,.4);transition:transform .3s}
+.wall figure img{width:100%;aspect-ratio:1/1;height:auto;object-fit:cover}
+.wall figure figcaption{position:absolute;left:10px;right:10px;bottom:8px;font-family:var(--hand);font-size:21px;line-height:1.05;color:var(--pen)}
+.wall figure::before{content:"";position:absolute;top:-12px;left:50%;width:80px;height:24px;margin-left:-40px;background:var(--tape);transform:rotate(-5deg)}
+.wall figure:nth-child(3n+1){transform:rotate(-2.5deg)}
+.wall figure:nth-child(3n+2){transform:rotate(1.8deg);margin-top:18px}
+.wall figure:nth-child(3n){transform:rotate(-.8deg)}
+.wall figure:nth-child(4n)::before{left:auto;right:-18px;top:14px;transform:rotate(40deg)}
+.wall figure:hover{transform:rotate(0) scale(1.03);z-index:2}
+.credit{font-size:12px;color:var(--ink-2);margin-top:26px;font-family:var(--mono)}
+
+/* grade */
+.grade{display:grid;gap:24px;align-items:center;background:#fff;border:1px solid #d3d7de;padding:26px 22px}
+@media (min-width:760px){.grade{grid-template-columns:auto 1fr auto;padding:30px 36px}}
+.g-num{position:relative;width:132px;height:132px;display:grid;place-items:center;font-family:var(--hand);font-weight:700;font-size:74px;color:var(--red);line-height:1}
+.g-num::before{content:"";position:absolute;inset:6px;border:3px solid var(--red);border-radius:50% 46% 52% 48%;transform:rotate(-8deg)}
+.grade p{font-size:17px;max-width:44ch}
+.grade .hand{color:var(--red);font-size:26px;display:block;line-height:1.1;margin-top:6px}
 
 /* visit */
-.visit{display:grid;gap:20px}
-@media (min-width:900px){.visit{grid-template-columns:1.05fr 1fr;gap:28px}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg,28px);padding:clamp(22px,3.4vw,36px)}
-.facts{list-style:none;margin:0;padding:0;display:grid;gap:18px}
-.facts li{display:flex;gap:14px;align-items:flex-start}
-.facts li>svg{color:var(--accent-text,var(--accent));margin-top:2px;width:22px;height:22px}
-.facts b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:2px}
-.hours{border-collapse:collapse;font-size:15.5px}
-.hours td{padding:2px 18px 2px 0}
-.mapcard{position:relative;min-height:300px;border-radius:var(--radius-lg,28px);overflow:hidden;border:1px solid var(--line);background:var(--map-bg,var(--surface-2));display:flex;align-items:flex-end;text-decoration:none}
-.mapcard svg.mapart{position:absolute;inset:0;width:100%;height:100%}
-.mapcard .mapbtn{position:relative;margin:18px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-weight:600;display:inline-flex;gap:10px;align-items:center;box-shadow:0 10px 30px -12px rgba(0,0,0,.25)}
-.mapcard:hover .mapbtn{border-color:var(--text)}
-.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.visit{display:grid;gap:30px}
+@media (min-width:880px){.visit{grid-template-columns:1fr 1fr;align-items:center}}
+.visit .pola{position:relative;display:block;transform:rotate(-2deg);max-width:520px}
+.visit .pola img{aspect-ratio:1/1;height:auto}
+.addr{font-family:var(--sans);font-size:clamp(26px,3.6vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.how{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:0;border-top:1px solid var(--ink)}
+.how li{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid #c9ced6}
+.how li>span:first-child{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
+.how a{font-weight:600;text-underline-offset:3px}
 
-/* contacts */
-.contacts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
-.ccard{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:var(--radius,18px);background:var(--surface);border:1px solid var(--line);text-decoration:none;transition:border-color .2s,transform .2s;min-width:0}
-.ccard:hover{border-color:var(--text);transform:translateY(-2px)}
-.ccard svg{width:26px;height:26px;color:var(--accent-text,var(--accent))}
-.ccard span{display:block;min-width:0}
-.ccard small{display:block;color:var(--muted);font-size:13px}
-.ccard strong{display:block;font-size:16.5px;overflow-wrap:anywhere}
+footer{border-top:2px solid var(--ink);background:var(--paper);padding:34px 0 120px;font-size:14px}
+footer .wrap{display:grid;gap:14px}
+footer .logo{font-size:44px}
+footer .fl{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer button{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;min-height:32px;font-size:14px}
+footer small{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+@media (min-width:880px){footer{padding-bottom:40px}}
 
-/* gallery placeholders */
-.gal{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
-.gal .ph:first-child{grid-column:span 2;aspect-ratio:2/1}
-@media (max-width:759px){.gal .ph:nth-child(n+6){display:none}}
-@media (min-width:760px){.gal{grid-template-columns:repeat(4,1fr)}.gal .ph:first-child{grid-row:span 2;aspect-ratio:auto}}
-.ph{position:relative;aspect-ratio:1;border-radius:var(--radius,18px);overflow:hidden;background:var(--ph-bg,var(--surface-2));border:1px dashed color-mix(in srgb,var(--text) 22%,transparent);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:13px;padding:12px}
-.ph::before{content:"";position:absolute;inset:0;background:var(--ph-pattern,none);opacity:.55}
-.ph span{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px}
-.ph svg{width:28px;height:28px}
-.ph:first-child span{font-size:15px;font-weight:600;color:var(--text)}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:2px solid var(--ink)}
+.bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:2px solid var(--ink);text-decoration:none;font-weight:700;background:#fff}
+.bar a:last-child{background:var(--pen);color:#fff}
+.bar svg{width:18px;height:18px}
+@media (min-width:880px){.bar{display:none}}
 
-/* forms */
-.form{display:grid;gap:14px}
-.field{display:grid;gap:6px}
-.field label,.field .lbl{font-size:14px;font-weight:600}
-.input,select.input,textarea.input{width:100%;min-height:52px;border-radius:var(--input-radius,14px);border:1.5px solid var(--line-strong,var(--line));background:var(--surface);padding:12px 16px;font-size:16px;transition:border-color .2s,box-shadow .2s}
-textarea.input{min-height:96px;resize:vertical}
-.input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
-.row2{display:grid;gap:14px}
-@media (min-width:640px){.row2{grid-template-columns:1fr 1fr}}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line-strong,var(--line));background:var(--surface);border-radius:999px;padding:9px 15px;font-size:15px;cursor:pointer;min-height:44px;transition:all .15s}
-.chip[aria-pressed="true"],.chip[aria-checked="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.chip:disabled{opacity:.4;cursor:not-allowed}
-.demo-msg{display:none;gap:12px;align-items:flex-start;border-radius:16px;padding:16px 18px;background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);font-weight:500}
-.demo-msg.show{display:flex}
-.demo-msg svg{width:22px;height:22px;color:var(--accent-text,var(--accent));margin-top:1px}
-.consent{font-size:13px;color:var(--muted)}
-.consent a{color:inherit}
+dialog{border:2px solid var(--ink);padding:26px;width:min(560px,92vw);background:var(--paper);box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(20,22,26,.5)}
+dialog h2{font-size:28px;margin-bottom:12px}
+dialog p{font-size:14px;color:var(--ink-2);margin-bottom:10px}
 
-/* booking widget */
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:8px}
-.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
-.days::-webkit-scrollbar{display:none}
-.day{flex:none;display:grid;justify-items:center;gap:2px;min-width:64px;padding:10px 8px;border-radius:16px;border:1.5px solid var(--line-strong,var(--line));background:var(--surface);cursor:pointer;font-size:13px;color:var(--muted)}
-.day strong{font-size:20px;color:var(--text);font-family:var(--font-display)}
-.day[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:color-mix(in srgb,var(--bg) 75%,transparent)}
-.day[aria-pressed="true"] strong{color:var(--bg)}
-.chosen{font-size:15px;color:var(--muted)}
-
-/* footer */
-.foot{padding:48px 0 calc(48px + var(--bar-h,0px));border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
-.foot .wrap{display:grid;gap:18px}
-@media (min-width:860px){.foot .wrap{grid-template-columns:1fr auto;align-items:end}}
-.foot a{color:inherit}
-.foot-name{font-family:var(--font-display);font-size:22px;color:var(--text)}
-.linkbtn{background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font-size:inherit}
-
-/* sticky bottom bar (mobile) */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1.25fr;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
-.bar .btn{min-height:52px;padding:0 12px}
-body{--bar-h:76px}
-@media (min-width:900px){.bar{display:none}body{--bar-h:0px}}
-
-dialog.policy{border:0;border-radius:24px;padding:0;max-width:560px;width:calc(100% - 32px);background:var(--surface);color:var(--text);box-shadow:0 30px 80px -20px rgba(0,0,0,.45)}
-dialog.policy::backdrop{background:rgba(10,10,10,.45);backdrop-filter:blur(3px)}
-dialog.policy .in{padding:28px;display:grid;gap:14px}
-dialog.policy h2{font-size:26px}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
-
-
-:root{--bg:#f7f0e4;--surface:#fffbf3;--surface-2:#efe3cf;--text:#2b1d14;--muted:#6b5646;--line:#e4d5bd;--line-strong:#d6c2a2;--accent:#b4532a;--accent-ink:#fff;--accent-text:#9f4722;
---font-display:Rubik,system-ui,sans-serif;--font-body:Rubik,system-ui,sans-serif;--display-weight:600;--display-tracking:-.02em;--radius:14px;--radius-lg:22px;--btn-radius:14px;--star:#e3a23b;--map-bg:#efe6d6;
---ph-pattern:linear-gradient(rgba(94,132,190,.12) 1px,transparent 1px) 0 0/100% 22px}
-.hand{font-family:Caveat,cursive;font-weight:700}
-.logo .hand{font-size:34px;letter-spacing:0}
-.paper{background-color:var(--bg);background-image:linear-gradient(rgba(94,132,190,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(94,132,190,.13) 1px,transparent 1px);background-size:24px 24px}
-.hero{position:relative;padding:clamp(34px,6vw,84px) 0 clamp(52px,8vw,100px)}
-.hero::before{content:"";position:absolute;top:0;bottom:0;left:clamp(12px,4vw,56px);width:2px;background:rgba(214,70,70,.35)}
-.hero .wrap{position:relative;display:grid;gap:26px;align-items:center}
-@media (min-width:920px){.hero .wrap{grid-template-columns:1.15fr .85fr}}
-.hero h1{font-size:clamp(44px,8vw,92px);line-height:.98}
-.hero h1 .hand{display:block;color:var(--accent-text);font-size:1.08em;font-weight:700;line-height:.9;transform:rotate(-2deg);transform-origin:left}
-.hero .lead{margin-top:20px;max-width:36ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.note-hand{font-family:Caveat,cursive;font-size:26px;color:var(--accent-text);display:inline-flex;gap:8px;align-items:center;margin-top:22px;transform:rotate(-1.5deg)}
-.stickers{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.sticker{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--text);border-radius:12px;padding:8px 12px;font-weight:600;font-size:14px;box-shadow:3px 3px 0 var(--text);text-decoration:none}
-.sticker svg{width:18px;height:18px}
-.sticker .st{fill:#e3a23b;stroke:none}
-.cup{width:min(100%,380px);justify-self:center}
-.steam{animation:steam 3.2s ease-in-out infinite;opacity:.7}
-.s2{animation-delay:.6s}.s3{animation-delay:1.2s}
-@keyframes steam{0%,100%{transform:translateY(4px);opacity:.25}50%{transform:translateY(-6px);opacity:.8}}
-.feat{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-top:30px}
-@media (min-width:760px){.feat{grid-template-columns:repeat(4,1fr)}}
-.feat div{background:var(--surface);border:1.5px dashed var(--line-strong);border-radius:14px;padding:14px;display:flex;gap:10px;align-items:center;font-weight:600;font-size:15px}
-.feat svg{width:22px;height:22px;color:var(--accent-text)}
-.menu{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
-.mcard{background:var(--surface);border:1.5px solid var(--text);border-radius:var(--radius-lg);padding:22px;box-shadow:5px 5px 0 var(--text);display:grid;gap:10px;align-content:start}
-.mcard h3{font-size:24px}
-.mcard .hand{font-size:24px;color:var(--accent-text)}
-.mcard ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.mcard li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line-strong);padding-bottom:6px;font-size:15.5px}
-.mcard li span:last-child{color:var(--muted);white-space:nowrap}
-.mcard .ph-line{color:var(--muted);font-size:14px}
-.pre{display:grid;gap:22px}
-@media (min-width:920px){.pre{grid-template-columns:1fr 1fr;align-items:start}}
-.ticket{position:relative;background:var(--surface);border:1.5px solid var(--text);border-radius:18px;padding:26px 24px;box-shadow:6px 6px 0 var(--text)}
-.ticket h3{font-family:Caveat,cursive;font-size:38px;font-weight:700;color:var(--accent-text)}
-.drink{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line-strong)}
-.drink strong{display:block}
-.drink small{color:var(--muted)}
-.qty{display:flex;align-items:center;gap:8px}
-.qty button{width:40px;height:40px;border-radius:12px;border:1.5px solid var(--text);background:var(--surface);font-size:20px;font-weight:600;cursor:pointer;line-height:1}
-.qty output{min-width:22px;text-align:center;font-weight:700}
-.bonus{display:grid;gap:14px;align-items:center;background:var(--accent);color:#fff;border-radius:var(--radius-lg);padding:clamp(22px,4vw,40px)}
-@media (min-width:760px){.bonus{grid-template-columns:1fr auto}}
-.bonus h3{font-size:clamp(24px,3vw,34px)}
-.bonus p{color:#fde6da;margin-top:6px}
-.bonus .btn{background:#fffbf3;color:var(--text)}
+.reveal{opacity:0;transform:translateY(16px) rotate(var(--r,0deg));transition:opacity .7s,transform .7s}
+.reveal.on{opacity:1;transform:rotate(var(--r,0deg))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+.stamp{position:absolute;right:-4px;bottom:0;z-index:5;width:128px;height:128px;font-size:10px}
+.stamp strong{font-size:34px}
+.sign small{text-align:left}
+.menu-grid{align-items:start}
+.cta .btn{flex:none}
+@media (max-width:879px){
+  .cover{padding-top:10px}.cover .wrap{gap:26px}
+  .label{padding:18px 16px 16px;box-shadow:5px 5px 0 var(--ink)}
+  .label h1{font-size:34px}
+  .cta{gap:10px 16px;margin-top:22px}.cta .btn{padding:0 18px}
+  .board{min-height:520px}
+  .p1{width:72%;top:10px}
+  .p2{width:54%;top:290px}
+  .arrow-note{font-size:21px;max-width:92px;left:0;top:20px}
+  .arrow-note svg{margin-left:20px;width:56px}
+}
+@media (min-width:880px){.stamp{width:150px;height:150px;right:20px;bottom:40px;font-size:11px}.stamp strong{font-size:40px}}
 </style>
 </head>
-<body class="paper">
-<a class="skip" href="#main">Перейти к содержанию</a>
-<div class="concept" role="note"><div class="wrap"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><p><b>Концепт</b>Концепт нового сайта для кофейни «Школьник». Подготовил Егор Лязин для обсуждения с владельцем. Не официальный сайт.</p></div></div>
-<header class="top"><div class="wrap">
-<a class="logo" href="#main" aria-label="Школьник — наверх"><span class="hand">Школьник</span></a>
-<nav class="nav" aria-label="Разделы"><a href="#menu">Меню</a><a href="#predzakaz">Предзаказ</a><a href="#otzyvy">Отзывы</a><a href="#kak-dobratsya">Как найти</a></nav>
-<a class="btn btn-primary btn-sm top-cta" href="#predzakaz">Предзаказ к выходу</a>
-</div></header>
-<main id="main">
-<section class="hero" aria-labelledby="h1"><div class="wrap">
-<div>
-<span class="eyebrow">Кофейня · кондитерская · магазин кофе</span>
-<h1 id="h1">Кофе на Земляном Валу <span class="hand">по пути к Курской</span></h1>
-<p class="lead">Закажите кофе заранее — заберёте по пути. Или оставайтесь с ноутбуком: есть Wi-Fi.</p>
-<div class="hero-cta"><a class="btn btn-primary" href="#predzakaz"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Предзаказ к выходу</a><a class="btn btn-ghost" href="#menu">Меню</a></div>
-<div class="stickers">
-<a class="sticker" href="#otzyvy"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path class="st" d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg>4,7 · 493 отзыва</a>
-<span class="sticker">Хорошее место 2026 · Яндекс Карты</span>
-</div>
-<p class="note-hand">↳ от метро Курская — 480 м</p>
-</div>
-<svg class="cup" viewBox="0 0 320 300" aria-hidden="true">
-<g fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-<path d="M70 120h150l-14 120a24 24 0 0 1-24 21h-74a24 24 0 0 1-24-21Z" fill="#fffbf3"/>
-<path d="M220 140h14a26 26 0 0 1 0 52h-20"/>
-<path d="M60 262h180"/>
-<path class="steam s1" d="M115 100c-12-16 12-24 0-44"/><path class="steam s2" d="M147 96c-12-16 12-24 0-44"/><path class="steam s3" d="M179 100c-12-16 12-24 0-44"/>
-</g>
-<path d="M86 150h118l-8 70H94Z" fill="#b4532a" opacity=".16"/>
-<text x="112" y="200" font-family="Caveat,cursive" font-size="34" fill="#b4532a">кофе</text>
-</svg>
-</div></section>
-<section class="sec" id="menu" aria-labelledby="menu-h" style="background:var(--surface-2)"><div class="wrap">
-<div class="sec-head reveal"><span class="eyebrow">Меню</span><h2 id="menu-h">Что у нас есть</h2><p>Здесь будет ваше меню с ценами. Пока показываем то, что известно из открытых данных.</p></div>
-<div class="menu">
-<div class="mcard reveal"><span class="hand">урок 1</span><h3>Кофе</h3><ul><li><span>Капучино</span><span>300–500 ₽</span></li><li><span>Раф</span><span>—</span></li><li><span>Флэт уайт</span><span>—</span></li><li><span>Лунго</span><span>—</span></li><li><span>Матча</span><span>—</span></li></ul><p class="ph-line">Цена капучино — по данным Яндекс Карт. Остальные цены добавим из вашего меню.</p></div>
-<div class="mcard reveal"><span class="hand">урок 2</span><h3>Кондитерская</h3><p class="ph-line">Десерты и выпечка — с фото и ценами из вашей витрины.</p><ul><li><span>Здесь будут десерты</span><span>—</span></li></ul></div>
-<div class="mcard reveal"><span class="hand">урок 3</span><h3>Зерно домой</h3><p class="ph-line">«Школьник» — ещё и магазин кофе. Здесь будет список сортов и помол.</p><ul><li><span>Здесь будет ассортимент</span><span>—</span></li></ul></div>
-<div class="mcard reveal"><span class="hand">перемена</span><h3>Чай и еда навынос</h3><p class="ph-line">Чай, еда с собой, оплата картой. Позиции — из вашего меню.</p><ul><li><span>Здесь будут позиции</span><span>—</span></li></ul></div>
-</div>
-<div class="feat">
-<div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Кофе с собой</div><div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a10 10 0 0 1 14 0M8 13.5a6 6 0 0 1 8 0M11 17h2"/></svg>Wi-Fi</div><div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>Оплата картой</div><div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 11H7Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Еда навынос</div>
-</div>
-</div></section>
-<section class="sec" id="predzakaz" aria-labelledby="pre-h"><div class="wrap">
-<div class="sec-head reveal"><span class="eyebrow">Предзаказ</span><h2 id="pre-h">Кофе будет готов к вашему приходу</h2><p>Выберите напитки и время — бариста начнёт готовить заранее. Без очереди.</p></div>
-<form class="pre" data-demo novalidate>
-<div class="ticket reveal"><h3>Мой заказ</h3>
-<div id="drinks"><div class="drink"><div><strong>Капучино</strong><small>300–500 ₽</small></div><div class="qty"><button type="button" data-d="-1" data-i="0" aria-label="Убрать Капучино">−</button><output id="q0" aria-live="polite">0</output><button type="button" data-d="1" data-i="0" aria-label="Добавить Капучино">+</button></div></div><div class="drink"><div><strong>Раф</strong><small>цена из вашего меню</small></div><div class="qty"><button type="button" data-d="-1" data-i="1" aria-label="Убрать Раф">−</button><output id="q1" aria-live="polite">0</output><button type="button" data-d="1" data-i="1" aria-label="Добавить Раф">+</button></div></div><div class="drink"><div><strong>Флэт уайт</strong><small>цена из вашего меню</small></div><div class="qty"><button type="button" data-d="-1" data-i="2" aria-label="Убрать Флэт уайт">−</button><output id="q2" aria-live="polite">0</output><button type="button" data-d="1" data-i="2" aria-label="Добавить Флэт уайт">+</button></div></div><div class="drink"><div><strong>Лунго</strong><small>цена из вашего меню</small></div><div class="qty"><button type="button" data-d="-1" data-i="3" aria-label="Убрать Лунго">−</button><output id="q3" aria-live="polite">0</output><button type="button" data-d="1" data-i="3" aria-label="Добавить Лунго">+</button></div></div><div class="drink"><div><strong>Матча</strong><small>цена из вашего меню</small></div><div class="qty"><button type="button" data-d="-1" data-i="4" aria-label="Убрать Матча">−</button><output id="q4" aria-live="polite">0</output><button type="button" data-d="1" data-i="4" aria-label="Добавить Матча">+</button></div></div></div>
-<p class="note" id="sum" style="margin-top:14px">Пока ничего не выбрано</p>
-</div>
-<div class="card form reveal">
-<div class="field"><span class="lbl" id="when-l">Буду через</span><div class="chips" role="radiogroup" aria-labelledby="when-l"><button type="button" class="chip" role="radio" aria-checked="false">10 минут</button><button type="button" class="chip" role="radio" aria-checked="true">15 минут</button><button type="button" class="chip" role="radio" aria-checked="false">20 минут</button><button type="button" class="chip" role="radio" aria-checked="false">30 минут</button></div></div>
-<div class="field"><label for="p-name">Имя для стакана</label><input class="input" id="p-name" name="name" autocomplete="given-name" placeholder="Например, Аня"></div>
-<div class="field"><label for="p-tel">Телефон</label><input class="input" id="p-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7"></div>
-<div class="field"><label for="p-note">Пожелания</label><input class="input" id="p-note" name="note" placeholder="Молоко, сироп, без сахара"></div>
-<button class="btn btn-primary btn-block" type="submit">Отправить предзаказ</button>
-<p class="consent">Оплата — на месте. Нажимая кнопку, вы соглашаетесь с <a href="#" data-policy>политикой обработки персональных данных</a>.</p>
-<div class="demo-msg" role="status" tabindex="-1"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><div>Это демо: заказ не отправлен. На рабочем сайте он сразу придёт бариста.</div></div>
-</div>
-</form>
-<div class="bonus reveal" style="margin-top:26px"><div><h3>Бонусная карта «Школьника»</h3><p>Анкета программы лояльности — скидки и бонусы для постоянных гостей.</p></div><a class="btn" href="https://card.evobonus.ru/form/d1929d7a-c925-4e50-933b-c93bc54182df" target="_blank" rel="noopener">Оформить карту<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-</div></section>
-<section class="sec" id="raboty" aria-labelledby="raboty-h"><div class="wrap">
-<div class="sec-head reveal"><span class="eyebrow">Галерея</span><h2 id="raboty-h">Зал, бар, витрина</h2><p>Зал, бар и витрина кондитерской: реальные фото вместо стоковых.</p></div>
-<div class="gal reveal"><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Здесь будут ваши фото зала и напитков</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 2</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 3</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 4</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 5</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 6</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 7</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 8</span></div><div class="ph"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>Фото 9</span></div></div>
-</div></section>
-<section class="sec sec-alt" id="otzyvy" aria-labelledby="otzyvy-h"><div class="wrap">
-<div class="rating reveal">
-<div class="rating-num"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><span>4,7</span></div>
-<div class="rating-txt"><div class="stars" aria-hidden="true"><span class="stars-bg"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg></span><span class="stars-fg" style="width:94.0%"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></svg></span></div><h3 id="otzyvy-h" style="margin-top:10px">493 отзыва на Яндекс Картах</h3><p>Гости оставили почти пятьсот отзывов. Все — в карточке кофейни на Яндекс Картах.</p><p class="award"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/><path d="m9 14-1.5 6.5L12 18l4.5 2.5L15 14"/><path d="m12 7.2.8 1.6 1.8.3-1.3 1.2.3 1.8-1.6-.9-1.6.9.3-1.8-1.3-1.2 1.8-.3Z"/></svg><span><strong>Хорошее место 2026</strong> — награда Яндекс Карт для любимых мест пользователей</span></p></div>
-<a class="btn btn-ghost" href="https://yandex.ru/maps/org/31552180825/reviews/" target="_blank" rel="noopener">Читать отзывы<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-</div></div></section>
-<section class="sec" id="kak-dobratsya" aria-labelledby="kak-h"><div class="wrap">
-<div class="sec-head reveal"><span class="eyebrow">Как добраться</span><h2 id="kak-h">Ждём по адресу</h2></div>
-<div class="visit">
-<div class="card reveal"><ul class="facts">
-<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg><div><b>Адрес</b>Москва, ул. Земляной Вал, 12/7с1</div></li>
-<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 18.5h17M5.5 18.5 9 6l3 7 3-7 3.5 12.5"/></svg><div><b>Рядом</b>м. Курская — 480 м</div></li>
-<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><div><b>Режим работы</b><table class="hours"><tbody><tr><td>Пн–Пт</td><td><strong>8:30–22:00</strong></td></tr><tr><td>Сб–Вс</td><td><strong>9:30–22:00</strong></td></tr></tbody></table></div></li>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<div class="concept" role="note"><p><b>Заметка:</b>Концепт нового сайта для «Школьник». Подготовил Егор Лязин для обсуждения с владельцем. Не официальный сайт.</p></div>
 
-</ul>
-<div class="btn-row"><a class="btn btn-primary" href="https://yandex.ru/maps/org/31552180825/" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>Маршрут в Яндекс Картах</a></div></div>
-<a class="mapcard reveal" href="https://yandex.ru/maps/org/31552180825/" target="_blank" rel="noopener" aria-label="Открыть карточку на Яндекс Картах"><svg class="mapart" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<rect width="800" height="500" fill="var(--map-bg,var(--surface-2))"/>
-<path d="M-20 360 C 180 300, 300 420, 520 330 S 760 250, 840 300" stroke="var(--map-water,color-mix(in srgb,var(--accent) 22%,transparent))" stroke-width="34" fill="none" stroke-linecap="round"/>
-<g stroke="var(--map-road,color-mix(in srgb,var(--text) 10%,transparent))" stroke-width="10" fill="none" stroke-linecap="round"><path d="M32.98842592592593 9.01440329218107 L 820 98.60931069958848" /><path d="M17.87808641975309 98.38052983539094 L 820 117.29526748971193" /><path d="M-14.037808641975309 153.5105452674897 L 820 235.84233539094652" /><path d="M22.24074074074074 216.90444958847738 L 820 299.2505144032922" /><path d="M31.713734567901234 301.0622427983539 L 820 332.519804526749" /><path d="M39.38117283950618 358.4839248971193 L 820 420.6502057613169" /><path d="M10.243055555555557 431.66949588477365 L 820 468.6417181069959" /><path d="M32.86625514403292 -20 L -25.01611796982167 520" /><path d="M130.99622770919066 -20 L 78.73353909465021 520" /><path d="M253.7764060356653 -20 L 165.610768175583 520" /><path d="M351.33024691358025 -20 L 272.1587791495199 520" /><path d="M447.85528120713303 -20 L 440.84670781893004 520" /><path d="M566.0675582990398 -20 L 515.6251714677641 520" /><path d="M678.312757201646 -20 L 630.8151577503429 520" /><path d="M804.3439643347051 -20 L 713.3302469135803 520" /></g>
-<g transform="translate(400 215)"><circle r="46" fill="color-mix(in srgb,var(--accent) 18%,transparent)"/><circle r="22" fill="color-mix(in srgb,var(--accent) 30%,transparent)"/><path d="M0 16s-17-15-17-28a17 17 0 0 1 34 0c0 13-17 28-17 28Z" transform="translate(0 -14)" fill="var(--accent)"/><circle cy="-26" r="6" fill="var(--surface)"/></g>
-</svg><span class="mapbtn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>Открыть на Яндекс Картах</span></a>
-</div></div></section>
-<section class="sec sec-alt" id="kontakty" aria-labelledby="kontakty-h"><div class="wrap">
-<div class="sec-head reveal"><span class="eyebrow">Контакты</span><h2 id="kontakty-h">Позвонить или написать</h2></div>
-<div class="contacts reveal"><a class="ccard" href="tel:+79859840925" aria-label="Телефон: +7 (985) 984-09-25"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.5 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.5v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg><span><small>Телефон</small><strong>+7 (985) 984-09-25</strong></span></a><a class="ccard" href="mailto:shkolnikcoffee@gmail.com" aria-label="Почта: shkolnikcoffee@gmail.com"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg><span><small>Почта</small><strong>shkolnikcoffee@gmail.com</strong></span></a></div>
-</div></section>
+<header class="top">
+  <a class="logo" href="#" aria-label="Кофейня Школьник — в начало">Школьник</a>
+  <nav aria-label="Разделы"><a href="#raspisanie">Расписание</a><a href="#menu">Меню</a><a href="#predzakaz">Предзаказ</a><a href="#karta">Бонусы</a><a href="#adres">Как найти</a></nav>
+  <a class="tel" href="tel:+79859840925" aria-label="Позвонить: +7 (985) 984-09-25"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>+7 (985) 984-09-25</span></a>
+</header>
+
+<main id="main">
+<section class="cover" aria-labelledby="h1">
+  <div class="wrap margin">
+    <div>
+      <div class="label">
+        <span class="kind">Тетрадь по кофе</span>
+        <h1 id="h1">Кофейня «Школьник» у&nbsp;Курской</h1>
+        <div class="ln">
+          <span>учим</span><span>кофе, десерты, зерно домой</span>
+          <span>адрес</span><span>Земляной Вал, 12/7с1</span>
+          <span>звонок</span><span>Пн–Пт с 8:30, Сб–Вс с 9:30</span>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#predzakaz">Предзаказ к выходу<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="pen-link" href="#menu">что в меню?</a>
+      </div>
+    </div>
+    <div class="board">
+      <a class="stamp" href="https://yandex.ru/maps/org/31552180825/reviews/" target="_blank" rel="noopener" aria-label="Рейтинг 4,7 на Яндекс Картах, 493 отзыва — читать"><span><strong>4,7</strong>493 отзыва<br>Хорошее место<br>2026</span></a>
+      <p class="arrow-note" aria-hidden="true">кофе здесь&nbsp;— с&nbsp;красивым рисунком<svg viewBox="0 0 70 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6c18 2 36 12 58 28M62 34l-12-2M62 34l-2-12"/></svg></p>
+      <figure class="pola p1"><img src="img/capp.jpg" width="1024" height="1024" fetchpriority="high" alt="Капучино с латте-артом и кусок торта с ягодной прослойкой на тёмном фоне"><figcaption>капучино + торт</figcaption></figure>
+      <figure class="pola p2"><img src="img/facade.jpg" width="800" height="600" alt="Фасад кофейни со светящейся вывеской «Школьник» и витринами"><figcaption>вот мы, ищите вывеску</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="raspisanie" aria-labelledby="tt-h">
+  <div class="wrap margin">
+    <div class="sec-t"><h2 id="tt-h">Расписание уроков</h2><span class="hand">без прогулов</span></div>
+    <div class="tt-grid">
+      <div class="tt reveal">
+        <table>
+          <caption>Кофейня «Школьник» · часы работы</caption>
+          <tbody id="tt">
+            <tr data-d="1"><th scope="row">Пн</th><td class="t">8:30–22:00</td><td class="s">первый звонок — в 8:30</td></tr>
+            <tr data-d="2"><th scope="row">Вт</th><td class="t">8:30–22:00</td><td class="s"></td></tr>
+            <tr data-d="3"><th scope="row">Ср</th><td class="t">8:30–22:00</td><td class="s"></td></tr>
+            <tr data-d="4"><th scope="row">Чт</th><td class="t">8:30–22:00</td><td class="s"></td></tr>
+            <tr data-d="5"><th scope="row">Пт</th><td class="t">8:30–22:00</td><td class="s"></td></tr>
+            <tr data-d="6"><th scope="row">Сб</th><td class="t">9:30–22:00</td><td class="s">выходные — на час позже</td></tr>
+            <tr data-d="0"><th scope="row">Вс</th><td class="t">9:30–22:00</td><td class="s"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tt-side reveal">
+        <p class="note-red">На всех уроках разрешено:</p>
+        <ul class="checks">
+          <li>кофе с собой</li>
+          <li>Wi-Fi и ноутбук</li>
+          <li>оплата картой</li>
+          <li>еда навынос</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="menu" aria-labelledby="menu-h">
+  <div class="wrap margin">
+    <div class="sec-t"><h2 id="menu-h">Меню</h2><span class="hand">черновик</span></div>
+    <div class="menu-grid">
+      <div class="page reveal" style="--r:-.6deg">
+        <h3>Кофе</h3>
+        <ul class="lst">
+          <li>Капучино<i></i><b>300–500 ₽</b></li>
+          <li>Раф<i></i><span class="q">из вашего меню</span></li>
+          <li>Флэт уайт<i></i><span class="q">из вашего меню</span></li>
+          <li>Лунго<i></i><span class="q">из вашего меню</span></li>
+          <li>Матча<i></i><span class="q">из вашего меню</span></li>
+        </ul>
+        <p class="src">Меню с ценами нигде не опубликовано. Цена капучино — из карточки на Яндекс Картах, названия напитков — из отзывов гостей. Остальные цены подставим из вашего меню.</p>
+      </div>
+      <figure class="pola tape reveal" style="position:relative;margin:0;--r:2deg;padding:10px 10px 50px;align-self:start">
+        <img src="img/flatlay.jpg" width="900" height="900" loading="lazy" alt="Два капучино с латте-артом, чизкейк и белые цветы на мраморном столе, вид сверху" style="aspect-ratio:1/1;height:auto">
+        <figcaption>на двоих — и торт пополам</figcaption>
+      </figure>
+    </div>
+    <div class="more-pages">
+      <div class="card-p reveal"><figure class="pola tape" style="margin:0"><img src="img/vitrine.jpg" width="668" height="835" loading="lazy" alt="Витрина кондитерской с десертами у кирпичной стены"></figure><h4>Кондитерская</h4><p>Десерты и выпечка — с фото и ценами из вашей витрины.</p></div>
+      <div class="card-p reveal"><figure class="pola tape" style="margin:0"><img src="img/beans.jpg" width="675" height="900" loading="lazy" alt="Стеллаж с пачками кофейного зерна и чаем на кирпичной стене"></figure><h4>Зерно домой</h4><p>«Школьник» — ещё и магазин кофе. Здесь будет список сортов.</p></div>
+      <div class="card-p reveal"><figure class="pola tape" style="margin:0"><img src="img/desserts.jpg" width="900" height="900" loading="lazy" alt="Брауни, печенье и чашка чёрного кофе на белом столе"></figure><h4>С собой</h4><p>Еда навынос — позиции добавим из вашего меню.</p></div>
+      <div class="card-p reveal"><figure class="pola tape" style="margin:0"><img src="img/tea.jpg" width="900" height="900" loading="lazy" alt="Стеклянный чайник с чаем и десерт в баночке на пальмовом листе"></figure><h4>Чай</h4><p>Чайная карта — тоже из вашего меню.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="predzakaz" aria-labelledby="pre-h">
+  <div class="wrap margin">
+    <div class="sec-t"><h2 id="pre-h">Предзаказ к выходу</h2><span class="hand">запиши в дневник</span></div>
+    <p style="max-width:52ch;margin:-12px 0 26px;color:var(--ink-2)">Отметьте напитки и через сколько будете — бариста начнёт готовить заранее. Оплата на месте.</p>
+    <form class="diary reveal" id="pre" novalidate>
+      <div>
+        <div class="d-h"><b>Дневник · заказ</b><span id="today">сегодня</span></div>
+        <table class="d-tbl">
+          <thead><tr><th scope="col">Предмет</th><th scope="col">Сколько</th></tr></thead>
+          <tbody id="drinks"></tbody>
+        </table>
+        <p class="d-sum" id="dsum" aria-live="polite">пока пусто…</p>
+      </div>
+      <div class="d-form">
+        <div><span class="lbl" id="when-l">Буду через</span><div class="chips" role="radiogroup" aria-labelledby="when-l" id="when"><button type="button" role="radio" aria-checked="false">10 мин</button><button type="button" role="radio" aria-checked="true">15 мин</button><button type="button" role="radio" aria-checked="false">20 мин</button><button type="button" role="radio" aria-checked="false">30 мин</button></div></div>
+        <div class="fld"><label class="lbl" for="p-name">Имя для стакана</label><input id="p-name" name="name" autocomplete="given-name" placeholder="Аня"></div>
+        <div class="fld"><label class="lbl" for="p-tel">Телефон</label><input id="p-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7"></div>
+        <div class="fld"><label class="lbl" for="p-note">Пожелания</label><input id="p-note" name="note" placeholder="на овсяном, без сахара"></div>
+        <div class="sign"><button class="btn" type="submit">Отправить бариста</button><small>Нажимая, вы соглашаетесь с <button type="button" data-policy>политикой обработки персональных данных</button>.</small></div>
+        <p class="demo" id="demo" role="status">Это демо: заказ не отправлен.</p>
+      </div>
+    </form>
+
+    <div class="idcard reveal" id="karta">
+      <div>
+        <span class="kind">Ученический билет</span>
+        <h3>Бонусная карта «Школьника»</h3>
+        <p style="margin-top:10px;font-size:15px;max-width:40ch">Программа лояльности для постоянных гостей. Анкета — на сервисе EvoBonus.</p>
+      </div>
+      <div style="display:grid;gap:18px">
+        <dl><dt>Имя</dt><dd>ваше</dd><dt>Класс</dt><dd>постоянный гость</dd></dl>
+        <a class="btn" href="https://card.evobonus.ru/form/d1929d7a-c925-4e50-933b-c93bc54182df" target="_blank" rel="noopener">Оформить карту<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="wall-h">
+  <div class="wrap margin">
+    <div class="sec-t"><h2 id="wall-h">Фотоальбом класса</h2><span class="hand">зал, бар, витрина</span></div>
+    <div class="wall">
+      <figure><img src="img/hall.jpg" width="675" height="900" loading="lazy" alt="Высокий зал с кирпичными стенами, картинами и столиками у окна"><figcaption>потолки — до неба</figcaption></figure>
+      <figure><img src="img/matcha.jpg" width="896" height="900" loading="lazy" alt="Матча-латте в белых чашках на тёмном столе рядом с книгой"><figcaption>матча-урок</figcaption></figure>
+      <figure><img src="img/latte.jpg" width="900" height="898" loading="lazy" alt="Латте и гранола с ягодами на деревянном столе, вид сверху"><figcaption>завтрак перед парой</figcaption></figure>
+      <figure><img src="img/bar.jpg" width="576" height="768" loading="lazy" alt="Барная стойка с кофемашиной под яркими картинами на кирпичной стене"><figcaption>бар и картины</figcaption></figure>
+    </div>
+    <p class="credit">Фото — из карточки компании на Яндекс Картах.</p>
+  </div>
+</section>
+
+<section class="sec" id="otzyvy" aria-labelledby="gr-h">
+  <div class="wrap margin">
+    <div class="grade reveal">
+      <div class="g-num" aria-hidden="true">4,7</div>
+      <div>
+        <h2 id="gr-h" style="font-size:clamp(24px,3vw,32px);letter-spacing:-.02em">Оценка гостей — 4,7 из 5</h2>
+        <p style="margin-top:8px">493 отзыва на Яндекс Картах. Кофейня отмечена знаком «Хорошее место 2026».</p>
+        <span class="hand">молодцы, так держать!</span>
+      </div>
+      <a class="btn" href="https://yandex.ru/maps/org/31552180825/reviews/" target="_blank" rel="noopener">Читать отзывы</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="adres" aria-labelledby="adr-h">
+  <div class="wrap margin">
+    <div class="visit">
+      <figure class="pola tape reveal" style="margin:0"><img src="img/evening.jpg" width="898" height="900" loading="lazy" alt="Вечерний фасад кофейни «Школьник» с тёплым светом в окнах"><figcaption>вечером открыты до 22:00</figcaption></figure>
+      <div class="reveal">
+        <div class="sec-t" style="margin-bottom:14px"><h2 id="adr-h">Как найти</h2><span class="hand">от Курской — 480 м</span></div>
+        <p class="addr">Москва, ул. Земляной Вал, 12/7с1</p>
+        <ul class="how">
+          <li><span>Метро</span><span>Курская — 480 м</span></li>
+          <li><span>Маршрут</span><a href="https://yandex.ru/maps/org/31552180825/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></li>
+          <li><span>Телефон</span><a href="tel:+79859840925">+7 (985) 984-09-25</a></li>
+          <li><span>Почта</span><a href="mailto:shkolnikcoffee@gmail.com">shkolnikcoffee@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
-<footer class="foot"><div class="wrap">
-<div><div class="foot-name">Школьник</div><p style="margin-top:8px">Кофейня · кондитерская · магазин кофе · ул. Земляной Вал, 12/7с1</p><p style="margin-top:8px">Концепт сайта. Все данные — из открытых источников компании (сайт кофейни на Яндекс Бизнесе и карточка на Яндекс Картах). Формы на странице ничего не отправляют.</p></div>
-<div><button class="linkbtn" type="button" data-policy>Политика обработки персональных данных</button><p style="margin-top:8px">© <span id="y">2026</span></p></div>
-</div></footer>
-<div class="bar" role="region" aria-label="Быстрые действия">
-<a class="btn btn-ghost" href="tel:+79859840925"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.5 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.5v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg><span>Позвонить</span></a>
-<a class="btn btn-primary" href="#predzakaz"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h11l-1 9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2Z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H15.6M8 3.5c-.8 1 .8 2 0 3M11 3.5c-.8 1 .8 2 0 3"/></svg><span>Предзаказ</span></a>
-</div>
-<dialog class="policy" id="policy" aria-labelledby="policy-t"><div class="in">
-<h2 id="policy-t">Политика обработки персональных данных</h2>
-<p class="muted">Здесь будет политика обработки персональных данных кофейни «Школьник». В концепте это заглушка: формы на странице ничего не отправляют и не сохраняют.</p>
-<form method="dialog"><button class="btn btn-primary">Понятно</button></form>
-</div></dialog>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">Школьник</span>
+    <p>Кофейня · кондитерская · магазин кофе · ул. Земляной Вал, 12/7с1</p>
+    <div class="fl"><a href="tel:+79859840925">+7 (985) 984-09-25</a><a href="mailto:shkolnikcoffee@gmail.com">shkolnikcoffee@gmail.com</a><button type="button" data-policy>Политика обработки персональных данных</button></div>
+    <small>Фото — из карточки компании на Яндекс Картах. Часы, рейтинг и цена капучино — оттуда же. Концепт, не официальный сайт.</small>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Быстрые действия">
+  <a href="tel:+79859840925"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</a>
+  <a href="#predzakaz">Предзаказ</a>
+</nav>
+
+<dialog id="policy" aria-labelledby="pol-t">
+  <h2 id="pol-t">Политика обработки персональных данных</h2>
+  <p>Здесь будет текст политики кофейни «Школьник»: какие данные собирает форма предзаказа, зачем и сколько хранятся.</p>
+  <p>Это концепт: формы на странице ничего не отправляют.</p>
+  <form method="dialog"><button class="btn">Понятно</button></form>
+</dialog>
+
 <script>
 (function(){
-  var d=document;
-  // tabs
-  d.querySelectorAll('[data-tabs]').forEach(function(root){
-    var tabs=root.querySelectorAll('[role="tab"]');
-    tabs.forEach(function(t,i){
-      t.addEventListener('click',function(){select(i)});
-      t.addEventListener('keydown',function(e){
-        if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;select(n);tabs[n].focus();}
-      });
-    });
-    function select(i){
-      tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;var p=d.getElementById(t.getAttribute('aria-controls'));if(p)p.hidden=!on;});
-    }
-  });
-  // demo forms: nothing is sent anywhere
-  d.querySelectorAll('form[data-demo]').forEach(function(f){
-    f.addEventListener('submit',function(e){
-      e.preventDefault();
-      var m=f.querySelector('.demo-msg');
-      if(m){m.classList.add('show');m.focus&&m.focus();}
-    });
-  });
-  // policy dialog
-  var dlg=d.getElementById('policy');
-  d.querySelectorAll('[data-policy]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(dlg&&dlg.showModal)dlg.showModal();});});
-  if(dlg){dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});}
-  // demo booking widgets
-  d.querySelectorAll('[data-booking]').forEach(function(root){
-    var cfg=JSON.parse(root.getAttribute('data-booking'));
-    var daysEl=root.querySelector('.days'),slotsEl=root.querySelector('.slots'),out=root.querySelector('.chosen'),hidden=root.querySelector('input[name="slot"]');
-    var names=['вс','пн','вт','ср','чт','пт','сб'],months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-    var now=new Date(),sel={day:null,time:null};
-    function toMin(s){var p=s.split(':');return +p[0]*60+ +p[1];}
-    function hoursFor(date){var o=cfg.open,c=cfg.close;if(cfg.byDay&&cfg.byDay[date.getDay()]){o=cfg.byDay[date.getDay()][0];c=cfg.byDay[date.getDay()][1];}return [toMin(o),toMin(c)];}
-    function pad(n){return (n<10?'0':'')+n;}
-    function renderSlots(){
-      slotsEl.innerHTML='';var date=sel.day;if(!date)return;var h=hoursFor(date),last=h[1]-(cfg.minLen||60),isToday=date.toDateString()===now.toDateString();
-      var any=false;
-      for(var m=h[0];m<=last;m+=cfg.step||60){
-        var b=d.createElement('button');b.type='button';b.className='chip';b.textContent=pad(Math.floor(m/60))+':'+pad(m%60);
-        if(isToday&&m<=now.getHours()*60+now.getMinutes()+30){b.disabled=true;b.setAttribute('aria-label',b.textContent+', уже прошло');}
-        else any=true;
-        b.setAttribute('aria-pressed','false');
-        b.addEventListener('click',function(){slotsEl.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false')});this.setAttribute('aria-pressed','true');sel.time=this.textContent;update();});
-        slotsEl.appendChild(b);
-      }
-      if(!any){var p=d.createElement('p');p.className='note';p.style.gridColumn='1/-1';p.textContent='На этот день окон уже нет — выберите другой день.';slotsEl.appendChild(p);}
-      return any;
-    }
-    function update(){
-      if(sel.day&&sel.time){var t=sel.day.getDate()+' '+months[sel.day.getMonth()]+', '+names[sel.day.getDay()]+' · '+sel.time;out.textContent='Вы выбрали: '+t;hidden.value=t;}
-      else out.textContent='Выберите день и время';
-    }
-    for(var i=0;i<(cfg.days||7);i++){
-      var dt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
-      var b=d.createElement('button');b.type='button';b.className='day';b.setAttribute('aria-pressed',i===0?'true':'false');
-      b.innerHTML='<span>'+(i===0?'сегодня':i===1?'завтра':names[dt.getDay()])+'</span><strong>'+dt.getDate()+'</strong><span>'+months[dt.getMonth()].slice(0,3)+'</span>';
-      b.setAttribute('aria-label',dt.getDate()+' '+months[dt.getMonth()]);
-      (function(dt,b){b.addEventListener('click',function(){daysEl.querySelectorAll('.day').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');sel.day=dt;sel.time=null;renderSlots();update();});})(dt,b);
-      daysEl.appendChild(b);
-      if(i===0)sel.day=dt;
-    }
-    if(!renderSlots()){var nb=daysEl.querySelectorAll('.day')[1];if(nb)nb.click();}
-    update();
-  });
-  // gentle reveal on scroll
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
-    d.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
-  } else d.querySelectorAll('.reveal').forEach(function(el){el.classList.add('on')});
-  var y=d.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+  var DR=[['Капучино','300–500 ₽'],['Раф',''],['Флэт уайт',''],['Лунго',''],['Матча','']],q=DR.map(function(){return 0});
+  var tb=document.getElementById('drinks');
+  tb.innerHTML=DR.map(function(d,i){return '<tr><td>'+d[0]+'<small>'+(d[1]||'цена из вашего меню')+'</small></td><td><div class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="Убрать: '+d[0]+'">−</button><output id="q'+i+'">0</output><button type="button" data-i="'+i+'" data-d="1" aria-label="Добавить: '+d[0]+'">+</button></div></td></tr>';}).join('');
+  var sum=document.getElementById('dsum');
+  tb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var i=+b.dataset.i;q[i]=Math.max(0,Math.min(9,q[i]+ +b.dataset.d));document.getElementById('q'+i).textContent=q[i];
+    var p=DR.map(function(d,i){return q[i]?d[0].toLowerCase()+' × '+q[i]:''}).filter(Boolean);sum.textContent=p.length?p.join(', '):'пока пусто…';});
+  var wh=document.getElementById('when');wh.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;wh.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-checked',x===b?'true':'false')});});
+  document.getElementById('pre').addEventListener('submit',function(e){e.preventDefault();var d=document.getElementById('demo');d.classList.add('on');});
+  var now=new Date(),days=['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],mon=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  document.getElementById('today').textContent=days[now.getDay()]+', '+now.getDate()+' '+mon[now.getMonth()];
+  var row=document.querySelector('#tt tr[data-d="'+now.getDay()+'"]');if(row)row.classList.add('now');
+  var pol=document.getElementById('policy');
+  document.querySelectorAll('[data-policy]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(pol.showModal)pol.showModal();});});
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px'}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('on');});
 })();
-
-
-(function(){
-  var names=["Капучино","Раф","Флэт уайт","Лунго","Матча"],q=names.map(function(){return 0});
-  var sum=document.getElementById('sum');
-  document.getElementById('drinks').addEventListener('click',function(e){
-    var b=e.target.closest('button[data-d]');if(!b)return;var i=+b.getAttribute('data-i');q[i]=Math.max(0,Math.min(9,q[i]+ +b.getAttribute('data-d')));
-    document.getElementById('q'+i).textContent=q[i];
-    var parts=names.map(function(n,i){return q[i]?n+' × '+q[i]:''}).filter(Boolean);
-    sum.textContent=parts.length?'В заказе: '+parts.join(', '):'Пока ничего не выбрано';
-  });
-  document.querySelectorAll('[role="radiogroup"] .chip').forEach(function(c,_,all){c.addEventListener('click',function(){c.parentNode.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-checked','false')});c.setAttribute('aria-checked','true');});});
-})();</script>
+</script>
 </body>
 </html>
