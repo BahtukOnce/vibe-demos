@@ -36,7 +36,7 @@ p{margin:0}
 .head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
 .logo{text-decoration:none;display:flex;align-items:baseline;gap:10px}
 .logo b{font-family:var(--hand);font-size:44px;line-height:1;font-weight:700;color:var(--brown)}
-.logo small{font-size:12px;color:var(--brown-2);line-height:1.2;display:none}
+.logo small{font-size:13px;color:var(--brown-2);line-height:1.2;display:none}
 @media (min-width:600px){.logo small{display:block}}
 .head nav{display:none;gap:24px;font-weight:700;font-size:15px}
 .head nav a{text-decoration:none;padding:10px 0}
@@ -59,7 +59,9 @@ p{margin:0}
 .hall{position:relative;display:block;width:100%;padding:0;border:0;background:#3a2c1f;cursor:pointer;text-align:left;overflow:hidden;border-radius:18px;aspect-ratio:3/4.1;isolation:isolate}
 @media (min-width:900px){.hall{aspect-ratio:auto;height:min(64vh,560px);min-height:420px}}
 .hall img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .4s;z-index:-2}
-.hall::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,24,14,0) 38%,rgba(35,24,14,.82));z-index:-1}
+.hall::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,24,14,0) 30%,rgba(35,24,14,.55) 55%,rgba(35,24,14,.9));z-index:-1}
+.hall .in{text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.hall .open{text-shadow:none}
 .hall:hover img{transform:scale(1.05)}
 .hall .in{position:absolute;left:0;right:0;bottom:0;padding:14px 14px 16px;color:#fff}
 @media (min-width:900px){.hall .in{padding:22px 22px 24px}}
@@ -99,10 +101,16 @@ p{margin:0}
 .brows{margin-top:14px;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;background:var(--sand);border-radius:22px;padding:14px}
 .brows img{width:96px;height:96px;object-fit:cover;border-radius:14px}
 .brows h3{font-size:19px;font-weight:900}
-.brows p{font-size:15px;color:var(--brown-2)}
-@media (min-width:760px){.brows{grid-template-columns:120px 1fr auto;padding:16px 28px 16px 16px}.brows img{width:120px;height:90px}}
-.brows .row{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:15px;margin-top:4px}
+.brows .row{display:grid;gap:2px;font-size:15px;margin-top:4px}
 .brows .row b{font-weight:800}
+.brows .btn{grid-column:1/-1}
+@media (min-width:760px){
+  .brows{grid-template-columns:120px minmax(0,1fr) auto;gap:28px;padding:16px 28px 16px 16px}
+  .brows img{width:120px;height:120px}
+  .brows h3{font-size:22px}
+  .brows .row{display:flex;flex-wrap:wrap;gap:6px 28px;margin-top:8px;font-size:16px}
+  .brows .btn{grid-column:auto}
+}
 
 /* sections */
 .sec{padding:72px 0}
@@ -113,14 +121,13 @@ p{margin:0}
 
 /* works */
 .works{margin-top:30px;display:grid;grid-auto-flow:column;grid-auto-columns:62%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin}
-@media (min-width:900px){.works{grid-auto-flow:row;grid-template-columns:1.25fr 1fr 1fr 1fr;grid-template-rows:auto auto;overflow:visible}}
+@media (min-width:900px){.works{grid-auto-flow:row;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto auto;gap:18px 12px;overflow:visible}}
 .works figure{margin:0;scroll-snap-align:start}
 .works img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px}
 .works figcaption{font-family:var(--hand);font-size:23px;line-height:1.1;margin-top:6px;color:var(--brown-2)}
 @media (min-width:900px){
-  .works figure:first-child{grid-row:span 2}
-  .works figure:first-child img{aspect-ratio:auto;height:calc(100% - 32px)}
-  .works figure:first-child{display:flex;flex-direction:column}
+  .works figure:first-child{grid-row:span 2;grid-column:span 2;display:flex;flex-direction:column}
+  .works figure:first-child img{aspect-ratio:auto;flex:1;min-height:0;object-position:50% 30%}
 }
 .src{margin-top:14px;font-size:13px;color:var(--brown-2)}
 
@@ -130,22 +137,24 @@ p{margin:0}
 .book .lead{color:#dccdb4}
 .bk{margin-top:32px;display:grid;gap:26px}
 .bk>*{min-width:0}
-@media (min-width:980px){.bk{grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}}
+@media (min-width:980px){.bk{grid-template-columns:1.2fr .8fr;gap:48px;align-items:stretch}.card{display:flex;flex-direction:column}}
 .step{border-top:1px solid rgba(251,245,233,.18);padding-top:18px}
 .step+.step{margin-top:22px}
-.step legend,.step .lbl{font-weight:800;font-size:15px;margin-bottom:12px;padding:0;display:block}
+.step legend,.step .lbl{font-weight:800;font-size:15px;margin-bottom:14px;padding:0;display:block;float:left;width:100%}
+.step legend+*{clear:both}
 .step legend span,.step .lbl span{font-family:var(--hand);color:var(--honey);font-size:24px;margin-right:6px;font-weight:700}
 fieldset{border:0;margin:0;padding:0;min-width:0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
 .chip span{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:48px;min-width:48px;padding:6px 16px;border-radius:14px;border:1.5px solid rgba(251,245,233,.28);font-weight:700;font-size:15px;line-height:1.15;transition:background .2s,border-color .2s}
-.chip small{white-space:nowrap;font-weight:600;font-size:12px;opacity:.75}
+.chip small{white-space:nowrap;font-weight:600;font-size:13px;opacity:.8}
 .chip input:checked+span{background:var(--honey);border-color:var(--honey);color:var(--brown)}
 .chip input:focus-visible+span{outline:3px solid var(--honey);outline-offset:2px}
 .chip:hover span{border-color:var(--honey)}
 .days{flex-wrap:nowrap;overflow-x:auto;padding:3px 3px 8px;margin:-3px}
 .days .chip span{min-width:66px}
+@media (min-width:980px){.days{flex-wrap:wrap;overflow:visible;margin:0;padding:0}}
 .times .chip span{min-width:74px}
 .card{background:var(--cream);color:var(--brown);border-radius:22px;padding:24px 20px}
 @media (min-width:760px){.card{padding:30px}}
@@ -160,10 +169,11 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .ok{margin-top:12px;font-weight:800;color:var(--gold-d);min-height:1.5em}
 .card .alt{margin-top:14px;font-size:14px;color:var(--brown-2)}
 .card .alt a{font-weight:800;white-space:nowrap}
+@media (min-width:980px){.card .alt{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:15px}}
 
 /* rating */
-.love{display:grid;gap:22px;align-items:center}
-@media (min-width:900px){.love{grid-template-columns:1fr 1fr;gap:60px}}
+.love{display:grid;gap:22px;align-items:center;margin-top:22px}
+@media (min-width:900px){.love{grid-template-columns:1fr 1fr;gap:60px;margin-top:30px}}
 .score{display:flex;align-items:flex-end;gap:18px}
 .score .n{font-size:clamp(96px,14vw,168px);font-weight:900;line-height:.82;letter-spacing:-.05em}
 .score .s{padding-bottom:8px}
@@ -178,7 +188,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 /* visit */
 .visit{background:var(--sand)}
 .vgrid{display:grid;gap:22px}
-@media (min-width:900px){.vgrid{grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}}
+@media (min-width:900px){.vgrid{grid-template-columns:1.1fr .9fr;gap:48px;align-items:stretch}.pics img{aspect-ratio:auto!important;position:absolute;inset:0}.pics figure{min-height:420px}}
 .pics{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}
 .pics img{width:100%;height:100%;object-fit:cover;border-radius:18px}
 .pics figure{margin:0;position:relative}
@@ -187,7 +197,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .pics figure:last-child img{aspect-ratio:3/4}
 .door{font-family:var(--hand);font-size:clamp(34px,4vw,46px);line-height:1;color:var(--gold-d);margin-top:10px}
 .vl{list-style:none;margin:20px 0 0;padding:0}
-.vl li{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(45,33,23,.14)}
+.vl li{display:grid;grid-template-columns:96px 1fr;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid rgba(45,33,23,.14)}
 .vl li b{color:var(--brown-2);font-weight:700;font-size:15px}
 .vtools{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .btn.line{background:transparent;color:var(--brown);box-shadow:inset 0 0 0 2px var(--brown)}
@@ -341,6 +351,7 @@ dialog p{color:var(--brown-2);margin-bottom:10px;font-size:16px}
       <img src="img/brows.jpg" alt="Брови до и после ламинирования" width="736" height="736" loading="lazy">
       <div><h3>И ещё брови и ресницы</h3>
         <div class="row"><span>Коррекция пинцетом <b>400 ₽</b></span><span>Окрашивание бровей <b>400 ₽</b></span><span>Окрашивание ресниц <b>400 ₽</b></span></div></div>
+      <a class="btn" href="#zapis" data-svc="Брови и ресницы">Записаться на брови</a>
     </div>
   </section>
 
@@ -357,7 +368,6 @@ dialog p{color:var(--brown-2);margin-bottom:10px;font-size:16px}
         <figure class="reveal"><img src="img/chair.jpg" alt="Клиентка в кресле мастера, пол в клетку" width="675" height="900" loading="lazy" style="object-position:50% 60%"><figcaption>В процессе</figcaption></figure>
         <figure class="reveal"><img src="img/work-straight.jpg" alt="Прямые светлые волосы после окрашивания, вид сзади" width="675" height="900" loading="lazy"><figcaption>Гладкий блонд</figcaption></figure>
       </div>
-      <p class="src">Фото — с сайта студии и из карточки компании на Яндекс Картах.</p>
     </div>
   </section>
 
@@ -400,11 +410,12 @@ dialog p{color:var(--brown-2);margin-bottom:10px;font-size:16px}
   </section>
 
   <section class="sec" id="otzyvy" aria-labelledby="r-h">
-    <div class="wrap love">
+    <div class="wrap">
+      <p class="kick">о нас говорят</p>
+      <h2 class="t" id="r-h">Оценка гостей</h2>
+    <div class="love">
       <div>
-        <p class="kick">о нас говорят</p>
-        <h2 class="t" id="r-h">Оценка гостей</h2>
-        <div class="score" style="margin-top:18px">
+        <div class="score">
           <span class="n">5,0</span>
           <div class="s">
             <span class="stars" aria-label="5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
@@ -414,9 +425,10 @@ dialog p{color:var(--brown-2);margin-bottom:10px;font-size:16px}
         <div class="award"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="24" cy="19" r="13"/><path d="m17 30-4 14 11-5 11 5-4-14"/><path d="m24 12 2 4.5 5 .5-3.7 3.4 1 4.8L24 22.8 19.7 25l1-4.8L17 17l5-.5Z" fill="currentColor" stroke="none"/></svg><span>«Хорошее место 2026» — знак Яндекс Карт</span></div>
       </div>
       <div class="txt">
-        <p>Отзывы живут там, где их оставили гости. Почитайте, что пишут про мастеров и залы, — и приходите проверить сами.</p>
+        <p>Все отзывы — на Яндекс Картах: гости пишут про мастеров и залы. Почитайте и приходите проверить сами.</p>
         <a class="btn line" href="https://yandex.ru/maps/org/185283450230/reviews/" target="_blank" rel="noopener">Читать отзывы на Яндекс Картах</a>
       </div>
+    </div>
     </div>
   </section>
 
@@ -448,7 +460,7 @@ dialog p{color:var(--brown-2);margin-bottom:10px;font-size:16px}
 <footer class="wrap foot">
   <div class="row">
     <span class="sig">Сияем вместе!</span>
-    <span>Студия красоты «Сияние» · Москва, ул. Планерная, 20к1</span>
+    <span>Студия красоты «Сияние» · Москва, ул.&nbsp;Планерная,&nbsp;20к1</span>
     <button type="button" class="linkbtn" data-open="policy">Политика обработки персональных данных</button>
   </div>
   <p style="margin-top:10px">Фото — с сайта студии и из карточки компании на Яндекс Картах. Цены — с сайта студии.</p>

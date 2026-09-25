@@ -54,7 +54,7 @@ p{margin:0}
 @media (min-width:960px){.top{padding:28px clamp(40px,5vw,84px)}}
 .brand{text-decoration:none;display:flex;flex-direction:column;line-height:1}
 .brand b{font-family:var(--serif);font-weight:500;font-size:27px;letter-spacing:.01em}
-.brand small{font-size:11px;letter-spacing:.14em;color:var(--soft);margin-top:4px}
+.brand small{font-size:13px;letter-spacing:.12em;color:var(--soft);margin-top:4px}
 .menu{display:none;gap:22px;font-size:14px;white-space:nowrap}
 .menu a{text-decoration:none;color:var(--soft)}
 .menu a:hover{color:var(--ink)}
@@ -67,7 +67,7 @@ p{margin:0}
 .ribbon figure{margin:0;flex:0 0 76%;scroll-snap-align:start;position:relative}
 .ribbon figure:first-child{flex-basis:86%}
 .ribbon img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.ribbon figcaption{font-size:12px;color:var(--soft);margin-top:6px}
+.ribbon figcaption{font-size:13px;color:var(--soft);margin-top:6px}
 @media (min-width:960px){.ribbon{display:none}}
 
 /* intro */
@@ -87,7 +87,7 @@ p{margin:0}
 .facts div{padding:16px 0;border-bottom:1px solid var(--line)}
 .facts div:nth-child(odd){padding-right:14px;border-right:1px solid var(--line)}
 .facts div:nth-child(even){padding-left:16px}
-.facts dt{font-size:12px;color:var(--soft)}
+.facts dt{font-size:13px;color:var(--soft)}
 .facts dd{margin:4px 0 0;font-family:var(--serif);font-size:23px;line-height:1.15}
 
 /* section heads */
@@ -143,12 +143,13 @@ p{margin:0}
 .space img{width:100%;height:100%;object-fit:cover}
 .space figure:first-child img{aspect-ratio:3/4.4}
 .space figure:not(:first-child) img{aspect-ratio:1}
-.space figcaption{font-size:12px;color:var(--soft);margin-top:6px}
+.space figcaption{font-size:13px;color:var(--soft);margin-top:6px}
 .space figure{display:flex;flex-direction:column}
 
 /* rating */
-.rate{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:center;margin-top:30px}
-.rate .big{font-family:var(--serif);font-size:clamp(96px,12vw,150px);line-height:.8;grid-row:span 2}
+.rate{display:flex;align-items:center;gap:10px 26px;margin-top:30px;flex-wrap:wrap}
+.rate .big{font-family:var(--serif);font-size:clamp(96px,12vw,150px);line-height:.72}
+.rate .rt{display:flex;flex-direction:column;gap:10px;padding-top:6px}
 .stars{display:flex;gap:3px;color:var(--sage)}
 .stars svg{width:18px;height:18px;fill:currentColor}
 .rate p{color:var(--soft);font-size:15px}
@@ -207,13 +208,13 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--sa
   <figure class="stage" aria-hidden="true">
     <img class="on" data-k="hall" src="img/hall.jpg" alt="" width="768" height="1024" style="object-position:50% 60%">
     <img data-k="nails" src="img/nails-sage.jpg" alt="" width="1024" height="768" loading="lazy" style="object-position:38% 50%">
-    <img data-k="brows" src="img/brows.jpg" alt="" width="602" height="1000" loading="lazy" style="object-position:50% 40%">
+    <img data-k="brows" src="img/brows.jpg" alt="" width="602" height="1000" loading="lazy" style="object-position:50% 75%">
     <img data-k="cabinet" src="img/cabinet.jpg" alt="" width="825" height="1100" loading="lazy">
     <img data-k="laser" src="img/laser.jpg" alt="" width="825" height="1100" loading="lazy">
     <img data-k="shelf" src="img/shelf.jpg" alt="" width="1100" height="825" loading="lazy" style="object-position:62% 50%">
     <img data-k="feet" src="img/feet.jpg" alt="" width="1000" height="1000" loading="lazy">
     <img data-k="pedi" src="img/pedi-room.jpg" alt="" width="1100" height="825" loading="lazy" style="object-position:60% 50%">
-    <img data-k="nailsw" src="img/nails-white.jpg" alt="" width="1000" height="831" loading="lazy">
+    <img data-k="nailsw" src="img/nails-pink.jpg" alt="" width="1050" height="1400" loading="lazy" style="object-position:50% 40%">
     <img data-k="lounge" src="img/lounge.jpg" alt="" width="768" height="1024" loading="lazy">
     <img data-k="corridor" src="img/corridor.jpg" alt="" width="729" height="1000" loading="lazy">
     <figcaption><span class="cap">Зал маникюра</span><span class="count">Планерная, 7к1</span></figcaption>
@@ -260,7 +261,7 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--sa
           <details data-k="nails" data-cap="Маникюр" open>
             <summary><span class="n">01</span><span class="t">Ногти<small>маникюр и педикюр</small></span><span class="pm" aria-hidden="true"></span></summary>
             <div class="body">
-              <figure class="shot"><img src="img/nails-sage.jpg" alt="Маникюр в оттенке шалфея с дизайном" width="1024" height="768" loading="lazy"></figure>
+              <figure class="shot"><img src="img/nails-sage.jpg" alt="Маникюр в оттенке шалфея с дизайном" width="1024" height="768" loading="lazy" style="object-position:40% 30%"></figure>
               <ul class="plist">
                 <li><span>Маникюр без покрытия</span><span class="p">1 300 ₽</span><span class="d">60 мин</span></li>
                 <li><span>Маникюр + снятие + гель-лак</span><span class="p">2 900 ₽</span><span class="d">120 мин</span></li>
@@ -273,7 +274,7 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--sa
           <details data-k="brows" data-cap="Брови">
             <summary><span class="n">02</span><span class="t">Брови и ресницы<small>коррекция, окрашивание, ламинирование, наращивание</small></span><span class="pm" aria-hidden="true"></span></summary>
             <div class="body">
-              <figure class="shot"><img src="img/brows.jpg" alt="Брови после оформления, крупный план" width="602" height="1000" loading="lazy" style="aspect-ratio:3/2;object-position:50% 40%"></figure>
+              <figure class="shot"><img src="img/brows.jpg" alt="Брови после оформления, крупный план" width="602" height="1000" loading="lazy" style="aspect-ratio:3/2;object-position:50% 78%"></figure>
               <ul class="plist">
                 <li><span>Коррекция бровей — воск или пинцет</span><span class="p">900 ₽</span></li>
                 <li><span>Коррекция + окрашивание краской</span><span class="p">1 600 ₽</span></li>
@@ -340,9 +341,8 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--sa
         <div class="space">
           <figure><img src="img/corridor.jpg" alt="Коридор салона с живыми растениями на стене" width="729" height="1000" loading="lazy"><figcaption>Коридор</figcaption></figure>
           <figure><img src="img/station.jpg" alt="Рабочее место мастера с зеркалом и лампой" width="750" height="1000" loading="lazy"><figcaption>Рабочее место</figcaption></figure>
-          <figure><img src="img/nails-white.jpg" alt="Белый маникюр с серебряным дизайном на фоне журнала" width="1000" height="831" loading="lazy"><figcaption>Работа мастера</figcaption></figure>
+          <figure><img src="img/nails-pink.jpg" alt="Розовый маникюр с градиентом на овальных ногтях" width="1050" height="1400" loading="lazy" style="object-position:50% 8%"><figcaption>Работа мастера</figcaption></figure>
         </div>
-        <p class="note">Фото — с сайта салона и из карточки на Яндекс Картах.</p>
       </section>
 
       <section class="inner sec" id="otzyvy" data-k="nailsw" data-cap="Работа мастера" aria-labelledby="r-h">
@@ -350,8 +350,8 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--sa
         <h2 id="r-h">Что говорят гости</h2>
         <div class="rate">
           <span class="big">5,0</span>
-          <span class="stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
-          <p>100 отзывов на Яндекс Картах. <a href="https://yandex.ru/maps/org/30638508264/reviews/" target="_blank" rel="noopener">Читать отзывы</a></p>
+          <span class="rt"><span class="stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"/></svg></span>
+          <p>100 отзывов на&nbsp;Яндекс Картах.<br><a href="https://yandex.ru/maps/org/30638508264/reviews/" target="_blank" rel="noopener">Читать отзывы</a></p></span>
         </div>
       </section>
 
@@ -381,7 +381,7 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--sa
     </main>
 
     <footer class="inner foot">
-      <p>Бьютисофия · салон красоты · Москва, ул. Планерная, 7к1</p>
+      <p>Бьютисофия · салон красоты · Москва, ул.&nbsp;Планерная,&nbsp;7к1</p>
       <p>Фото — с сайта салона и из карточки компании на Яндекс Картах.</p>
       <p><button type="button" class="linkbtn" data-open="policy">Политика обработки персональных данных</button></p>
     </footer>

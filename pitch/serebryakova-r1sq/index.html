@@ -28,9 +28,9 @@ h1,h2,h3{font-family:var(--disp);font-weight:400;margin:0;line-height:1.05;lette
 p{margin:0}
 .wrap{max-width:1280px;margin:0 auto;padding:0 20px}
 @media (min-width:800px){.wrap{padding:0 48px}}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--steel)}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--steel)}
 
-.concept{background:var(--graphite);color:#e9eaea;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;line-height:1.5;padding:10px 20px;text-align:center}
+.concept{background:var(--graphite);color:#e9eaea;font-family:var(--mono);font-size:13px;letter-spacing:.02em;line-height:1.5;padding:10px 20px;text-align:center}
 
 /* header */
 .head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
@@ -38,7 +38,8 @@ p{margin:0}
 .mark i{width:34px;height:34px;border:1px solid var(--graphite);border-radius:50%;position:relative;flex:none}
 .mark i::after{content:"";position:absolute;left:50%;top:5px;bottom:5px;width:1px;background:var(--graphite)}
 .mark b{font-family:var(--disp);font-weight:400;font-size:19px;letter-spacing:.2em;display:block;line-height:1}
-.mark small{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--steel);display:block;margin-top:5px}
+.mark small{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--steel);display:block;margin-top:5px;white-space:nowrap}
+@media (max-width:599px){.mark small .loc{display:none}}
 .head nav{display:none;gap:30px;font-size:14px}
 .head nav a{text-decoration:none;color:var(--steel);padding:10px 0}
 .head nav a:hover{color:var(--ink)}
@@ -63,9 +64,9 @@ p{margin:0}
 .photo{position:relative;margin:0}
 @media (max-width:979px){.photo{order:-1;margin:0 -20px}.photo figcaption{padding:0 20px}.hero{padding-top:0}}
 .photo img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(.85)}
-.photo figcaption{display:flex;justify-content:space-between;margin-top:10px}
+.photo figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;margin-top:10px}
 @media (min-width:980px){.photo img{aspect-ratio:5/4.3}}
-.photo .tag{position:absolute;right:-1px;top:-1px;background:var(--pearl);padding:10px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+.photo .tag{position:absolute;right:-1px;top:-1px;background:var(--pearl);padding:10px 14px;font-family:var(--mono);font-size:13px;letter-spacing:.08em}
 
 /* sterile */
 .ster{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 0 70px;overflow:hidden}
@@ -82,10 +83,10 @@ p{margin:0}
 .st .line::before{content:"";position:absolute;left:0;right:0;top:13px;height:1px;background:var(--silver)}
 .st .line::after{content:"";position:absolute;left:0;top:6px;width:15px;height:15px;border-radius:50%;background:var(--white);border:1px solid var(--graphite)}
 .st.on .line::after{background:var(--graphite)}
-.st .no{font-family:var(--mono);font-size:12px;color:var(--steel)}
+.st .no{font-family:var(--mono);font-size:13px;color:var(--steel)}
 .st h3{font-size:26px;margin-top:10px;line-height:1.1}
 .st p{margin-top:10px;font-size:15px;color:#474b50;font-weight:300;max-width:26ch}
-.st.last .line::before{right:40%;background:linear-gradient(90deg,var(--silver),var(--kraft))}
+.st.last .line::before{background:linear-gradient(90deg,var(--silver),var(--kraft))}
 .st.last .line::after{border-color:var(--kraft);background:var(--kraft)}
 .st.last h3{color:#7a5a36}
 .st figure{margin:18px 0 0}
@@ -109,7 +110,7 @@ p{margin:0}
 .mgrid figure{margin:0}
 .mgrid figure img{width:100%;aspect-ratio:3/4;object-fit:cover}
 @media (min-width:980px){.mgrid figure img{aspect-ratio:4/5}}
-.big700{font-family:var(--disp);font-size:clamp(110px,17vw,230px);line-height:.8;letter-spacing:-.04em;background:linear-gradient(100deg,#6e747c 0%,#c9cdd2 35%,#f5f5f3 50%,#aab0b7 68%,#555a61 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.big700{font-family:var(--disp);font-size:clamp(110px,17vw,230px);line-height:.8;letter-spacing:-.04em;background:linear-gradient(100deg,#5b6168 0%,#9aa0a7 32%,#c2c6cb 50%,#8a9097 68%,#4b5056 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 @supports not ((-webkit-background-clip:text) or (background-clip:text)){.big700{color:var(--steel)}}
 .mat h2{font-size:clamp(30px,3.6vw,46px);margin-top:14px}
 .brands{margin:30px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--graphite)}
@@ -143,7 +144,7 @@ p{margin:0}
 .pcat{padding-top:34px;scroll-margin-top:70px}
 @media (min-width:980px){.pcat{padding-top:0;margin-bottom:60px;scroll-margin-top:30px}}
 .pcat h3{font-size:30px;display:flex;align-items:baseline;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--graphite)}
-.pcat h3 .mono{font-size:12px}
+.pcat h3 .mono{font-size:13px}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{display:grid;grid-template-columns:1fr auto;gap:2px 20px;padding:13px 0;border-bottom:1px solid var(--line)}
 .rows .n{font-size:15.5px}
@@ -155,30 +156,37 @@ p{margin:0}
 .works{padding:90px 0}
 @media (min-width:980px){.works{padding:130px 0}}
 .works h2{font-size:clamp(38px,4.6vw,60px)}
-.wgrid{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-@media (min-width:980px){.wgrid{grid-template-columns:repeat(4,1fr);gap:14px}}
+.wgrid{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 8px}
+@media (min-width:980px){.wgrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 14px}}
 .wgrid figure{margin:0}
 .wgrid img{width:100%;aspect-ratio:1;object-fit:cover}
 .wgrid figcaption{margin-top:8px}
 .wgrid .wide{grid-column:span 2}
 .wgrid .wide img{aspect-ratio:2/1}
-@media (min-width:980px){.wgrid .tall{grid-row:span 2}.wgrid .tall img{aspect-ratio:auto;height:calc(100% - 28px)}.wgrid .tall{display:flex;flex-direction:column}}
+.wgrid .tall{grid-column:span 2}
+@media (min-width:980px){.wgrid .tall{grid-row:span 2;display:flex;flex-direction:column}.wgrid .tall img{aspect-ratio:auto;flex:1;min-height:0}}
 .src{margin-top:18px}
 
 /* rating + visit */
 .rv{border-top:1px solid var(--line);padding-top:90px;padding-bottom:90px;display:grid;gap:60px}
-@media (min-width:980px){.rv{grid-template-columns:1fr 1fr;gap:80px;padding-top:130px;padding-bottom:130px}}
+@media (min-width:980px){.rv{grid-template-columns:1fr 1fr;gap:56px 80px;padding-top:130px;padding-bottom:130px}}
+.rv>div{display:flex;flex-direction:column}
+.rv>div .tl{align-self:flex-start}
+@media (min-width:980px){.rv>div .tl{margin-top:auto;padding-top:18px}}
 .score{display:flex;align-items:flex-end;gap:22px;margin-top:18px}
 .score .n{font-family:var(--disp);font-size:clamp(100px,12vw,160px);line-height:.8}
 .score p{font-size:15px;color:#474b50;padding-bottom:8px}
 .score p b{display:block;font-weight:500;color:var(--ink);font-size:17px}
 .award{margin-top:26px;display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15px}
-.award i{width:40px;height:40px;border:1px solid var(--graphite);border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--mono);font-size:11px;flex:none}
+.award i{width:46px;height:46px;border:1px solid var(--graphite);border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--mono);font-size:12px;flex:none}
 .tl{display:inline-flex;align-items:center;min-height:48px;margin-top:18px;font-weight:500;text-underline-offset:5px}
 .rv h2{font-size:clamp(34px,4vw,50px)}
 .addr{font-size:19px;margin-top:18px;font-weight:300}
-.vfig{margin:24px 0 0}
+.vfig{margin:0}
+@media (max-width:979px){.vfig{margin-top:-28px}}
 .vfig img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.vfig figcaption{margin-top:10px}
+@media (min-width:980px){.vfig{grid-column:1/-1}.vfig img{aspect-ratio:5/2;object-position:50% 45%}}
 .warn{margin-top:18px;padding:14px 16px;background:var(--white);border-left:2px solid var(--graphite);font-size:15px}
 
 /* contacts */
@@ -219,7 +227,7 @@ dialog .btn{margin-top:8px;border:0;cursor:pointer;font-family:var(--sans)}
 
 <div class="wrap">
   <header class="head">
-    <a class="mark" href="#top" aria-label="Студия красоты Серебряковой — в начало"><i aria-hidden="true"></i><span><b>СЕРЕБРЯКОВА</b><small>СТУДИЯ КРАСОТЫ · ЖУЛЕБИНО</small></span></a>
+    <a class="mark" href="#top" aria-label="Студия красоты Серебряковой — в начало"><i aria-hidden="true"></i><span><b>СЕРЕБРЯКОВА</b><small>СТУДИЯ КРАСОТЫ<span class="loc"> · ЖУЛЕБИНО</span></small></span></a>
     <nav aria-label="Разделы"><a href="#sterilnost">Стерильность</a><a href="#materialy">Материалы</a><a href="#ceny">Цены</a><a href="#raboty">Работы</a><a href="#adres">Адрес</a></nav>
     <a class="lnk" href="https://n612473.yclients.com/" target="_blank" rel="noopener">Записаться</a>
   </header>
@@ -260,7 +268,7 @@ dialog .btn{margin-top:8px;border:0;cursor:pointer;font-family:var(--sans)}
       <article class="st reveal"><div class="line" aria-hidden="true"></div><span class="no">ШАГ 02</span><h3>УЗ-чистка</h3><p>Ультразвуковая очистка инструмента.</p></article>
       <article class="st reveal"><div class="line" aria-hidden="true"></div><span class="no">ШАГ 03</span><h3>Сушка и упаковка</h3><p>Инструмент сушат и запечатывают в крафт-пакет.</p></article>
       <article class="st reveal"><div class="line" aria-hidden="true"></div><span class="no">ШАГ 04</span><h3>Стерилизатор ГП-10</h3><p>Воздушный стерилизатор Ферропласт ГП-10 уничтожает микроорганизмы, включая споры.</p></article>
-      <article class="st last reveal"><div class="line" aria-hidden="true"></div><span class="no">ШАГ 05</span><h3>Пакет вскрывают при вас</h3><p>Запечатанный крафт-пакет открывают в вашем присутствии.</p></article>
+      <article class="st last reveal"><div class="line" aria-hidden="true"></div><span class="no">ШАГ 05</span><h3>Пакет вскрывают при&nbsp;вас</h3><p>Запечатанный крафт-пакет открывают в вашем присутствии.</p></article>
     </div>
     <div class="navs"><button type="button" data-dir="-1" aria-label="Предыдущий шаг">←</button><button type="button" data-dir="1" aria-label="Следующий шаг">→</button></div>
     <div class="also">
@@ -282,7 +290,7 @@ dialog .btn{margin-top:8px;border:0;cursor:pointer;font-family:var(--sans)}
       </ul>
       <div class="care">
         <div><span class="mono">ПОКА МАСТЕР РАБОТАЕТ</span><p>Бесплатный чай и кофе, фильмы и сериалы во время процедуры.</p></div>
-        <div><span class="mono">ВАЖНО ЗНАТЬ</span><p>Работаем с длиной свободного края до 1 см.</p></div>
+        <div><span class="mono">ВАЖНО ЗНАТЬ</span><p>Работаем с длиной свободного края до&nbsp;1&nbsp;см.</p></div>
       </div>
     </div>
   </div>
@@ -385,7 +393,6 @@ dialog .btn{margin-top:8px;border:0;cursor:pointer;font-family:var(--sans)}
       <figure class="reveal"><img src="img/n-blue.jpg" alt="Маникюр в ярко-синем цвете" width="800" height="600" loading="lazy"><figcaption class="mono">ОДИН ТОН</figcaption></figure>
       <figure class="reveal"><img src="img/n-milk.jpg" alt="Молочный маникюр на коротких ногтях" width="900" height="573" loading="lazy"><figcaption class="mono">МОЛОЧНЫЙ</figcaption></figure>
     </div>
-    <p class="mono src">ФОТО — ИЗ КАРТОЧКИ КОМПАНИИ НА ЯНДЕКС КАРТАХ И С САЙТА СТУДИИ</p>
   </div>
 </section>
 
@@ -400,14 +407,14 @@ dialog .btn{margin-top:8px;border:0;cursor:pointer;font-family:var(--sans)}
   <div>
     <span class="mono">КАК ДОБРАТЬСЯ</span>
     <h2>Жулебино</h2>
-    <p class="addr">Москва, ул. Авиаконструктора Миля, 15к1<br>м. Жулебино — 350 м, 3 минуты пешком</p>
+    <p class="addr">Москва, ул. Авиаконструктора Миля,&nbsp;15к1<br>м. Жулебино — 350 м, 3 минуты пешком</p>
     <p class="warn">Точный адрес и схему прохода пришлём при записи.</p>
-    <figure class="vfig"><img src="img/racks.jpg" alt="Интерьер студии: стеллажи с гель-лаками и картины на стенах" width="1024" height="576" loading="lazy"></figure>
     <ul class="spec" style="margin-top:22px">
       <li><span class="mono">ЧАСЫ</span><span>Круглосуточно, по записи</span></li>
     </ul>
     <a class="tl" href="https://yandex.ru/maps/org/181394309384/" target="_blank" rel="noopener">Открыть в Яндекс Картах →</a>
   </div>
+  <figure class="vfig"><img src="img/racks.jpg" alt="Интерьер студии: стеллажи с гель-лаками и картины на стенах" width="1024" height="576" loading="lazy"><figcaption class="mono">ИНТЕРЬЕР СТУДИИ</figcaption></figure>
 </section>
 
 <section class="cont" id="kontakty" aria-labelledby="c-h">
@@ -420,12 +427,13 @@ dialog .btn{margin-top:8px;border:0;cursor:pointer;font-family:var(--sans)}
       <li><a href="https://wa.me/79999200297" target="_blank" rel="noopener"><span class="mono">WHATSAPP</span><strong>Написать</strong></a></li>
       <li><a href="https://t.me/serebryakova_beauty_studio" target="_blank" rel="noopener"><span class="mono">TELEGRAM</span><strong>@serebryakova_beauty_studio</strong></a></li>
       <li><a href="https://vk.ru/serebryakova_beauty_studio" target="_blank" rel="noopener"><span class="mono">ВКОНТАКТЕ</span><strong>Страница студии</strong></a></li>
+      <li><a href="https://yandex.ru/maps/org/181394309384/" target="_blank" rel="noopener"><span class="mono">ЯНДЕКС КАРТЫ</span><strong>Маршрут и отзывы</strong></a></li>
     </ul>
   </div>
 </section>
 <footer class="foot">
   <div class="wrap">
-    <span>Студия красоты Серебряковой · Москва, ул. Авиаконструктора Миля, 15к1</span>
+    <span>Студия красоты Серебряковой · Москва, ул.&nbsp;Авиаконструктора Миля,&nbsp;15к1</span>
     <span>Фото — из карточки компании на Яндекс Картах и с сайта студии</span>
     <button type="button" class="linkbtn" data-open="policy">Политика обработки персональных данных</button>
   </div>
