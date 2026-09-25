@@ -96,6 +96,7 @@ p{margin:0}
 .ch:hover .cap,.ch.sel .cap{left:calc(var(--lvl) + 12%)}
 .meter{display:none}
 .price{font:700 38px/1 var(--disp);letter-spacing:.01em;white-space:nowrap}
+.price small{display:block;margin-top:6px;font:500 13px/1.2 var(--mono,monospace);letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#a39d95)}
 .price small{font:500 12px var(--mono);letter-spacing:.1em;color:var(--dim);display:block;margin-top:6px;text-transform:uppercase}
 .pick{min-height:48px;padding:0 16px;border:1px solid #4a443d;background:transparent;color:var(--text);font:500 13px var(--mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .pick:hover,.ch.sel .pick{background:var(--amber);border-color:var(--amber);color:#140d02}
@@ -305,7 +306,7 @@ dialog button{min-height:48px;padding:0 20px;background:var(--text);color:var(--
         <div class="knobs" aria-hidden="true"><i class="knob" style="--r:-40deg"></i><i class="knob" style="--r:25deg"></i><i class="knob" style="--r:80deg"></i></div>
         <p class="d">Запись голоса и музыкальных инструментов.</p>
         <div class="fader" aria-hidden="true"><i class="scale"></i><i class="slot"></i><i class="cap"></i><i class="meter"></i></div>
-        <div class="price">1 500 ₽</div>
+        <div class="price">1 500 ₽<small>за час</small></div>
         <button class="pick" type="button" data-svc="Звукозапись">В сессию</button>
       </article>
       <article class="ch" role="listitem" style="--lvl:56%">
@@ -314,7 +315,7 @@ dialog button{min-height:48px;padding:0 20px;background:var(--text);color:var(--
         <div class="knobs" aria-hidden="true"><i class="knob" style="--r:10deg"></i><i class="knob" style="--r:-70deg"></i><i class="knob" style="--r:45deg"></i></div>
         <p class="d">Сведение одной дорожки голоса с минусом (битом) и мастеринг.</p>
         <div class="fader" aria-hidden="true"><i class="scale"></i><i class="slot"></i><i class="cap"></i><i class="meter"></i></div>
-        <div class="price">3 000 ₽</div>
+        <div class="price">3 000 ₽<small>за песню</small></div>
         <button class="pick" type="button" data-svc="Сведение + мастеринг">В сессию</button>
       </article>
       <article class="ch" role="listitem" style="--lvl:46%">
@@ -323,7 +324,7 @@ dialog button{min-height:48px;padding:0 20px;background:var(--text);color:var(--
         <div class="knobs" aria-hidden="true"><i class="knob" style="--r:-15deg"></i><i class="knob" style="--r:60deg"></i><i class="knob" style="--r:-55deg"></i></div>
         <p class="d">Мастеринг уже сведённого трека.</p>
         <div class="fader" aria-hidden="true"><i class="scale"></i><i class="slot"></i><i class="cap"></i><i class="meter"></i></div>
-        <div class="price">1 200 ₽</div>
+        <div class="price">1 200 ₽<small>за трек</small></div>
         <button class="pick" type="button" data-svc="Мастеринг">В сессию</button>
       </article>
       <article class="ch" role="listitem" style="--lvl:30%">
@@ -383,6 +384,7 @@ dialog button{min-height:48px;padding:0 20px;background:var(--text);color:var(--
           <dt>День</dt><dd id="o-day">—</dd>
           <dt>Время</dt><dd id="o-time">—</dd>
           <dt>Канал</dt><dd id="o-svc">—</dd>
+          <dt>Стоимость</dt><dd id="o-cost">—</dd>
         </dl>
         <label for="svc">Что делаем</label>
         <select id="svc" name="svc">
@@ -394,7 +396,7 @@ dialog button{min-height:48px;padding:0 20px;background:var(--text);color:var(--
         <input id="ph" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7" required>
         <button class="go" type="submit">Забронировать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="ok" id="ok" role="status"></p>
-        <p class="note">Итог по стоимости зависит от объёма — его назовут до начала работы.</p>
+        <p class="note">Цены студии: запись — 1 500 ₽ за час, сведение с мастерингом — 3 000 ₽ за песню, мастеринг — 1 200 ₽ за трек. Точную сумму подтвердит студия.</p>
       </aside>
     </form>
   </div>
@@ -515,6 +517,12 @@ dialog button{min-height:48px;padding:0 20px;background:var(--text);color:var(--
     document.getElementById('o-day').textContent=d.toLocaleDateString('ru-RU',{weekday:'short',day:'numeric',month:'long'});
     document.getElementById('o-time').textContent=st.start+':00 → '+(st.start+st.dur)+':00 · '+st.dur+' ч';
     document.getElementById('o-svc').textContent=svc.value;
+    var v=svc.value,cost;
+    if(v==='Звукозапись')cost=st.dur+' ч × 1 500 ₽ = '+(st.dur*1500).toLocaleString('ru-RU').replace(/\u00a0/g,'\u00a0')+'\u00a0₽';
+    else if(v==='Сведение + мастеринг')cost='3 000 ₽ за песню';
+    else if(v==='Мастеринг')cost='1 200 ₽ за трек';
+    else cost='по запросу';
+    document.getElementById('o-cost').textContent=cost;
     document.querySelectorAll('.ch').forEach(function(c){var p=c.querySelector('.pick');c.classList.toggle('sel',p&&p.dataset.svc===svc.value)});
   }
   days.addEventListener('click',function(e){var b=e.target.closest('button');if(b){st.day=+b.dataset.i;render()}});
