@@ -26,7 +26,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.55 var(--b
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--clay-2);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--disp);font-weight:700;margin:0;line-height:1.05;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--disp);font-weight:700;margin:0;line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
 p{margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrap{max-width:1320px;margin:0 auto;padding:0 var(--gut)}
@@ -50,6 +50,7 @@ p{margin:0}
 
 /* hero */
 .hero{padding:4px var(--gut) 0;max-width:1320px;margin:0 auto;display:grid;gap:0}
+.hero .src{padding:12px 0 0;margin:0}
 .mosaic{display:grid;gap:6px;grid-template-columns:repeat(4,1fr);grid-auto-rows:86px;
   grid-template-areas:"p p b f" "p p o g" "l l gl g"}
 .mosaic figure{margin:0;overflow:hidden;border-radius:10px;background:var(--peach)}
@@ -65,10 +66,12 @@ p{margin:0}
 .score h1{font-size:21px;margin-top:16px;line-height:1.2}
 .score .sub{color:var(--ink-2);margin-top:6px;font-size:15px}
 .score .cta{width:100%;margin-top:16px}
-.stamp{position:absolute;top:-92px;right:4px;width:84px;height:84px;border-radius:50%;background:var(--ink);color:#ffe7d4;display:grid;place-items:center;text-align:center;font-family:var(--disp);font-size:10.5px;line-height:1.15;letter-spacing:.02em;transform:rotate(9deg);box-shadow:0 0 0 4px var(--bg)}
-.stamp b{display:block;font-size:19px;color:#fff}
+.stamp{display:inline-flex;align-items:baseline;gap:.4em;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:var(--ink);color:#ffe7d4;font-family:var(--disp);font-size:13px;line-height:1.2;letter-spacing:.02em}
+.stamp br{display:none}
+.stamp b{font-size:13px;color:#fff}
 @media(min-width:960px){
-  .hero{grid-template-columns:.9fr 1.1fr;gap:40px;align-items:stretch;padding-top:10px}
+  .hero{grid-template-columns:.9fr 1.1fr;gap:10px 40px;align-items:stretch;padding-top:10px}
+  .hero .src{order:3;grid-column:2;padding:0}
   .mosaic{order:2;grid-auto-rows:1fr;height:min(640px,calc(100vh - 170px));grid-template-areas:"p p b f" "p p b f" "o g g l" "o g g gl";gap:10px}
   .mosaic figure{border-radius:16px}
   .score{order:1;margin:0;background:none;box-shadow:none;padding:12px 0 0;display:flex;flex-direction:column;justify-content:space-between}
@@ -78,10 +81,11 @@ p{margin:0}
   .score h1{font-size:clamp(28px,2.6vw,38px);margin-top:28px}
   .score .sub{font-size:17px;max-width:36ch}
   .score .cta{width:auto;align-self:flex-start;margin-top:26px}
-  .stamp{position:relative;top:auto;right:auto;width:124px;height:124px;font-size:12px;margin-bottom:12px}
-  .stamp b{font-size:24px}
+  .stamp{display:grid;place-items:center;align-content:center;gap:0;width:124px;height:124px;padding:0;border-radius:50%;text-align:center;font-size:13px;line-height:1.15;margin-bottom:12px;transform:rotate(9deg);box-shadow:0 0 0 4px var(--bg)}
+  .stamp br{display:inline}
+  .stamp b{display:block;font-size:24px}
 }
-.src{font-size:12.5px;color:var(--ink-2);padding:10px var(--gut) 0;max-width:1320px;margin:0 auto}
+.src{font-size:13px;color:var(--ink-2);padding:10px var(--gut) 0;max-width:1320px;margin:0 auto}
 
 /* tags */
 .sec{padding:clamp(60px,9vw,120px) 0}
@@ -101,12 +105,12 @@ p{margin:0}
 .vtag .pct{font-family:var(--disp);font-weight:700;font-size:clamp(28px,7.2vw,72px);line-height:1;letter-spacing:-.05em;color:var(--clay)}
 .vt:nth-child(3) .vtag .pct{color:#fff}
 .vtag .what{font-weight:600;font-size:clamp(14px,1.6vw,19px);line-height:1.25}
-.vtag .what small{display:block;font-weight:400;font-size:12.5px;opacity:.8;margin-top:6px}
+.vtag .what small{display:block;font-weight:400;font-size:13px;opacity:.8;margin-top:6px}
 .offers{display:grid;gap:14px}
 .offer{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:center;background:var(--ink);color:#ffeede;border-radius:10px 26px 26px 10px;padding:18px 22px 18px 20px;position:relative}
 .offer .pr{font-family:var(--disp);font-weight:700;font-size:28px;color:var(--peach-2);grid-row:span 2;border-right:1.5px dashed #7a5647;padding-right:18px;white-space:nowrap}
 .offer b{font-weight:600;font-size:17px;line-height:1.25}
-.offer b i{font-style:normal;font-size:11.5px;background:var(--clay-2);color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.offer b i{font-style:normal;font-size:13px;background:var(--clay-2);color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
 .offer small{font-size:14px;color:#dcbfae}
 @media(max-width:520px){.offer{grid-template-columns:1fr}.offer .pr{grid-row:auto;border:0;border-bottom:1.5px dashed #7a5647;padding:0 0 8px;margin-bottom:6px}}
 @media(min-width:760px){.rail{gap:24px;padding-top:54px}.vt{transform-origin:50% -54px}.vt::before{top:-54px;height:70px}.vtag{min-height:250px;padding-top:56px}.vtag::before{top:18px;width:16px;height:16px;margin-left:-8px}.offers{grid-template-columns:1fr 1fr;gap:24px}}
@@ -119,6 +123,8 @@ p{margin:0}
 .four-in{display:grid;max-width:1320px;margin:0 auto}
 .four figure{margin:0;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:4px;min-height:300px}
 .four figure img{width:100%;height:100%;object-fit:cover}
+.four figure img:first-child{object-position:78% 50%}
+.four figure img:last-child{object-position:54% 50%}
 .four .txt{padding:36px var(--gut) 44px;display:grid;gap:16px;align-content:center}
 .four .kick{font-family:var(--disp);font-size:clamp(90px,16vw,200px);line-height:.8;color:var(--clay-2);letter-spacing:-.06em}
 .four .kick span{font-size:.3em;letter-spacing:-.01em;color:#ffd9bf;vertical-align:.9em;margin-left:.2em}
@@ -134,39 +140,45 @@ p{margin:0}
 .ptable{width:100%;border-collapse:collapse;background:var(--cream);border-radius:18px;overflow:hidden;font-size:16px}
 .ptable caption{text-align:left}
 .ptable th,.ptable td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-.ptable thead th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);font-weight:600;background:var(--peach)}
+.ptable thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);font-weight:600;background:var(--peach)}
 .ptable tbody th[scope=rowgroup]{font-family:var(--disp);font-size:16px;background:#fbe6d6;color:var(--clay);padding-top:16px}
 .ptable td.p{text-align:right;white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
 .ptable td small{display:block;color:var(--ink-2);font-size:13.5px;margin-top:2px}
-.ptable .flag{display:inline-block;font-size:11.5px;font-weight:600;background:var(--clay);color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.ptable .flag{display:inline-block;font-size:13px;font-weight:600;background:var(--clay);color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px}
 .ptable tr.hl td{background:#fff1e4}
 .pnote{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:22px;color:var(--ink-2);font-size:15px}
 .pgrid{display:grid;gap:30px}
-@media(min-width:960px){.pgrid{grid-template-columns:1.35fr .65fr;align-items:start}.paside{position:sticky;top:20px}}
 .paside figure{margin:0}
-.paside img{border-radius:18px;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 20%}
-@media(min-width:960px){.paside img{aspect-ratio:3/4}}
+.pph{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.paside img{border-radius:18px;width:100%;aspect-ratio:4/5;object-fit:cover}
+@media(min-width:960px){
+  .pgrid{grid-template-columns:1.35fr .65fr;align-items:stretch}
+  .paside,.paside figure{display:flex;flex-direction:column;flex:1}
+  .pph{display:flex;flex-direction:column;flex:1;min-height:0}
+  .paside img{flex:1 1 0;min-height:0;aspect-ratio:auto}
+}
 .paside figcaption{font-size:14px;color:var(--ink-2);margin-top:8px}
 
 /* home */
 .home{background:var(--peach)}
-.home-grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.home-grid{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:30px}
 .home-grid figure{margin:0;position:relative;overflow:hidden;border-radius:18px}
 .home-grid img{width:100%;height:100%;object-fit:cover}
 .home-grid figcaption{position:absolute;left:10px;bottom:10px;background:var(--cream);font-size:13px;font-weight:500;padding:4px 10px;border-radius:8px}
-.hg-room{grid-row:span 2;aspect-ratio:3/5}
+.hg-room{grid-row:span 2}
+.hg-room img{position:absolute;inset:0}
 .hg-door,.hg-cert{aspect-ratio:1}
 .perks{list-style:none;margin:0;padding:0;display:grid;gap:0;grid-column:1/-1}
 .perks li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(59,34,25,.2);font-size:17px}
 .perks li::before{content:"";flex:none;width:10px;height:10px;border-radius:3px;background:var(--clay);transform:rotate(45deg) translateY(-2px)}
 @media(min-width:960px){
   .home-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  .home-grid{grid-template-columns:1fr 1fr}
+  .home-grid{grid-template-columns:1fr 1fr;margin-top:0}
 }
 
 /* visit */
 .visit{display:grid;gap:30px}
-.addr{font-family:var(--disp);font-size:clamp(28px,4.4vw,52px);line-height:1.08}
+.addr{font-family:var(--disp);font-size:clamp(25px,4.4vw,52px);line-height:1.08}
 .facts{display:grid;gap:0;margin-top:22px}
 .facts div{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
 .facts dt{color:var(--ink-2)}
@@ -179,7 +191,7 @@ p{margin:0}
 .door{margin:0}
 .door img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover}
 .door figcaption{font-size:14px;color:var(--ink-2);margin-top:8px}
-@media(min-width:960px){.visit{grid-template-columns:1.3fr .7fr;gap:70px;align-items:center}}
+@media(min-width:960px){.visit{grid-template-columns:1.3fr .7fr;gap:70px;align-items:stretch}.door{display:flex;flex-direction:column}.door img{flex:1 1 0;min-height:0;aspect-ratio:auto;object-position:50% 40%}}
 
 footer{background:var(--ink);color:#e9cdbb;padding:36px var(--gut) 110px;font-size:14px}
 footer .in{max-width:1240px;margin:0 auto;display:grid;gap:12px}
@@ -227,7 +239,7 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
   </div>
   <div class="score">
     <div>
-      <div class="stamp" aria-label="Награда Яндекс Карт «Хорошее место 2026»">Хорошее<br>место<b>2026</b></div>
+      <div class="stamp" aria-label="Награда Яндекс Карт «Хорошее место 2026»">Хорошее<br> место<b>2026</b></div>
       <div class="row1">
         <span class="big" aria-hidden="true">4,9</span>
         <div>
@@ -242,12 +254,12 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
       <a class="cta" href="https://n204433.yclients.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Записаться онлайн</a>
     </div>
   </div>
+  <p class="src">Фото работ — из карточки студии на Яндекс Картах.</p>
 </section>
-<p class="src">Фото работ — из карточки студии на Яндекс Картах.</p>
 
 <section class="sec" id="skidki" aria-labelledby="sk-h">
   <div class="wrap">
-    <div class="sh reveal"><h2 id="sk-h">Чем чаще приходите — тем дешевле</h2><p>Скидки для постоянных клиентов и акции из прайса студии.</p></div>
+    <div class="sh reveal"><h2 id="sk-h">Чем чаще приходите — тем дешевле</h2><p>Скидки для постоянных клиентов и акции из прайса студии.</p></div>
     <div class="rail reveal" role="list">
       <div class="vt" role="listitem" style="--r:-3deg"><div class="vtag"><span class="pct">−5%</span><span class="what">каждый 5-й визит</span></div></div>
       <div class="vt" role="listitem" style="--r:2deg"><div class="vtag"><span class="pct">−10%</span><span class="what">каждый 10-й визит</span></div></div>
@@ -268,9 +280,9 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
     </figure>
     <div class="txt reveal">
       <div class="kick" aria-hidden="true">4<span>руки</span></div>
-      <h2 id="four-h">Маникюр и педикюр — одновременно</h2>
+      <h2 id="four-h">Маникюр и педикюр — одновременно</h2>
       <p>Два мастера работают в один сеанс: пока делают руки, делают и ноги. Выходит в два раза быстрее.</p>
-      <div class="price"><b>5 500 ₽</b><span>маникюр + педикюр, покрытие «ХИТ» и SPA-программа</span></div>
+      <div class="price"><b>5 500 ₽</b><span>маникюр + педикюр, покрытие «ХИТ» и SPA‑программа</span></div>
       <a class="cta" href="https://n204433.yclients.com/" target="_blank" rel="noopener">Записаться в 4 руки</a>
     </div>
   </div>
@@ -298,18 +310,18 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
           </tbody>
           <tbody>
             <tr><th scope="rowgroup" colspan="2">В 4 руки</th></tr>
-            <tr class="hl"><td>Маникюр + педикюр + покрытие «ХИТ» + SPA-программа<small>Два мастера одновременно</small></td><td class="p">5 500 ₽</td></tr>
+            <tr class="hl"><td>Маникюр + педикюр + покрытие «ХИТ» + SPA‑программа<small>Два мастера одновременно</small></td><td class="p">5 500 ₽</td></tr>
           </tbody>
           <tbody>
             <tr><th scope="rowgroup" colspan="2">Брови</th></tr>
-            <tr><td>Ламинирование бровей — комплекс<span class="flag">акция</span><small>Коррекция + окрашивание + ботокс</small></td><td class="p">2 800 ₽</td></tr>
-            <tr><td>Окрашивание бровей хной<small>Brow-пилинг в подарок</small></td><td class="p">1 000 ₽</td></tr>
+            <tr><td>Ламинирование бровей — комплекс<span class="flag">акция</span><small>Коррекция + окрашивание + ботокс</small></td><td class="p">2 800 ₽</td></tr>
+            <tr><td>Окрашивание бровей хной<small>Brow‑пилинг в подарок</small></td><td class="p">1 000 ₽</td></tr>
           </tbody>
         </table>
-        <div class="pnote"><a class="cta" href="https://n204433.yclients.com/" target="_blank" rel="noopener">Выбрать время</a><span>Онлайн-запись студии в YCLIENTS: мастер и время — на ваш выбор.</span></div>
+        <div class="pnote"><a class="cta" href="https://n204433.yclients.com/" target="_blank" rel="noopener">Выбрать время</a><span>Онлайн-запись студии в YCLIENTS: мастер и время — на ваш выбор.</span></div>
       </div>
       <aside class="paside reveal" aria-label="Брови">
-        <figure><img src="img/brows.jpg" width="600" height="800" loading="lazy" alt="Оформленные брови крупным планом"><figcaption>Брови и ресницы — тоже здесь.</figcaption></figure>
+        <figure><div class="pph"><img src="img/brows.jpg" width="675" height="900" loading="lazy" alt="Оформленная бровь и ресницы крупным планом" style="object-position:60% 40%"><img src="img/brows-2.jpg" width="675" height="900" loading="lazy" alt="Бровь после оформления и окрашенные ресницы, профиль" style="object-position:40% 45%"></div><figcaption>Брови и ресницы — тоже здесь.</figcaption></figure>
       </aside>
     </div>
   </div>
@@ -321,7 +333,7 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
       <div class="sh"><h2 id="home-h">Как дома, только с&nbsp;мастером</h2><p>Светлая студия в розовых тонах, цветы и бесплатный чай, пока сохнет покрытие.</p></div>
       <ul class="perks">
         <li>Одноразовые наборы и антисептика</li>
-        <li>Чай и кофе — бесплатно</li>
+        <li>Чай и кофе — бесплатно</li>
         <li>Мужской ногтевой сервис</li>
         <li>Наращивание и артдизайн</li>
         <li>Подарочные сертификаты</li>
@@ -340,7 +352,7 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
   <div class="wrap visit">
     <div class="reveal">
       <h2 id="adres-h" class="sr" style="position:absolute;left:-9999px">Как добраться и контакты</h2>
-      <p class="addr">Москва,<br>ул. Менжинского, 25</p>
+      <p class="addr">Москва,<br>ул. Менжинского,&nbsp;25</p>
       <dl class="facts">
         <div><dt>Метро</dt><dd>Бабушкинская, 370 м</dd></div>
         <div><dt>Часы</dt><dd>Ежедневно, 10:00–22:00</dd></div>
@@ -353,14 +365,14 @@ dialog button{min-height:48px;padding:0 22px;border:0;border-radius:12px;backgro
         <a class="soft" href="https://t.me/dommanikura" target="_blank" rel="noopener">Telegram</a>
       </div>
     </div>
-    <figure class="door reveal"><img src="img/door.jpg" width="675" height="900" loading="lazy" alt="Вход в студию: стеклянная дверь с табличкой часов работы 10–22, цветы у входа"><figcaption>Вход в студию. Фото — из карточки на Яндекс Картах.</figcaption></figure>
+    <figure class="door reveal"><img src="img/door.jpg" width="675" height="900" loading="lazy" alt="Вход в студию: стеклянная дверь с табличкой часов работы 10–22, цветы у входа"><figcaption>Вход в студию. Фото — из карточки на Яндекс Картах.</figcaption></figure>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="in">
-    <p>«Дом Маникюра» · ногтевая студия · Москва, ул. Менжинского, 25. Фото — из карточки компании на Яндекс Картах.</p>
+    <p>«Дом Маникюра» · ногтевая студия · Москва, ул. Менжинского, 25. Фото — из карточки компании на Яндекс Картах.</p>
     <button type="button" id="policy-btn">Политика обработки персональных данных</button>
   </div>
 </footer>

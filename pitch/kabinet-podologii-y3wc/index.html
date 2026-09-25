@@ -88,6 +88,7 @@ header.top{max-width:var(--max);margin:0 auto;padding:16px var(--gut);display:fl
   .ask{padding:24px 0 96px}
   .ask .wrap{grid-template-columns:1fr .92fr;gap:56px}
   .ans{position:sticky;top:20px}
+  .ans figure img{aspect-ratio:16/9}
   .opts{grid-template-columns:1fr 1fr}
 }
 
@@ -119,7 +120,8 @@ header.top{max-width:var(--max);margin:0 auto;padding:16px var(--gut);display:fl
   .room-grid .big{grid-column:1;grid-row:1/3}
   .room-grid .wide{grid-column:2/4}.room-grid .wide img{aspect-ratio:auto;height:280px}
   .room-grid figure:not(.big):not(.wide) img{height:300px;aspect-ratio:auto}
-  .room-grid .big img{aspect-ratio:auto;height:100%;min-height:560px}
+  .room-grid .big{display:flex;flex-direction:column}
+  .room-grid .big img{aspect-ratio:auto;flex:1 1 0;height:0;min-height:0}
   .trust{grid-template-columns:auto 1fr auto;align-items:center;gap:32px}
 }
 
@@ -127,12 +129,12 @@ header.top{max-width:var(--max);margin:0 auto;padding:16px var(--gut);display:fl
 .ortho .wrap{display:grid;gap:36px}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .pair img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
-.pair figure{margin:0}
+.pair figure{margin:0;display:flex;flex-direction:column}
 .pair figcaption{font-size:14px;color:var(--ink-2);margin-top:6px}
 .plist{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--line)}
 .plist li{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
 .plist b{font-weight:600;white-space:nowrap}
-@media(min-width:960px){.ortho .wrap{grid-template-columns:1fr 1fr;gap:72px;align-items:center}}
+@media(min-width:960px){.ortho .wrap{grid-template-columns:1fr 1fr;gap:72px;align-items:stretch}.pair img{aspect-ratio:auto;flex:1 1 0;height:0;min-height:0}}
 
 /* price */
 .price{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -161,17 +163,20 @@ details td small{display:block;color:var(--ink-2);font-size:14px;margin-top:2px}
 fieldset{border:0;padding:0;margin:0}
 .times{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:6px}
 .times label{display:flex;align-items:center;justify-content:center;min-height:52px;border:1.5px solid #cfc7ba;border-radius:12px;cursor:pointer;font-weight:500;text-align:center;padding:4px 8px;line-height:1.2}
-.times input{position:absolute;opacity:0;pointer-events:none}
+.times{position:relative}
+.times input{position:absolute;left:0;top:0;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
 .times input:checked+label{background:var(--sage);border-color:var(--sage);color:#fff}
 .times input:focus-visible+label{outline:3px solid var(--sage-2);outline-offset:2px}
-.times label small{display:block;font-size:12px;opacity:.8;font-weight:400}
+.times label small{display:block;font-size:13px;opacity:.8;font-weight:400}
 .two{display:grid;gap:16px}
 .consent{font-size:13px;color:var(--ink-2)}
 .consent button,.linkbtn{font:inherit;color:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
 .done{display:none;padding:14px 16px;border-radius:12px;background:var(--sage-soft);font-weight:600}
 .done.show{display:block}
 @media(min-width:620px){.times{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1fr 1fr}}
-@media(min-width:960px){.req .wrap{grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}.fcard{padding:36px}}
+.req-alt{font-size:15px}
+.req-l{display:flex;flex-direction:column}
+@media(min-width:960px){.req .wrap{grid-template-columns:.8fr 1.2fr;gap:64px;align-items:stretch}.fcard{padding:36px}.req-alt{margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}}
 
 /* route */
 .route .wrap{display:grid;gap:30px}
@@ -212,6 +217,8 @@ dialog .btn{margin-top:20px}
 .fade{animation:fade .45s ease}
 @keyframes fade{from{opacity:.2}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}*{transition:none!important;animation:none!important}}
+.pair-one{grid-template-columns:1fr!important}
+.pair-one img{object-position:50% 45%}
 </style>
 </head>
 <body>
@@ -263,7 +270,7 @@ dialog .btn{margin-top:20px}
     <div class="room-grid">
       <figure class="big reveal"><img src="img/shelf.jpg" width="675" height="900" loading="lazy" alt="Светлые полки кабинета: растения, модель стопы, картина"><figcaption>Кабинет изнутри</figcaption></figure>
       <figure class="reveal"><img src="img/steril.jpg" width="600" height="800" loading="lazy" alt="Рабочая зона с оборудованием для обработки инструментов"><figcaption>Зона обработки инструментов</figcaption></figure>
-      <figure class="reveal"><img src="img/packs.jpg" width="394" height="700" loading="lazy" alt="Ящик с запечатанными крафт-пакетами"><figcaption>Инструменты в крафт-пакетах</figcaption></figure>
+      <figure class="reveal"><img src="img/packs.jpg" width="394" height="700" loading="lazy" alt="Ящик с запечатанными крафт-пакетами"><figcaption>Инструменты в&nbsp;<span style="white-space:nowrap">крафт-пакетах</span></figcaption></figure>
       <figure class="wide reveal"><img src="img/device.jpg" width="600" height="800" loading="lazy" alt="Аппарат для обработки стоп и ногтей со шлангом пылесоса"><figcaption>Аппарат для обработки</figcaption></figure>
     </div>
     <div class="trust">
@@ -277,9 +284,8 @@ dialog .btn{margin-top:20px}
 
 <section class="sec ortho" id="ortopediya" aria-labelledby="ort-h">
   <div class="wrap">
-    <div class="pair">
+    <div class="pair pair-one">
       <figure class="reveal"><img src="img/insoles.jpg" width="602" height="800" loading="lazy" alt="Пара анатомических стелек в руке"><figcaption>Анатомические стельки</figcaption></figure>
-      <figure class="reveal" style="margin-top:40px"><img style="aspect-ratio:1/1" src="img/podoscope.jpg" width="800" height="800" loading="lazy" alt="Стопа на подсвеченной стеклянной платформе, вид сбоку"><figcaption>Осмотр стопы</figcaption></figure>
     </div>
     <div>
       <p class="eyebrow">Ортопедия</p>
@@ -335,11 +341,11 @@ dialog .btn{margin-top:20px}
 
 <section class="sec req" id="zapis" aria-labelledby="zapis-h">
   <div class="wrap">
-    <div>
+    <div class="req-l">
       <p class="eyebrow">Заявка</p>
-      <h2 class="h2" id="zapis-h">Выберите удобное время суток</h2>
+      <h2 class="h2" id="zapis-h">Заявка на&nbsp;приём</h2>
       <p class="lead">Оставьте телефон — кабинет перезвонит и подберёт точное время приёма.</p>
-      <p class="lead" style="font-size:15px">Удобнее написать самим? <a href="https://wa.me/79917142303" target="_blank" rel="noopener">WhatsApp</a> или <a href="https://t.me/Podolog_Proskurnova" target="_blank" rel="noopener">Telegram</a>.</p>
+      <p class="lead req-alt">Удобнее написать самим? <a href="https://wa.me/79917142303" target="_blank" rel="noopener">WhatsApp</a> или <a href="https://t.me/Podolog_Proskurnova" target="_blank" rel="noopener">Telegram</a>.</p>
     </div>
     <form class="fcard" id="form" novalidate>
       <div class="fld"><label for="z-what">Что беспокоит</label>
@@ -426,6 +432,7 @@ dialog .btn{margin-top:20px}
     if(scroll&&innerWidth<960){document.getElementById('ans').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}
   }
   btns.forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.i,true)})});
+  if(matchMedia('(min-width:960px)').matches)document.querySelectorAll('.groups details').forEach(function(x){x.open=true});
 
   document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();this.querySelector('.done').classList.add('show')});
   var dlg=document.getElementById('policy');

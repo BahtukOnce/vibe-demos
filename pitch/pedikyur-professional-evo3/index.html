@@ -40,7 +40,7 @@ p{margin:0}
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px var(--gut);max-width:var(--max);margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:15px;line-height:1.1}
 .brand i{font-style:normal;display:grid;place-items:center;width:40px;height:40px;background:var(--fux);color:#fff;font-family:var(--f-d);font-size:15px;font-weight:800;letter-spacing:-.04em}
-.brand small{display:block;font-weight:600;color:var(--ink-2);font-size:12px}
+.brand small{display:block;font-weight:600;color:var(--ink-2);font-size:13px}
 .top nav{display:none;gap:26px;font-weight:600;font-size:15px}
 .top nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
 .top nav a:hover{border-color:var(--fux)}
@@ -54,12 +54,12 @@ p{margin:0}
 .hero .wrap{display:grid;gap:26px}
 .shot{position:relative;margin:0 calc(var(--gut)*-1)}
 .shot img{width:100%;aspect-ratio:4/4.3;object-fit:cover;object-position:50% 40%}
-.clock{position:absolute;left:var(--gut);bottom:-28px;font-family:var(--f-d);font-weight:800;font-size:clamp(88px,30vw,190px);line-height:.8;letter-spacing:-.06em;color:var(--fux);text-shadow:0 0 0 #fff;-webkit-text-stroke:0}
-.clock span{background:#fff;padding:10px 16px 0 6px;display:inline-block;margin-left:-6px}
+.clock{position:absolute;left:var(--gut);top:var(--gut);margin:0;font-family:var(--f-d);font-weight:800;font-size:clamp(40px,12vw,64px);line-height:1;letter-spacing:-.05em;color:var(--fux)}
+.clock span{background:#fff;padding:8px 12px 6px;display:inline-block}
 .hero h1{font-size:clamp(28px,7.4vw,56px);margin-top:18px}
 .hero h1 em{font-style:normal;background:linear-gradient(transparent 58%,var(--lime) 58% 92%,transparent 92%)}
 .sub{margin-top:14px;color:var(--ink-2);font-size:17px;max-width:36ch}
-.calc{margin-top:22px;border:2px solid var(--ink);padding:18px;display:grid;gap:14px;max-width:470px}
+.calc{margin-top:22px;border:2px solid var(--ink);padding:18px;display:grid;gap:14px;max-width:520px}
 .calc-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;font-weight:700;font-size:18px}
 .calc select{font:800 20px var(--f-d);color:var(--ink);background:var(--mist);border:0;border-bottom:3px solid var(--fux);padding:8px 34px 8px 12px;min-height:48px;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c8105f' stroke-width='3'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;background-size:18px;cursor:pointer}
 .out{font:800 20px var(--f-d);background:var(--lime);padding:8px 12px}
@@ -75,11 +75,11 @@ p{margin:0}
 .where b{font-family:var(--f-d);color:var(--fux);font-size:22px}
 @media(min-width:900px){
   .hero{padding:24px 0 90px}
-  .hero .wrap{grid-template-columns:1fr 1.02fr;align-items:end;gap:48px}
-  .hero .txt{order:1;padding-bottom:10px}
-  .shot{order:2;margin:0}
-  .shot img{aspect-ratio:4/4.6}
-  .clock{left:-28px;bottom:-44px;font-size:150px}
+  .hero .wrap{grid-template-columns:1fr 1.02fr;align-items:stretch;gap:48px}
+  .hero .txt{order:1}
+  .shot{order:2;margin:0;min-height:560px}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-position:50% 45%}
+  .clock{left:24px;top:24px;font-size:72px}
   .hero h1{font-size:clamp(34px,3.9vw,50px)}
 }
 
@@ -107,6 +107,7 @@ p{margin:0}
   .tl{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
   .tl::before{left:0;right:0;top:32px;bottom:auto;width:auto;height:3px;background:repeating-linear-gradient(90deg,var(--fux) 0 10px,transparent 10px 16px)}
   .tl li{padding-left:0;padding-top:92px;display:flex;flex-direction:column}
+  .tl h3{font-size:19px}
   .tl figure{margin-top:auto;padding-top:16px}
   .tl figure img{aspect-ratio:4/5}
 }
@@ -129,12 +130,15 @@ p{margin:0}
 .ptable tr.hit td:first-child{padding-left:12px}.ptable tr.hit td:last-child{padding-right:12px}
 .pnote{margin-top:16px;font-size:14px;color:var(--ink-2)}
 .pgrid{display:grid;gap:36px}
-.pside{background:var(--ink);color:#fff;padding:28px;align-self:start}
+.pside{background:var(--ink);color:#fff;padding:28px;display:flex;flex-direction:column}
+.phead{grid-column:1/-1}
+.phead+div .seg{margin-top:0}
 .pside h3{font-size:22px}
 .pside p{margin-top:10px;color:#d8cdd9}
 .pside .big{font:800 44px var(--f-d);letter-spacing:-.04em;color:var(--lime);margin-top:18px}
 .pside .btn{margin-top:20px;width:100%}
-@media(min-width:900px){.pgrid{grid-template-columns:1.6fr .8fr;gap:56px}.pside{position:sticky;top:24px;margin-top:84px}}
+.pside .big{margin-top:auto;padding-top:18px}
+@media(min-width:900px){.pgrid{grid-template-columns:1.6fr .8fr;gap:30px 56px}.pside{align-self:stretch}}
 
 /* rating band */
 .band{background:var(--lime);color:var(--lime-ink)}
@@ -154,7 +158,6 @@ p{margin:0}
 @media(min-width:900px){.arrows{display:flex}}
 .feed{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px var(--gut) 14px;margin-top:0;scrollbar-width:thin;scrollbar-color:var(--fux) var(--mist);scroll-padding:0 var(--gut)}
 .feed figure{flex:0 0 auto;margin:0;scroll-snap-align:start;width:74vw;max-width:340px}
-.feed figure:nth-child(3n+2){margin-top:34px}
 .feed img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .feed figcaption{font-size:13px;color:var(--ink-2);margin-top:8px;font-weight:600}
 @media(min-width:1180px){.feed{padding-left:calc((100vw - var(--max))/2 + var(--gut));scroll-padding-left:calc((100vw - var(--max))/2 + var(--gut))}}
@@ -171,10 +174,12 @@ p{margin:0}
 .step h3{font-size:18px}
 .step p{margin-top:6px;color:var(--ink-2);font-size:15px}
 .step .m{width:110px;height:130px;display:grid;place-items:center;background:var(--fux);color:#fff;font:800 22px var(--f-d);letter-spacing:-.03em}
+.step .m span{text-align:center}
+.step .m small{display:none;font:700 15px var(--f-b);letter-spacing:0;margin-top:10px;opacity:.85}
 .addr{margin-top:34px;display:grid;gap:14px;border-top:2px solid var(--ink);padding-top:22px}
 .addr strong{font-size:19px}
 .addr .row{display:flex;flex-wrap:wrap;gap:10px}
-@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:28px}.step{grid-template-columns:1fr}.step img,.step .m{width:100%;height:260px}.step .m{font-size:48px}.addr{grid-template-columns:1fr auto;align-items:center}}
+@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:28px}.step{grid-template-columns:1fr}.step img,.step .m{width:100%;height:260px}.step .m{font-size:48px}.step .m small{display:block}.addr{grid-template-columns:1fr auto;align-items:center}}
 
 /* book */
 .book{background:var(--ink);color:#fff}
@@ -190,7 +195,9 @@ p{margin:0}
 .ch li:first-child span{color:#3d3340}
 .hours{margin-top:24px;font-weight:600;color:#cfc3d0}
 .hours b{color:#fff}
-@media(min-width:900px){.book .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}.ch{margin-top:0}}
+.book-l{display:flex;flex-direction:column}
+.hours small{display:block;font-weight:500;margin-top:4px}
+@media(min-width:900px){.book .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:stretch}.ch{margin-top:0}.book-l .hours{margin-top:auto;border-top:1.5px solid rgba(255,255,255,.22);padding-top:18px}}
 
 footer{padding:34px 0 120px;font-size:14px;color:var(--ink-2)}
 footer .wrap{display:grid;gap:10px}
@@ -241,7 +248,7 @@ dialog .btn{margin-top:20px}
           <select id="start"></select>
           <span>— свободна в</span> <output class="out" id="end" for="start" aria-live="polite">19:30</output></p>
         <a class="btn" href="https://n50373.yclients.com/company/68109/personal/menu?o=" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Выбрать время онлайн</a>
-        <small>Салон работает ежедневно с 10:15 до 22:00. Свободные окна — в онлайн-записи.</small>
+        <small>Салон работает ежедневно с 10:15 до 22:00. Свободные окна — в&nbsp;<span style="white-space:nowrap">онлайн-записи</span>.</small>
       </div>
       <p class="where"><b>93 м</b> от платформы МЦД Железнодорожная</p>
     </div>
@@ -268,9 +275,11 @@ dialog .btn{margin-top:20px}
 
 <section class="sec" id="ceny" aria-labelledby="ceny-h">
   <div class="wrap pgrid">
-    <div>
+    <div class="phead">
       <p class="kicker">Цены</p>
       <h2 class="h2" id="ceny-h">Сколько стоит</h2>
+    </div>
+    <div>
       <div class="seg" role="tablist" aria-label="Раздел прайса">
         <button role="tab" id="t-m" aria-controls="p-m" aria-selected="false" tabindex="-1">Маникюр</button>
         <button role="tab" id="t-p" aria-controls="p-p" aria-selected="false" tabindex="-1">Педикюр</button>
@@ -347,7 +356,7 @@ dialog .btn{margin-top:20px}
     <p class="kicker">Как дойти</p>
     <h2 class="h2" id="doroga-h">93 метра от&nbsp;МЦД</h2>
     <div class="steps">
-      <div class="step reveal"><p class="m" aria-hidden="true"><span>МЦД</span></p><div><h3>Выходите на МЦД Железнодорожная</h3><p>От платформы до салона — 93 метра.</p></div></div>
+      <div class="step reveal"><p class="m" aria-hidden="true"><span>МЦД<small>Железнодорожная</small></span></p><div><h3>Выходите на МЦД</h3><p>От платформы Железнодорожная до салона — 93 метра.</p></div></div>
       <div class="step reveal"><img src="img/building.jpg" width="675" height="900" loading="lazy" alt="Стеклянное торговое здание на Советской улице, 5А"><div><h3>Советская ул., 5А</h3><p>Стеклянное здание с большими окнами.</p></div></div>
       <div class="step reveal"><img src="img/sign.jpg" width="601" height="800" loading="lazy" alt="Розовая вывеска «Педикюр Professional» со стрелкой внутри здания"><div><h3>Идёте по розовой вывеске</h3><p>Внутри здания — указатели «Педикюр Professional».</p></div></div>
     </div>
@@ -360,11 +369,11 @@ dialog .btn{margin-top:20px}
 
 <section class="sec book" id="zapis" aria-labelledby="zapis-h">
   <div class="wrap">
-    <div>
+    <div class="book-l">
       <p class="kicker" style="color:var(--lime)">Запись</p>
       <h2 class="h2" id="zapis-h">Выберите, где&nbsp;удобнее</h2>
       <p class="lead">Онлайн — сразу видны свободные окна. Или напишите в мессенджер — как привычнее.</p>
-      <p class="hours">Ежедневно <b>10:15–22:00</b></p>
+      <p class="hours">Ежедневно <b>10:15–22:00</b><small>Советская ул., 5А — 93 метра от МЦД Железнодорожная</small></p>
     </div>
     <ul class="ch">
       <li><a href="https://n50373.yclients.com/company/68109/personal/menu?o=" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Онлайн-запись</b><span>YCLIENTS: мастер, услуга, время</span></div><span class="go" aria-hidden="true">→</span></a></li>

@@ -42,7 +42,7 @@ p{margin:0}
 .mast nav{display:none;gap:28px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
 .mast nav a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
 .mast nav a:hover{border-color:currentColor}
-.mast .issue{font-size:12px;letter-spacing:.08em;color:var(--ink-2);text-align:right;line-height:1.3}
+.mast .issue{font-size:13px;letter-spacing:.08em;color:var(--ink-2);text-align:right;line-height:1.3}
 @media(min-width:900px){.mast nav{display:flex}.logo{font-size:36px}}
 
 /* cover */
@@ -54,9 +54,9 @@ p{margin:0}
 .cover .head{position:absolute;z-index:2;left:var(--gut);right:var(--gut);top:22px}
 .cover h1{color:#f8efeb;font-size:clamp(60px,16vw,184px);line-height:.86;letter-spacing:-.03em}
 .cover h1 em{font-style:italic;color:var(--powder)}
-.cover .kicker{color:#e9dcd7;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
-.shotcap{position:absolute;z-index:2;left:var(--gut);bottom:14px;font-size:12px;color:#3a3335;background:rgba(251,248,244,.85);padding:4px 8px}
-.credit{position:absolute;z-index:2;right:10px;top:24px;writing-mode:vertical-rl;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#cdbfba}
+.cover .kicker{color:#e9dcd7;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.shotcap{position:absolute;z-index:2;left:var(--gut);bottom:14px;font-size:13px;color:#3a3335;background:rgba(251,248,244,.85);padding:4px 8px}
+.credit{display:none;position:absolute;z-index:2;right:10px;top:24px;writing-mode:vertical-rl;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#cdbfba}
 .covlines{display:grid;padding:6px var(--gut) 26px;gap:0}
 .covline{display:grid;grid-template-columns:118px 1fr;gap:12px;align-items:baseline;text-decoration:none;border-bottom:1px solid var(--rule);padding:12px 0}
 .covline strong{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1;color:var(--rose)}
@@ -71,7 +71,7 @@ p{margin:0}
   .cover img{object-position:50% 36%}
   .cover .shot::after{background:linear-gradient(90deg,rgba(10,9,10,.62) 0%,rgba(10,9,10,.12) 48%,rgba(10,9,10,0) 62%)}
   .cover .head{top:52px}
-  .credit{right:24px}
+  .credit{display:block;right:24px}
   .covlines{grid-template-columns:repeat(3,1fr) auto;gap:0 40px;align-items:center;padding:22px var(--gut) 34px;border-bottom:1px solid var(--ink)}
   .covline{grid-template-columns:auto 1fr;border:0;border-left:1px solid var(--ink);padding:4px 0 4px 18px;align-self:stretch;align-items:center}
   .covline strong{font-size:44px}
@@ -80,7 +80,7 @@ p{margin:0}
 
 /* sections general */
 .sec{padding:clamp(64px,10vw,140px) var(--gut)}
-.folio{display:flex;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:clamp(28px,5vw,56px)}
+.folio{display:flex;justify-content:space-between;gap:16px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:clamp(28px,5vw,56px)}
 .cap{font-size:13px;line-height:1.45;color:var(--ink-2);margin-top:10px}
 .cap b{font-weight:500;color:var(--ink)}
 
@@ -94,9 +94,11 @@ p{margin:0}
 .stat{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:22px 0;margin:28px 0 8px}
 .stat .n{font-family:var(--serif);font-weight:300;font-size:clamp(64px,9vw,104px);line-height:.85;letter-spacing:-.03em;color:var(--rose)}
 .stat p{font-size:17px;line-height:1.35;max-width:22ch}
-.stat small{display:block;color:var(--ink-2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.stat small{display:block;color:var(--ink-2);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
 .facts3{list-style:none;margin:0;padding:0}
 .facts3 li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:16.5px;line-height:1.55;hyphens:none}
+.facts3 li div{max-width:60ch}
+.rules li p{max-width:60ch}
 .facts3 li span{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1;color:var(--rose)}
 .jar{margin:28px 0 0}
 .jar img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 55%;display:block}
@@ -135,14 +137,14 @@ p{margin:0}
 .menu-head h2{font-size:clamp(52px,9vw,120px);font-style:italic}
 .menu-head p{color:var(--ink-2);margin-top:12px}
 .mcols{display:grid;gap:44px}
-.mgroup h3{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+.mgroup h3{font-family:var(--sans);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
 .mgroup + .mgroup{margin-top:40px}
 .row{display:flex;align-items:baseline;gap:8px;padding:12px 0}
 .row .nm{font-family:var(--serif);font-size:23px;line-height:1.15}
 .row .nm small{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-2);margin-top:3px}
 .row .dots{flex:1;min-width:18px;border-bottom:1px dotted var(--ink-2);transform:translateY(-6px)}
 .row .pr{font-family:var(--serif);font-size:23px;white-space:nowrap}
-.row .t{font-size:12px;color:var(--ink-2);white-space:nowrap;margin-left:4px}
+.row .t{font-size:13px;color:var(--ink-2);white-space:nowrap;margin-left:4px}
 .menu-foot{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:center;margin-top:56px;text-align:center}
 .menu-foot p{font-size:14px;color:var(--ink-2)}
 @media(min-width:900px){.mcols{grid-template-columns:1fr 1fr;gap:88px}}
@@ -156,19 +158,20 @@ p{margin:0}
 .lb figure{margin:0;overflow:hidden;position:relative}
 .lb img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .lb figure:hover img{transform:scale(1.04)}
-.lb figcaption{position:absolute;left:0;bottom:0;padding:8px 10px;font-size:12px;letter-spacing:.06em;background:rgba(37,34,36,.78);color:#f3e8e4}
-.lb .a{grid-column:span 6;aspect-ratio:4/3}
+.lb figcaption{position:absolute;left:0;bottom:0;padding:8px 10px;font-size:13px;letter-spacing:.06em;background:rgba(37,34,36,.78);color:#f3e8e4}
+.lb .a{grid-column:span 6;aspect-ratio:4/5}
 .lb .b{grid-column:span 3;aspect-ratio:3/4}
 .lb .c{grid-column:span 3;aspect-ratio:3/4}
-.lb .d{grid-column:span 6;aspect-ratio:1}
+.lb .d{grid-column:span 6;aspect-ratio:4/3}
 .lb .e{grid-column:span 3;aspect-ratio:3/4}
-.look .src{font-size:12px;color:#a99c98;margin-top:18px;max-width:1320px;margin-inline:auto}
+.look .src{font-size:13px;color:#a99c98;margin-top:18px;max-width:1320px;margin-inline:auto}
 @media(min-width:900px){
   .lb{grid-template-columns:repeat(12,1fr);gap:14px}
-  .lb .a{grid-column:1/8;grid-row:span 2;aspect-ratio:auto}
-  .lb .b{grid-column:8/11;aspect-ratio:3/4}
-  .lb .c{grid-column:11/13;aspect-ratio:auto}
-  .lb .d{grid-column:8/13;aspect-ratio:16/10}
+  .lb .a{grid-column:1/7;grid-row:span 2;aspect-ratio:auto}
+  .lb .a img{position:absolute;inset:0}
+  .lb .b{grid-column:7/10;aspect-ratio:3/4}
+  .lb .c{grid-column:10/13;aspect-ratio:3/4}
+  .lb .d{grid-column:7/13;aspect-ratio:16/10}
   .lb .e{grid-column:span 3;aspect-ratio:4/5}
 }
 
@@ -186,16 +189,19 @@ p{margin:0}
 .colo h2{font-size:clamp(46px,7vw,96px)}
 .colo h2 em{font-style:italic}
 .colo dl{margin:0;display:grid;gap:0}
-.colo dl div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid rgba(37,34,36,.25)}
-.colo dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding-top:5px}
+.colo dl div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid rgba(37,34,36,.25)}
+.colo dt{font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding-top:5px}
 .colo dd{margin:0;font-family:var(--serif);font-size:24px;line-height:1.2}
-.colo dd a{overflow-wrap:anywhere;text-decoration-thickness:1px;text-underline-offset:4px}
+.colo dd a{text-decoration-thickness:1px;text-underline-offset:4px}
 .colo dd small{display:block;font-family:var(--sans);font-size:14px;color:#4c4245}
+.colo dd a[href^="mailto"]{font-size:.86em;white-space:nowrap}
+@media(min-width:600px){.colo dl div{grid-template-columns:110px 1fr}.colo dd a[href^="mailto"]{font-size:inherit}}
 .colo .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .ghost{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border:1px solid var(--ink);text-decoration:none;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
 .ghost:hover{background:var(--ink);color:var(--paper)}
 @media(min-width:900px){.colo-in{grid-template-columns:1fr 1.2fr;gap:80px}}
 
+footer span:not(.logo){max-width:68ch}
 footer{padding:34px var(--gut) 110px;font-size:13px;color:var(--ink-2);display:grid;gap:10px}
 footer .logo{font-size:26px;color:var(--ink)}
 footer button{font:inherit;color:inherit;background:none;border:0;padding:6px 0;text-decoration:underline;cursor:pointer;justify-self:start;min-height:44px}
@@ -241,10 +247,10 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
       <h1 id="h1">Маникюр<br><em>без лампы</em></h1>
     </div>
     <span class="credit" aria-hidden="true">Dip studio · Москва</span>
-    <p class="shotcap">На обложке — работа мастеров студии</p>
+    <p class="shotcap">На обложке — работа мастеров студии</p>
   </div>
   <div class="covlines">
-    <a class="covline" href="#pudra"><strong>98,7%</strong><span>клиенток студии — аллергики. Почему они выбирают пудру</span></a>
+    <a class="covline" href="#pudra"><strong>98,7%</strong><span>клиенток студии — аллергики. Почему они выбирают пудру</span></a>
     <a class="covline" href="#menu"><strong>2 000 ₽</strong><span>маникюр. Весь прайс: педикюр, френч, омбре</span></a>
     <a class="covline" href="#otzyvy"><strong>5,0</strong><span>на Яндекс Картах, 52 отзыва</span></a>
     <a class="book" href="https://dikidi.net/1421790?p=0.pi" target="_blank" rel="noopener">Записаться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -252,23 +258,23 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
 </section>
 
 <section class="sec" id="pudra" aria-labelledby="pudra-h">
-  <div class="folio" style="max-width:1320px;margin-inline:auto"><span>История</span><span>Пудра вместо гель-лака</span></div>
+  <div class="folio" style="max-width:1320px;margin-inline:auto"><span>История</span><span>Пудра вместо гель‑лака</span></div>
   <div class="spread">
     <figure class="main reveal">
       <img src="img/spread.jpg" width="1300" height="1300" loading="lazy" alt="Руки с молочно-розовым мерцающим покрытием на развороте газеты">
       <figcaption class="cap"><b>На фото:</b> молочное мерцающее покрытие. Съёмка студии на газетном развороте.</figcaption>
     </figure>
     <div class="txt reveal">
-      <h2 id="pudra-h" class="pull">Для тех, кому не подходит гель-лак</h2>
-      <div class="stat"><span class="n">98,7%</span><p>клиенток студии — аллергики<small>Данные студии</small></p></div>
+      <h2 id="pudra-h" class="pull">Для тех, кому не подходит гель‑лак</h2>
+      <div class="stat"><span class="n">98,7%</span><p>клиенток студии — аллергики<small>Данные студии</small></p></div>
       <ol class="facts3">
-        <li><span>i</span><div>Покрытие — пудра, а не гель-лак. Наносят без УФ-лампы; оно гипоаллергенное, с витаминами и минералами для ногтевой пластины.</div></li>
-        <li><span>ii</span><div>Подходит, если на гель-лак аллергия или от лампы остаются ожоги. Сначала аппаратный или пилочный маникюр, затем пудра — любой оттенок, френч или омбре.</div></li>
-        <li><span>iii</span><div>Гарантия 5 дней: отколется кусочек или появится трещинка — переделают бесплатно.</div></li>
+        <li><span>i</span><div>Покрытие — пудра, а не гель‑лак. Наносят без УФ‑лампы; оно гипоаллергенное, с витаминами и минералами для ногтевой пластины.</div></li>
+        <li><span>ii</span><div>Подходит, если на гель‑лак аллергия или от лампы остаются ожоги. Сначала аппаратный или пилочный маникюр, затем пудра — любой оттенок, френч или омбре.</div></li>
+        <li><span>iii</span><div>Гарантия 5 дней: отколется кусочек или появится трещинка — переделают бесплатно.</div></li>
       </ol>
       <figure class="jar">
         <img src="img/jars.jpg" width="1000" height="1000" loading="lazy" alt="Баночки с розовой пудрой для покрытия ногтей на газете">
-        <figcaption class="cap"><b>Пудра вместо гель-лака.</b> Наносится без УФ-лампы.</figcaption>
+        <figcaption class="cap"><b>Пудра вместо гель‑лака.</b> Наносится без УФ‑лампы.</figcaption>
       </figure>
     </div>
   </div>
@@ -285,9 +291,9 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
       <figcaption class="cap"><b>Студия</b> в пяти минутах от м. Таганская.</figcaption>
     </figure>
     <ol class="reveal">
-      <li><h3>Без лампы</h3><p>Пудровое покрытие не требует УФ-лампы. Подходит при аллергии на гель-лак и ожогах от лампы.</p></li>
+      <li><h3>Без лампы</h3><p>Пудровое покрытие не требует УФ‑лампы. Подходит при аллергии на гель‑лак и ожогах от лампы.</p></li>
       <li><h3>Стерильно</h3><p>Инструменты проходят четыре этапа стерилизации. Крафт-пакет вскрывают при вас.</p></li>
-      <li><h3>Гарантия пять дней</h3><p>Откололся кусочек или пошла трещинка — переделают бесплатно.</p></li>
+      <li><h3>Гарантия пять дней</h3><p>Откололся кусочек или пошла трещинка — переделают бесплатно.</p></li>
       <li><h3>Как дома</h3><p>Мягкая мебель, напитки, печенье и конфеты, негромкая музыка.</p></li>
     </ol>
   </div>
@@ -295,12 +301,12 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
 
 <section class="sec" id="menu" aria-labelledby="menu-h">
   <div class="menu">
-    <div class="menu-head reveal"><h2 id="menu-h">Прайс-лист</h2><p>Время — ориентировочное.</p></div>
+    <div class="menu-head reveal"><h2 id="menu-h">Прайс-лист</h2><p>Время — ориентировочное.</p></div>
     <div class="mcols">
       <div class="reveal">
         <div class="mgroup"><h3>Маникюр</h3>
           <div class="row"><span class="nm">Аппаратный или пилочный</span><span class="dots"></span><span class="pr">2 000 ₽</span><span class="t">1 ч</span></div>
-          <div class="row"><span class="nm">Маникюр + пудровое покрытие<small>Без УФ-лампы, гипоаллергенно</small></span><span class="dots"></span><span class="pr">4 000 ₽</span><span class="t">2 ч</span></div>
+          <div class="row"><span class="nm">Маникюр + пудровое покрытие<small>Без УФ‑лампы, гипоаллергенно</small></span><span class="dots"></span><span class="pr">4 000 ₽</span><span class="t">2 ч</span></div>
           <div class="row"><span class="nm">Коррекция длины<small>Наращивание ногтя</small></span><span class="dots"></span><span class="pr">400 ₽</span><span class="t">5 мин</span></div>
         </div>
         <div class="mgroup"><h3>Педикюр</h3>
@@ -331,16 +337,16 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
   <div class="folio" style="max-width:1320px;margin-inline:auto"><span>Лукбук</span><span>Работы мастеров</span></div>
   <h2 id="look-h" class="reveal" style="max-width:1320px;margin-inline:auto">От нюда <em>до чёрного</em></h2>
   <div class="lb">
-    <figure class="a reveal"><img src="img/sleeve.jpg" width="900" height="674" loading="lazy" alt="Две руки с молочным мерцающим маникюром, рукав серого свитшота"><figcaption>01 · Молочный шиммер</figcaption></figure>
+    <figure class="a reveal"><img src="img/phone.jpg" width="900" height="1200" loading="lazy" alt="Руки с нежно-розовым маникюром держат телефон"><figcaption>01 · Пудровый</figcaption></figure>
     <figure class="b reveal"><img src="img/noir.jpg" width="900" height="900" loading="lazy" alt="Чёрный маникюр с блёстками и кольцо на пальце"><figcaption>02 · Чёрный с блеском</figcaption></figure>
-    <figure class="c reveal"><img src="img/phone.jpg" width="675" height="900" loading="lazy" alt="Руки с нежно-розовым маникюром держат телефон"><figcaption>03 · Пудровый</figcaption></figure>
-    <figure class="d reveal"><img src="img/rouge.jpg" width="900" height="900" loading="lazy" alt="Красный маникюр на фоне белой гипсовой скульптуры"><figcaption>04 · Красный</figcaption></figure>
+    <figure class="c reveal"><img src="img/rouge.jpg" width="900" height="900" loading="lazy" alt="Красный маникюр на фоне белой гипсовой скульптуры" style="object-position:68% 50%"><figcaption>03 · Красный</figcaption></figure>
+    <figure class="d reveal"><img src="img/sleeve.jpg" width="1200" height="899" loading="lazy" alt="Две руки с молочным мерцающим маникюром, рукав серого свитшота"><figcaption>04 · Молочный шиммер</figcaption></figure>
     <figure class="e reveal"><img src="img/color.jpg" width="900" height="900" loading="lazy" alt="Разноцветный маникюр: бирюзовый, оранжевый, красный"><figcaption>05 · Цвет</figcaption></figure>
     <figure class="e reveal"><img src="img/paper.jpg" width="675" height="900" loading="lazy" alt="Светлый лавандовый маникюр на фоне газеты"><figcaption>06 · Лаванда</figcaption></figure>
-    <figure class="e reveal"><img src="img/fur.jpg" width="675" height="900" loading="lazy" alt="Розовый маникюр на фоне белого меха"><figcaption>07 · Розовый</figcaption></figure>
+    <figure class="e reveal"><img src="img/nude.jpg" width="768" height="1024" loading="lazy" alt="Нюдовый маникюр на квадратной форме, голубой вязаный рукав"><figcaption>07 · Нюд</figcaption></figure>
     <figure class="e reveal"><img src="img/cobalt.jpg" width="900" height="675" loading="lazy" alt="Насыщенный синий маникюр и кольца на пальцах"><figcaption>08 · Кобальт</figcaption></figure>
   </div>
-  <p class="src">Фото — с сайта студии и из карточки компании на Яндекс Картах.</p>
+  <p class="src">Фото — с сайта студии и из карточки компании на Яндекс Картах.</p>
 </section>
 
 <section class="sec" id="otzyvy" aria-labelledby="otz-h">
@@ -349,7 +355,7 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
     <div class="big" aria-hidden="true">5,0<sup>из 5</sup></div>
     <div>
       <h2 id="otz-h" class="sr">Рейтинг на Яндекс Картах</h2>
-      <p>Оценка студии на Яндекс Картах — 5,0 из 5 по 52 отзывам.</p>
+      <p>Средняя оценка студии по 52 отзывам на Яндекс Картах.</p>
       <a class="ln" href="https://yandex.ru/maps/org/39989078578/reviews/" target="_blank" rel="noopener">Читать отзывы <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </div>
   </div>
@@ -378,7 +384,7 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
 
 <footer>
   <span class="logo">Dip <i>studio</i></span>
-  <span>Студия пудрового маникюра · Москва, ул. Верхняя Радищевская, 13–15. Фото — с сайта студии и из карточки компании на Яндекс Картах.</span>
+  <span>Студия пудрового маникюра · Москва, ул. Верхняя Радищевская, 13–15. Фото — с сайта студии и из карточки компании на Яндекс Картах.</span>
   <button type="button" id="policy-btn">Политика обработки персональных данных</button>
 </footer>
 

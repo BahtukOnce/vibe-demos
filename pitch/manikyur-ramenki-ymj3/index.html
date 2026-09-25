@@ -29,7 +29,7 @@ h1,h2,h3{font-family:var(--head);font-weight:400;margin:0;line-height:1.1;letter
 p{margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-.concept{font-size:12.5px;line-height:1.4;color:#dfe3ea;background:#262c35;padding:9px 16px;text-align:center}
+.concept{font-size:13px;line-height:1.4;color:#dfe3ea;background:#262c35;padding:9px 16px;text-align:center}
 .concept span{color:#9fb0ff}
 
 .page{max-width:1180px;margin:0 auto;padding:0 16px}
@@ -42,7 +42,7 @@ p{margin:0}
 .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;text-align:center}
 .stats a,.stats div{text-decoration:none;display:grid;gap:0;padding:2px 4px}
 .stats b{font-family:var(--head);font-weight:400;font-size:22px;line-height:1.2}
-.stats span{font-size:12.5px;color:var(--ink-2);line-height:1.25}
+.stats span{font-size:13px;color:var(--ink-2);line-height:1.25}
 .stats a:hover b{color:var(--cobalt)}
 .acts{grid-column:1/-1;display:grid;grid-template-columns:1.3fr 1fr;gap:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none;transition:background .2s,color .2s}
@@ -55,15 +55,15 @@ p{margin:0}
 .bio b{color:var(--ink);font-weight:500}
 
 /* highlights */
-.hl{display:flex;gap:16px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none;margin:0 -16px;padding-left:16px;padding-right:16px}
+.hl{display:flex;justify-content:space-between;gap:6px;padding:4px 0 14px}
 .hl::-webkit-scrollbar{display:none}
-.hl a{flex:none;display:grid;justify-items:center;gap:6px;text-decoration:none;font-size:12.5px;color:var(--ink-2);width:70px}
-.hl .ring{width:64px;height:64px;border-radius:50%;padding:3px;background:conic-gradient(var(--cobalt),#7c8bff,var(--steel),var(--cobalt))}
+.hl a{flex:0 1 64px;min-width:0;display:grid;justify-items:center;gap:6px;text-decoration:none;font-size:13px;color:var(--ink-2)}
+.hl .ring{width:min(64px,16vw);height:min(64px,16vw);border-radius:50%;padding:3px;background:conic-gradient(var(--cobalt),#7c8bff,var(--steel),var(--cobalt))}
 .hl img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid var(--bg)}
 .hl a:hover{color:var(--ink)}
 
 /* grid */
-.tabs{display:flex;justify-content:center;gap:36px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.tabs{display:flex;justify-content:center;gap:36px;border-top:1px solid var(--line);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .tabs span{padding:12px 0;border-top:1px solid var(--ink);margin-top:-1px;color:var(--ink);display:flex;gap:6px;align-items:center}
 .tabs svg{width:13px;height:13px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:0 -16px}
@@ -73,7 +73,7 @@ p{margin:0}
 .grid button:hover img{transform:scale(1.04);filter:brightness(.85)}
 .grid .cap{position:absolute;left:8px;right:8px;bottom:8px;color:#fff;font-size:13px;opacity:0;transform:translateY(6px);transition:.3s;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .grid button:hover .cap,.grid button:focus-visible .cap{opacity:1;transform:none}
-.src{font-size:12px;color:var(--ink-2);padding:10px 0 0}
+.src{font-size:13px;color:var(--ink-2);padding:10px 0 0}
 
 @media(min-width:900px){
   .page{padding:0 32px}
@@ -82,7 +82,7 @@ p{margin:0}
   .profile{grid-template-columns:1fr;padding-top:0}
   .mono{width:104px;height:104px;font-size:46px}
   .who h1{font-size:36px}
-  .hl{margin:0;padding:6px 0 18px;gap:6px}.hl a{width:64px}
+  .hl{padding:6px 0 18px}
   .grid{margin:0;gap:6px}
   .tabs{justify-content:flex-start}
 }
@@ -94,7 +94,7 @@ p{margin:0}
 .shead span{font-size:13px;color:var(--ink-2)}
 .pricewrap{display:grid;gap:16px}
 .pcard{background:var(--card);border-radius:18px;padding:22px 20px;box-shadow:0 1px 0 var(--line)}
-.pcard h3{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);margin:18px 0 4px}
+.pcard h3{font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt);margin:18px 0 4px}
 .pcard h3:first-child{margin-top:0}
 .pcard ul{list-style:none;margin:0;padding:0}
 .pcard li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:9px 0;border-bottom:1px solid #e6e9ed;font-size:15.5px}
@@ -103,10 +103,10 @@ p{margin:0}
 .pcard li b{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
 .pcard .btn{width:100%;margin-top:18px}
 .stil{margin:0;position:relative;border-radius:18px;overflow:hidden;background:#3a4048}
-.stil img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;object-position:50% 60%}
+.stil img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;object-position:50% 55%}
 .stil::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(15,18,23,.75))}
 .stil figcaption{z-index:1;position:absolute;left:18px;bottom:16px;right:18px;color:#eef1f5;font-family:var(--head);font-size:clamp(22px,2.8vw,32px);line-height:1.15}
-@media(min-width:900px){.pricewrap{grid-template-columns:1fr 1.15fr;gap:24px}.stil img{aspect-ratio:auto;min-height:100%}.pcard{padding:30px 32px}}
+@media(min-width:900px){.pricewrap{grid-template-columns:1fr 1.15fr;gap:24px}.stil img{position:absolute;inset:0;aspect-ratio:auto;object-position:60% 50%}.pcard{padding:30px 32px}}
 
 /* about + rating */
 .duo{display:grid;gap:16px}
@@ -131,8 +131,8 @@ p{margin:0}
 .vlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .vphoto{margin:0;display:none}
 @media(min-width:900px){.vphoto{display:block}}
-.vphoto img{border-radius:18px;width:100%;aspect-ratio:1;object-fit:cover}
-@media(min-width:900px){.visit{grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}}
+.vphoto img{border-radius:18px;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+@media(min-width:900px){.visit{grid-template-columns:1.3fr .7fr;gap:48px;align-items:stretch}.vphoto{position:relative}.vphoto img{position:absolute;inset:0}}
 
 footer{border-top:1px solid var(--line);padding:26px 16px 100px;font-size:13px;color:var(--ink-2);text-align:center;display:grid;gap:6px;justify-items:center}
 footer button{font:inherit;color:var(--ink);background:none;border:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px;padding:0 6px}
@@ -169,7 +169,7 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
       <div class="mono" aria-hidden="true">К</div>
       <div class="who">
         <h1>Маникюр в&nbsp;Раменках</h1>
-        <p>мастер Катерина · Мичуринский пр., 25к3</p>
+        <p>мастер Катерина · Мичуринский пр.,&nbsp;25к3</p>
       </div>
       <div class="stats">
         <a href="https://yandex.ru/maps/org/121998722046/reviews/" target="_blank" rel="noopener"><b>5,0</b><span>оценка</span></a>
@@ -208,18 +208,18 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
       <button type="button" data-cap="Нюд на длинных ногтях"><img src="img/black-dress.jpg" width="750" height="1000" loading="lazy" alt="Светлый маникюр на фоне чёрного платья"><span class="cap">Нюд</span></button>
       <button type="button" data-cap="Светлое покрытие, мягкий квадрат"><img src="img/window.jpg" width="750" height="1000" loading="lazy" alt="Рука со светлым маникюром у окна, белый вязаный рукав"><span class="cap">Светлое</span></button>
     </div>
-    <p class="src">Фото — из карточки студии на Яндекс Картах.</p>
+    <p class="src">Фото — из карточки студии на Яндекс Картах.</p>
 
     <section class="blk" id="prays" aria-labelledby="pr-h">
       <div class="shead"><h2 id="pr-h">Прайс</h2><span>по каталогу студии</span></div>
       <div class="pricewrap">
-        <figure class="stil reveal"><img src="img/bottles.jpg" width="675" height="900" loading="lazy" alt="Два флакона гель-лака и серебряная цепочка на сером фоне"><figcaption>Маникюр с&nbsp;гель-лаком — 3&nbsp;900&nbsp;₽</figcaption></figure>
+        <figure class="stil reveal"><img src="img/jeans.jpg" width="576" height="1024" loading="lazy" alt="Рука с разноцветным маникюром на голубых джинсах"><figcaption>Маникюр с&nbsp;гель‑лаком — 3&nbsp;900&nbsp;₽</figcaption></figure>
         <div class="pcard reveal">
           <h3>Маникюр</h3>
           <ul>
             <li><span>Без покрытия</span><b>2 400 ₽</b></li>
-            <li><span>Комплексный + гель-лак</span><b>3 900 ₽</b></li>
-            <li><span>Комплексный + гель-лак + пирсинг ногтя</span><b>4 400 ₽</b></li>
+            <li><span>Комплексный + гель‑лак</span><b>3 900 ₽</b></li>
+            <li><span>Комплексный + гель‑лак + пирсинг ногтя</span><b>4 400 ₽</b></li>
             <li><span>Дизайн: френч или омбре</span><b>500 ₽</b></li>
           </ul>
           <h3>Наращивание</h3>
@@ -229,9 +229,9 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
           </ul>
           <h3>Педикюр</h3>
           <ul>
-            <li><span>Пальчики + гель-лак<small>Без обработки стопы</small></span><b>4 000 ₽</b></li>
+            <li><span>Пальчики + гель‑лак<small>Без обработки стопы</small></span><b>4 000 ₽</b></li>
             <li><span>Smart-педикюр без покрытия</span><b>4 000 ₽</b></li>
-            <li><span>Smart-педикюр + гель-лак</span><b>4 900 ₽</b></li>
+            <li><span>Smart-педикюр + гель‑лак</span><b>4 900 ₽</b></li>
           </ul>
           <a class="btn pri" href="https://n832854.yclients.com/company/779254/personal/select-master?o=" target="_blank" rel="noopener">Выбрать время в YCLIENTS</a>
         </div>
@@ -242,14 +242,14 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
       <div class="duo">
         <div class="about reveal" id="master">
           <h2>Катерина</h2>
-          <p>Мастер ногтевого сервиса. Аппаратный и комбинированный маникюр, педикюр, стойкое покрытие, наращивание и дизайн — френч, омбре, пирсинг ногтя.</p>
-          <p>Удобнее всего выбрать время в онлайн-записи. Вопрос про дизайн или длину — напишите в <a href="https://t.me/nails_master_kate" target="_blank" rel="noopener">Telegram</a>.</p>
+          <p>Мастер ногтевого сервиса. Аппаратный и комбинированный маникюр, педикюр, стойкое покрытие, наращивание и дизайн — френч, омбре, пирсинг ногтя.</p>
+          <p>Удобнее всего выбрать время в онлайн-записи. Вопрос про дизайн или длину — напишите в <a href="https://t.me/nails_master_kate" target="_blank" rel="noopener">Telegram</a>.</p>
         </div>
         <div class="rate reveal" id="otzyvy">
           <span class="n" aria-hidden="true">5,0</span>
           <p>Оценка на Яндекс Картах по 81 отзыву.</p>
           <span class="award"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg>Хорошее место 2026</span>
-          <a class="more" href="https://yandex.ru/maps/org/121998722046/reviews/" target="_blank" rel="noopener">Читать отзывы на Картах →</a>
+          <a class="more" href="https://yandex.ru/maps/org/121998722046/reviews/" target="_blank" rel="noopener">Читать отзывы на&nbsp;Картах&nbsp;→</a>
         </div>
       </div>
     </section>
@@ -259,8 +259,8 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
       <div class="visit">
         <div class="reveal">
           <dl style="margin:0">
-            <div class="vrow"><dt>Адрес</dt><dd>Москва, Мичуринский пр., 25к3</dd></div>
-            <div class="vrow"><dt>Метро</dt><dd>Раменки — 460 м</dd></div>
+            <div class="vrow"><dt>Адрес</dt><dd>Москва, Мичуринский пр.,&nbsp;25к3</dd></div>
+            <div class="vrow"><dt>Метро</dt><dd>Раменки — 460 м</dd></div>
             <div class="vrow"><dt>Часы</dt><dd>Ежедневно, 10:00–22:00</dd></div>
             <div class="vrow"><dt>Телефон</dt><dd><a href="tel:+79060750399">+7 (906) 075-03-99</a></dd></div>
             <div class="vrow"><dt>Написать</dt><dd><a href="https://t.me/nails_master_kate" target="_blank" rel="noopener">@nails_master_kate</a> · <a href="https://wa.me/79060750399" target="_blank" rel="noopener">WhatsApp</a></dd></div>
@@ -270,7 +270,7 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
             <a class="btn sec" href="https://n832854.yclients.com/company/779254/personal/select-master?o=" target="_blank" rel="noopener">Онлайн-запись</a>
           </div>
         </div>
-        <figure class="vphoto reveal"><img src="img/bottle.jpg" width="750" height="1000" loading="lazy" alt="Флакон гель-лака с цепочкой на сером фоне"></figure>
+        <figure class="vphoto reveal"><img src="img/workplace.jpg" width="768" height="1024" loading="lazy" alt="Рабочее место мастера: стол, лампа и вытяжка"></figure>
       </div>
     </section>
   </main>
@@ -278,7 +278,7 @@ dialog::backdrop{background:rgba(15,18,23,.86)}
 </div>
 
 <footer>
-  <span>«Маникюр Раменки» · Москва, Мичуринский пр., 25к3 · Фото — из карточки компании на Яндекс Картах</span>
+  <span>«Маникюр Раменки» · Москва, Мичуринский пр., 25к3 · Фото — из карточки компании на Яндекс Картах</span>
   <button type="button" id="policy-btn">Политика обработки персональных данных</button>
 </footer>
 
