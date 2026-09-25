@@ -91,21 +91,19 @@ p{margin:0}
 .pull{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(34px,5.4vw,64px);line-height:1.02;letter-spacing:-.015em}
 .pull::before{content:"«";color:var(--rose)}
 .pull::after{content:"»";color:var(--rose)}
-.stat{display:flex;align-items:flex-end;gap:16px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 0 26px;margin:30px 0}
-.stat .n{font-family:var(--serif);font-weight:300;font-size:clamp(88px,15vw,170px);line-height:.8;letter-spacing:-.04em;color:var(--rose)}
-.stat p{font-size:15px;line-height:1.4;padding-bottom:6px;max-width:18ch}
-.stat small{display:block;color:var(--ink-2);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
-.cols{columns:1;column-gap:36px}
-.cols p{margin-bottom:1em;hyphens:auto}
-.cols p:first-child::first-letter{font-family:var(--serif);float:left;font-size:74px;line-height:.78;padding:6px 10px 0 0;color:var(--rose)}
-.jar{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:end;margin-top:12px}
-.jar img{width:120px;height:150px;object-fit:cover}
+.stat{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:22px 0;margin:28px 0 8px}
+.stat .n{font-family:var(--serif);font-weight:300;font-size:clamp(64px,9vw,104px);line-height:.85;letter-spacing:-.03em;color:var(--rose)}
+.stat p{font-size:17px;line-height:1.35;max-width:22ch}
+.stat small{display:block;color:var(--ink-2);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.facts3{list-style:none;margin:0;padding:0}
+.facts3 li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:16.5px;line-height:1.55;hyphens:none}
+.facts3 li span{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1;color:var(--rose)}
+.jar{margin:28px 0 0}
+.jar img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 55%;display:block}
 @media(min-width:900px){
-  .spread{grid-template-columns:5fr 1fr 6fr;align-items:start}
-  .spread .main{grid-column:1;position:sticky;top:24px}
-  .spread .txt{grid-column:3}
-  .cols{columns:2}
-  .jar{grid-template-columns:200px 1fr}.jar img{width:200px;height:250px}
+  .spread{grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .spread .main{position:sticky;top:24px}
+  .spread .main img{aspect-ratio:4/5}
 }
 
 /* rules / sidebar */
@@ -120,7 +118,16 @@ p{margin:0}
 .rules li p{color:var(--ink-2);font-size:15.5px}
 .rules figure{margin:0}
 .rules figure img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(1) contrast(1.05)}
-@media(min-width:900px){.rules{grid-template-columns:1fr 1.1fr;gap:72px}.rules .left{position:sticky;top:24px;align-self:start}}
+.rules-head .folio{margin-bottom:28px}
+@media(min-width:900px){
+  .rules{grid-template-columns:1fr 1fr;gap:28px 64px;align-items:stretch}
+  .rules-head{grid-column:1/-1}
+  .rules-head h2{max-width:none}
+  .rules-photo{display:flex;flex-direction:column}
+  .rules-photo img{flex:1;height:100%;aspect-ratio:auto;min-height:0}
+  .rules ol{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+  .rules li{flex:1;align-content:center}
+}
 
 /* menu */
 .menu{max-width:1180px;margin:0 auto}
@@ -254,29 +261,29 @@ dialog button{margin-top:10px;min-height:48px;padding:0 22px;background:var(--in
     <div class="txt reveal">
       <h2 id="pudra-h" class="pull">Для тех, кому не подходит гель-лак</h2>
       <div class="stat"><span class="n">98,7%</span><p>клиенток студии — аллергики<small>Данные студии</small></p></div>
-      <div class="cols">
-        <p>Здесь работают с пудровым покрытием. Цвет наносят без ультрафиолетовой лампы, покрытие гипоаллергенное и содержит витамины и минералы для ногтевой пластины.</p>
-        <p>Поэтому сюда приходят те, у кого на гель-лак аллергия или от лампы остаются ожоги. Сначала аппаратный или пилочный маникюр, потом пудра — в любом оттенке, френч или омбре.</p>
-        <p>Если за пять дней отколется кусочек или появится трещинка, студия бесплатно переделает.</p>
-      </div>
-      <div class="jar">
+      <ol class="facts3">
+        <li><span>i</span><div>Покрытие — пудра, а не гель-лак. Наносят без УФ-лампы; оно гипоаллергенное, с витаминами и минералами для ногтевой пластины.</div></li>
+        <li><span>ii</span><div>Подходит, если на гель-лак аллергия или от лампы остаются ожоги. Сначала аппаратный или пилочный маникюр, затем пудра — любой оттенок, френч или омбре.</div></li>
+        <li><span>iii</span><div>Гарантия 5 дней: отколется кусочек или появится трещинка — переделают бесплатно.</div></li>
+      </ol>
+      <figure class="jar">
         <img src="img/jars.jpg" width="1000" height="1000" loading="lazy" alt="Баночки с розовой пудрой для покрытия ногтей на газете">
-        <p class="cap"><b>Пудра вместо гель-лака.</b> Наносится без УФ-лампы.</p>
-      </div>
+        <figcaption class="cap"><b>Пудра вместо гель-лака.</b> Наносится без УФ-лампы.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <section class="sec rules-wrap" aria-labelledby="rules-h">
   <div class="rules">
-    <div class="left reveal">
+    <div class="rules-head reveal">
       <div class="folio"><span>Правила дома</span><span>Верхняя Радищевская</span></div>
       <h2 id="rules-h">Четыре вещи, <em>которые стоит знать</em> до записи</h2>
-      <figure style="margin-top:32px">
-        <img src="img/studio.jpg" width="1280" height="853" loading="lazy" alt="Зал студии: светлые рабочие столы мастеров и кресло для педикюра">
-        <figcaption class="cap"><b>Студия</b> в пяти минутах от м. Таганская.</figcaption>
-      </figure>
     </div>
+    <figure class="rules-photo reveal">
+      <img src="img/studio.jpg" width="1280" height="853" loading="lazy" alt="Зал студии: светлые рабочие столы мастеров и кресло для педикюра">
+      <figcaption class="cap"><b>Студия</b> в пяти минутах от м. Таганская.</figcaption>
+    </figure>
     <ol class="reveal">
       <li><h3>Без лампы</h3><p>Пудровое покрытие не требует УФ-лампы. Подходит при аллергии на гель-лак и ожогах от лампы.</p></li>
       <li><h3>Стерильно</h3><p>Инструменты проходят четыре этапа стерилизации. Крафт-пакет вскрывают при вас.</p></li>
